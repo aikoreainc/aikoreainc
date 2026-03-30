@@ -1,0 +1,8 @@
+{
+  "name": "aikoreainc-site",
+  "private": true,
+  "description": "정적 기업 사이트 — 공통 헤더/푸터는 partials/ 편집 후 npm run build:partials",
+  "scripts": {
+    "build:partials": "node scripts/apply-partials.mjs"
+  }
+}

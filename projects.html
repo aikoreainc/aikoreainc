@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="">
+    <meta name="description" content="한국인공지능 주식회사 수행 프로젝트 — 다양한 분야의 프로젝트 사례를 소개합니다.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>Projects</title>
+    <title>수행 프로젝트 | 한국인공지능 주식회사</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico">
@@ -19,60 +19,66 @@
 
     <!-- Responsive Stylesheet -->
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/modern-professional.css">
 
 </head>
 
 <body class="darker">
+    <a class="skip-link" href="#main-content">본문으로 바로가기</a>
     <!-- Preloader -->
     <div id="preloader">
         <div class="preload-content">
-            <div id="loader-load"></div>
+            <div id="dream-load" aria-hidden="true"></div>
         </div>
     </div>
 
     <!-- ##### Header Area Start ##### -->
-    <nav class="navbar navbar-expand-lg navbar-white fixed-top" id="banner">
+    <header>
+    <nav class="navbar navbar-expand-lg navbar-white fixed-top" id="banner" role="navigation" aria-label="주요 메뉴">
         <div class="container">
-            <!-- Brand -->
-            <a class="navbar-brand" href="index.html"><span><img draggable="false" src="img/core-img/logo_aid_small.png" alt="logo"></span></a>
+            <a class="navbar-brand" href="index.html"><span><img draggable="false" src="img/core-img/logo_aid_small.png" alt="한국인공지능"></span></a>
 
-            <!-- Toggler/collapsibe Button -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="false" aria-label="메뉴 열기">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <!-- Navbar links -->
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="about-us.html">About Us</a>
+                        <a class="nav-link" href="about-us.html">기업 소개</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Solutions</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="solution.html">Solutions List</a>
-                            <a class="dropdown-item" href="portfolio-details_1.html">Dashboard</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop-solutions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">솔루션</a>
+                        <div class="dropdown-menu" aria-labelledby="navbardrop-solutions">
+                            <a class="dropdown-item" href="solution.html">솔루션 개요</a>
+                            <a class="dropdown-item" href="portfolio.html">사례 · 포트폴리오</a>
+                            <div class="dropdown-divider"></div>
+                            <h6 class="dropdown-header">유형별 상세</h6>
+                            <a class="dropdown-item" href="portfolio-details_1.html">대시보드</a>
                             <a class="dropdown-item" href="portfolio-details_2.html">AI 설계</a>
                             <a class="dropdown-item" href="portfolio-details_3.html">LLM 활용</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Services</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="services.html">Services List</a>
-                            <a class="dropdown-item" href="services-details_1.html">Dashboard</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop-services" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">서비스</a>
+                        <div class="dropdown-menu" aria-labelledby="navbardrop-services">
+                            <a class="dropdown-item" href="services.html">서비스 개요</a>
+                            <a class="dropdown-item" href="projects.html">수행 프로젝트</a>
+                            <div class="dropdown-divider"></div>
+                            <h6 class="dropdown-header">유형별 상세</h6>
+                            <a class="dropdown-item" href="services-details_1.html">대시보드</a>
                             <a class="dropdown-item" href="services-details_2.html">AI 설계</a>
                             <a class="dropdown-item" href="services-details_3.html">LLM 활용</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="products.html">Data</a>
+                        <a class="nav-link" href="products.html">데이터</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact-us.html">Contact Us</a>
+                        <a class="nav-link" href="contact-us.html">문의</a>
                     </li>
                     <li class="lh-55px">
-                        <button id="toggle-theme" class="btn login-btn ml-15" title="테마 전환">
+                        <button type="button" id="toggle-theme" class="btn login-btn ml-15" title="라이트/다크 테마 전환">
                             Light Mode
                         </button>
                     </li>
@@ -80,7 +86,11 @@
             </div>
         </div>
     </nav>
+    </header>
     <!-- ##### Header Area End ##### -->
+
+
+    <main class="site-main" id="main-content">
 
     <!-- ##### Welcome Area Start ##### -->
     <div class="breadcumb-area">
@@ -91,10 +101,10 @@
                 <div class="row h-100 align-items-center">
                     <div class="col-12">
                         <nav aria-label="breadcrumb" class="breadcumb--con text-center">
-                            <h2 class="w-text title wow fadeInUp" data-wow-delay="0.2s">Projects</h2>
+                            <h2 class="w-text title wow fadeInUp" data-wow-delay="0.2s">수행 프로젝트</h2>
                             <ol class="breadcrumb justify-content-center wow fadeInUp" data-wow-delay="0.4s">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Projects</li>
+                                <li class="breadcrumb-item"><a href="index.html">홈</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">수행 프로젝트</li>
                             </ol>
                         </nav>
                     </div>
@@ -124,14 +134,14 @@
                     <!-- Content -->
                     <div class="project_single wow fadeInUp" data-wow-delay="0.2s">
                         <div class="project_img">
-                            <a href="project-details.html">
+                            <a href="services-details_1.html">
                                 <img src="img/projects/proj1.png" class="img-responsive " alt="">
                             </a>
                         </div>
                         <div class="project_info">
                             <h4>조류인플루엔자<br>현황분석 및 발생 예측</h4>
                             <p>Dashboard</p>
-                            <a href="project-details.html">자세히 보기<span><i class="fa fa-arrow-right"></i></span></a>
+                            <a href="services-details_1.html">자세히 보기<span><i class="fa fa-arrow-right"></i></span></a>
                         </div>
                     </div>
                 </div>
@@ -139,14 +149,14 @@
                     <!-- Content -->
                     <div class="project_single wow fadeInUp" data-wow-delay="0.3s">
                         <div class="project_img">
-                            <a href="project-details.html">
+                            <a href="services-details_1.html">
                                 <img src="img/projects/proj2.png" class="img-responsive " alt="">
                             </a>
                         </div>
                         <div class="project_info">
                             <h4>AI & 빅데이터 기반<br>인력수요 및 현황</h4>
                             <p>Dashboard</p>
-                            <a href="project-details.html">자세히 보기<span><i class="fa fa-arrow-right"></i></span></a>
+                            <a href="services-details_1.html">자세히 보기<span><i class="fa fa-arrow-right"></i></span></a>
                         </div>
                     </div>
                 </div>
@@ -154,14 +164,14 @@
                     <!-- Content -->
                     <div class="project_single wow fadeInUp" data-wow-delay="0.2s">
                         <div class="project_img">
-                            <a href="project-details.html">
+                            <a href="services-details_2.html">
                                 <img src="img/projects/proj3.png" class="img-responsive " alt="">
                             </a>
                         </div>
                         <div class="project_info">
                             <h4>미세먼지 단기노출<br>건강현황보고서</h4>
                             <p>Dashboard</p>
-                            <a href="project-details.html">자세히 보기<span><i class="fa fa-arrow-right"></i></span></a>
+                            <a href="services-details_2.html">자세히 보기<span><i class="fa fa-arrow-right"></i></span></a>
                         </div>
                     </div>
                 </div>
@@ -169,14 +179,14 @@
                     <!-- Content -->
                     <div class="project_single wow fadeInUp" data-wow-delay="0.3s">
                         <div class="project_img">
-                            <a href="project-details.html">
+                            <a href="services-details_3.html">
                                 <img src="img/projects/proj4.png" class="img-responsive " alt="">
                             </a>
                         </div>
                         <div class="project_info">
                             <h4>채용빅데이터<br>분석 및 제공</h4>
                             <p>Data Provide</p>
-                            <a href="project-details.html">자세히 보기<span><i class="fa fa-arrow-right"></i></span></a>
+                            <a href="services-details_3.html">자세히 보기<span><i class="fa fa-arrow-right"></i></span></a>
                         </div>
                     </div>
                 </div>
@@ -218,73 +228,64 @@
     
     <!-- ##### Team Area End ##### -->
 
+    </main>
+
     <!-- ##### Footer Area Start ##### -->
-    <footer class="footer-area bg-img">
+    <footer class="footer-area bg-img" role="contentinfo">
         <div class="footer-content-area ">
             <div class="container">
                 <div class="row ">
                     <div class="col-12 col-lg-4 col-md-6">
                         <div class="footer-copywrite-info">
-                            <!-- Copywrite -->
                             <div class="copywrite_text fadeInUp" data-wow-delay="0.2s">
                                 <div class="footer-logo">
-                                    <a href="#"><img draggable="false" src="img/core-img/logo_aid_small.png" alt="logo"> </a>
+                                    <a href="index.html"><img draggable="false" src="img/core-img/logo_aid_small.png" alt="한국인공지능"></a>
                                 </div>
-                                <p>AI Korea Inc.</p>
+                                <p>한국인공지능 주식회사</p>
                             </div>
-                            <!-- Social Icon -->
-                            <div class="footer-social-info fadeInUp" data-wow-delay="0.4s">
-                                <!-- <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a> -->
-                                <!-- <a href="#"> <i class="fa fa-twitter" aria-hidden="true"></i></a> -->
-                                <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-book" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-github" aria-hidden="true"></i></a>
-
+                            <div class="footer-social-info fadeInUp" data-wow-delay="0.4s" aria-label="소셜 링크">
+                                <a href="#" aria-label="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                <a href="#" aria-label="블로그"><i class="fa fa-book" aria-hidden="true"></i></a>
+                                <a href="#" aria-label="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-12 col-lg-4 col-md-6 ">
                         <div class="contact_info_area d-sm-flex justify-content-between">
-                            <!-- Content Info -->
                             <div class="contact_info mt-s text-center fadeInUp" data-wow-delay="0.4s">
                                 <h5>기업정보</h5>
                                 <p>대표자: 이동현</p>
                                 <p>주소: 경기도 시흥시 정왕동 산기대학로 237, TIP 310호</p>
-                                <p>이메일: aikoreainc@gmail.com</p>
+                                <p>이메일: <a href="mailto:aikoreainc@gmail.com" class="footer-mail-link">aikoreainc@gmail.com</a></p>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-12 col-lg-4 col-md-6 ">
                         <div class="contact_info_area d-sm-flex justify-content-between">
                             <div class="contact_info mt-s text-center fadeInUp" data-wow-delay="0.2s">
                                 <h5>사업자 정보</h5>
-                                <a href=""><p>사업자등록번호: 698-81-02819</p></a>
-                                <a href=""><p>직업정보제공사 신고번호: J1500020250003</p></a>
-                                <a href=""><p>© 2025 한국인공지능 주식회사. All rights reserved.</p></a>
+                                <p>사업자등록번호: 698-81-02819</p>
+                                <p>© 2026 한국인공지능 주식회사. All rights reserved.</p>
                             </div>
                         </div>
                     </div>
-                     
+
                 </div>
             </div>
-                
+
         </div>
     </footer>
     <!-- ##### Footer Area End ##### -->
 
     <!-- ########## All JS ########## -->
-    <!-- jQuery js -->
     <script src="js/jquery.min.js"></script>
-    <!-- Popper js -->
     <script src="js/popper.min.js"></script>
-    <!-- Bootstrap js -->
     <script src="js/bootstrap.min.js"></script>
-    <!-- All Plugins js -->
     <script src="js/plugins.js"></script>
-    <!-- Active js -->
     <script src="js/script.js"></script>
+
 
 </body>
 

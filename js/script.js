@@ -133,19 +133,28 @@
 })(jQuery);
 
 
-// Theme Toggle Active Code update - 2025.05.13
-document.getElementById('toggle-theme').addEventListener('click', function () {
-    document.body.classList.toggle('light-version');
+// Theme Toggle — document-relative URLs (pages live at site root)
+(function () {
+    var toggle = document.getElementById('toggle-theme');
+    if (!toggle) return;
 
-    const isLight = document.body.classList.contains('light-version');
-    this.innerHTML = isLight ? 'Dark Mode' : 'Light Mode';
+    toggle.addEventListener('click', function () {
+        document.body.classList.toggle('light-version');
 
-    const heroSection = document.querySelector('.hero-section.de-3');
-    const breadcumbArea = document.querySelector('.breadcumb-area');
+        var isLight = document.body.classList.contains('light-version');
+        this.innerHTML = isLight ? 'Dark Mode' : 'Light Mode';
 
-    const lightBg = "url('../img/bg-img/bg-light-blue.png')";
-    const darkBg = "url('../img/bg-img/bg.png')";
+        var heroSection = document.querySelector('.hero-section.de-3');
+        var breadcumbArea = document.querySelector('.breadcumb-area');
 
-    heroSection.style.backgroundImage = isLight ? lightBg : darkBg;
-    breadcumbArea.style.backgroundImage = isLight ? lightBg : darkBg;
-});
+        var lightBg = "url('img/bg-img/bg-light-blue.png')";
+        var darkBg = "url('img/bg-img/bg.png')";
+
+        if (heroSection) {
+            heroSection.style.backgroundImage = isLight ? lightBg : darkBg;
+        }
+        if (breadcumbArea) {
+            breadcumbArea.style.backgroundImage = isLight ? lightBg : darkBg;
+        }
+    });
+})();
