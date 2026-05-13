@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SectionHeading from "../../components/SectionHeading.astro";
+import ResearchCard from "../../components/ResearchCard.astro";
+import { papers } from "../../data/research";
+---
+
+<BaseLayout
+  title="Research — AIKoreaInc"
+  description="Peer-reviewed papers authored under AIKoreaInc affiliation, in trustworthy AI, explainable AI, and environmental prediction."
+  lang="en"
+>
+  <section class="container-page py-16 sm:py-24">
+    <SectionHeading
+      eyebrow="RESEARCH"
+      title="The methods we publish are the methods we ship"
+      description="Papers published under AIKoreaInc affiliation in Journal of Cleaner Production. The same methodology powers our consulting, dashboards, and SaaS."
+    />
+
+    <div class="mt-12 grid gap-6 sm:mt-16">
+      {papers.map((paper) => <ResearchCard paper={paper} lang="en" />)}
+    </div>
+  </section>
+</BaseLayout>

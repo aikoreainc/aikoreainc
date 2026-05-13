@@ -1,11 +1,32 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+import ResearchCard from "../components/ResearchCard.astro";
+import { services, serviceHref } from "../data/services";
+import { papers } from "../data/research";
+
+const differentiators = [
+  {
+    title: "연구 기반 신뢰성",
+    body: "HUFS 교수 창업 · SCI 학술지 게재 방법론을 그대로 적용합니다.",
+  },
+  {
+    title: "풀스택 실행",
+    body: "데이터 수집·모델·대시보드·SaaS까지 직접 운영합니다.",
+  },
+  {
+    title: "Trustworthy AI",
+    body: "설명가능 AI와 불확실성 정량화로 근거 있는 의사결정을 지원합니다.",
+  },
+];
 ---
 
 <BaseLayout
   title="한국인공지능 — 신뢰가능 AI 연구 기반 회사"
   description="한국인공지능(주)은 신뢰가능 AI를 설계하고 운영하는 교수 창업 연구 기반 회사입니다. 환경·공공·산업의 데이터 난제를 데이터·모델·대시보드·SaaS로 풀어냅니다."
 >
+  <!-- Hero -->
   <section class="container-page py-24 sm:py-32">
     <div class="max-w-3xl">
       <p
@@ -40,20 +61,127 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </a>
       </div>
     </div>
+  </section>
 
-    <div
-      class="mt-32 rounded-2xl border border-(--color-ink-200) bg-(--color-ink-50) px-6 py-8 sm:px-10"
-    >
-      <p
-        class="text-xs font-semibold uppercase tracking-wider text-(--color-ink-500)"
+  <!-- Trust strip -->
+  <section class="border-y border-(--color-ink-200) bg-(--color-ink-50)">
+    <div class="container-page py-8">
+      <ul
+        class="flex flex-wrap items-center justify-between gap-x-8 gap-y-3 text-sm text-(--color-ink-600)"
       >
-        Phase 1 진행 중
+        <li>
+          <span class="font-semibold text-(--color-ink-900)">HUFS</span> 교원창업기업
+        </li>
+        <li>
+          <span class="font-semibold text-(--color-ink-900)"
+            >J. Cleaner Production</span
+          >
+           2024 · 2025 게재
+        </li>
+        <li>
+          <span class="font-semibold text-(--color-ink-900)">4개 사업 라인</span>
+           운영 중
+        </li>
+        <li>
+          자체 SaaS <a
+            href="https://homosilicus.github.io"
+            target="_blank"
+            rel="noopener"
+            class="font-semibold text-(--color-brand-600) hover:text-(--color-brand-700)"
+            >Homosilicus</a
+          >
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="container-page py-24 sm:py-32">
+    <SectionHeading
+      eyebrow="SERVICES"
+      title="데이터부터 SaaS까지, 4개 사업 라인"
+      description="채용 데이터 · 환경 GIS · 신뢰가능 AI 설계 · Homosilicus SaaS"
+    />
+    <div class="mt-12 grid gap-6 md:grid-cols-2">
+      {
+        services.map((service) => (
+          <ServiceCard
+            service={service}
+            lang="ko"
+            href={service.externalUrl ?? serviceHref(service.slug, "ko")}
+          />
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Why us -->
+  <section class="bg-(--color-ink-900) text-white">
+    <div class="container-page py-24 sm:py-32">
+      <p
+        class="text-xs font-semibold uppercase tracking-wider text-(--color-brand-400)"
+      >
+        WHY US
       </p>
-      <p class="mt-2 text-sm leading-relaxed text-(--color-ink-700)">
-        공통 헤더·푸터 적용 완료. 다음 단계에서 사업 라인 4개(채용공고 데이터·환경
-        GIS 대시보드·신뢰가능 AI 설계·Homosilicus), 사례, 연구실적 섹션이
-        추가됩니다.
+      <h2 class="mt-3 max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">
+        다른 AI 회사와 무엇이 다른가
+      </h2>
+      <div class="mt-12 grid gap-8 md:grid-cols-3">
+        {
+          differentiators.map((d, i) => (
+            <div>
+              <p class="text-xs font-semibold tracking-wider text-(--color-brand-400)">
+                0{i + 1}
+              </p>
+              <h3 class="mt-3 text-lg font-bold sm:text-xl">{d.title}</h3>
+              <p class="mt-3 text-sm leading-relaxed text-(--color-ink-300) sm:text-base">
+                {d.body}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Research preview -->
+  <section class="container-page py-24 sm:py-32">
+    <SectionHeading
+      eyebrow="RESEARCH"
+      title="학술지 게재 방법론을 그대로 운영"
+      description="한국인공지능 소속으로 출판된 신뢰가능 AI 연구입니다."
+    />
+    <div class="mt-12 grid gap-6">
+      {papers.map((paper) => <ResearchCard paper={paper} lang="ko" />)}
+    </div>
+    <div class="mt-10">
+      <a
+        href="/research/"
+        class="inline-flex items-center gap-1.5 text-sm font-semibold text-(--color-brand-600) hover:text-(--color-brand-700)"
+      >
+        모든 연구실적 보기 →
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="container-page pb-24 sm:pb-32">
+    <div
+      class="rounded-3xl bg-(--color-brand-600) px-8 py-14 text-white sm:px-14 sm:py-20"
+    >
+      <h2 class="max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">
+        AI 도입을 고민 중이신가요?
+      </h2>
+      <p class="mt-4 max-w-2xl text-base leading-relaxed text-(--color-brand-50) sm:text-lg">
+        의사결정의 근거가 필요한 영역일수록, 연구 기반의 신뢰가능 AI가 필요합니다.
+        편하게 메일 주세요.
       </p>
+      <a
+        href="/contact/"
+        class="mt-8 inline-block rounded-lg bg-white px-6 py-3 text-sm font-semibold text-(--color-brand-700) transition hover:bg-(--color-brand-50)"
+      >
+        문의하기
+      </a>
     </div>
   </section>
 </BaseLayout>

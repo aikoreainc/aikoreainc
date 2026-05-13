@@ -1,0 +1,31 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+import { services, serviceHref } from "../data/services";
+---
+
+<BaseLayout
+  title="서비스 — 한국인공지능"
+  description="채용공고 데이터, 환경 GIS 대시보드, 신뢰가능 AI 설계, Homosilicus(자체 SaaS) — 한국인공지능(주)의 4개 사업 라인."
+>
+  <section class="container-page py-16 sm:py-24">
+    <SectionHeading
+      eyebrow="SERVICES"
+      title="데이터부터 SaaS까지, 4개 사업 라인"
+      description="채용 데이터로 시작해 환경 GIS 대시보드, 신뢰가능 AI 컨설팅, 자체 SaaS 제품 Homosilicus까지 운영합니다."
+    />
+
+    <div class="mt-12 grid gap-6 sm:mt-16 md:grid-cols-2">
+      {
+        services.map((service) => (
+          <ServiceCard
+            service={service}
+            lang="ko"
+            href={service.externalUrl ?? serviceHref(service.slug, "ko")}
+          />
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

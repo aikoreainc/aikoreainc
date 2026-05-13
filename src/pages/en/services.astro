@@ -1,0 +1,32 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SectionHeading from "../../components/SectionHeading.astro";
+import ServiceCard from "../../components/ServiceCard.astro";
+import { services, serviceHref } from "../../data/services";
+---
+
+<BaseLayout
+  title="Services — AIKoreaInc"
+  description="Job-posting data, environmental GIS dashboards, trustworthy-AI design, and Homosilicus — AIKoreaInc's four business lines."
+  lang="en"
+>
+  <section class="container-page py-16 sm:py-24">
+    <SectionHeading
+      eyebrow="SERVICES"
+      title="Four business lines, data to SaaS"
+      description="From job-posting data to environmental GIS dashboards, trustworthy-AI consulting, and our flagship SaaS Homosilicus."
+    />
+
+    <div class="mt-12 grid gap-6 sm:mt-16 md:grid-cols-2">
+      {
+        services.map((service) => (
+          <ServiceCard
+            service={service}
+            lang="en"
+            href={service.externalUrl ?? serviceHref(service.slug, "en")}
+          />
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>
