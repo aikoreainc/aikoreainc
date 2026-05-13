@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aikoreainc.com/sitemap-index.xml
