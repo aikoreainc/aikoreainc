@@ -1,0 +1,142 @@
+---
+import type { Lang } from "../data/company";
+import { company, tagline } from "../data/company";
+import { dict, pathFor } from "../i18n/dict";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const year = new Date().getFullYear();
+
+const navItems = [
+  { key: "about", slug: "/about" },
+  { key: "services", slug: "/services" },
+  { key: "research", slug: "/research" },
+  { key: "contact", slug: "/contact" },
+] as const;
+---
+
+<footer
+  class="mt-32 border-t border-(--color-ink-200) bg-(--color-ink-50)"
+>
+  <div class="container-page py-16 sm:py-20">
+    <div class="grid gap-12 md:grid-cols-[1.5fr_1fr_1.5fr]">
+      <div>
+        <a
+          href={pathFor("/", lang)}
+          class="flex items-center gap-2.5"
+          aria-label={company.shortName[lang]}
+        >
+          <img
+            src="/img/logo/symbol-blue.png"
+            alt=""
+            width="36"
+            height="36"
+            class="h-9 w-auto"
+          />
+          <span class="text-lg font-bold text-(--color-ink-900)">
+            {company.shortName[lang]}
+          </span>
+        </a>
+        <p class="mt-4 max-w-sm text-sm leading-relaxed text-(--color-ink-600)">
+          {tagline[lang]}
+        </p>
+        <a
+          href={company.links.homosilicus}
+          target="_blank"
+          rel="noopener"
+          class="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-(--color-brand-600) hover:text-(--color-brand-700)"
+        >
+          {dict.footer.productLink[lang]}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-3.5 w-3.5"
+            aria-hidden="true"
+          >
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <nav aria-label={lang === "ko" ? "푸터 메뉴" : "Footer menu"}>
+        <h2
+          class="text-xs font-semibold uppercase tracking-wider text-(--color-ink-500)"
+        >
+          {dict.footer.company[lang]}
+        </h2>
+        <ul class="mt-4 space-y-3">
+          {
+            navItems.map((item) => (
+              <li>
+                <a
+                  href={pathFor(item.slug, lang)}
+                  class="text-sm text-(--color-ink-700) hover:text-(--color-brand-600)"
+                >
+                  {dict.nav[item.key][lang]}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <div>
+        <h2
+          class="text-xs font-semibold uppercase tracking-wider text-(--color-ink-500)"
+        >
+          {company.legalName[lang]}
+        </h2>
+        <dl
+          class="mt-4 space-y-2.5 text-sm text-(--color-ink-700) [&_dt]:text-(--color-ink-500) [&_dt]:text-xs [&_dt]:uppercase [&_dt]:tracking-wider [&_dd]:mt-0.5"
+        >
+          <div>
+            <dt>{dict.footer.ceo[lang]}</dt>
+            <dd>
+              {company.ceo[lang]} · <span class="text-(--color-ink-500)">{company.ceoTitle[lang]}</span>
+            </dd>
+          </div>
+          <div>
+            <dt>{dict.footer.bizRegNo[lang]}</dt>
+            <dd>{company.bizRegNo}</dd>
+          </div>
+          <div>
+            <dt>{dict.footer.address[lang]}</dt>
+            <dd>
+              {company.address[lang]}
+              <span class="mt-0.5 block text-xs text-(--color-ink-500)">
+                {company.addressNote[lang]}
+              </span>
+            </dd>
+          </div>
+          <div>
+            <dt>{dict.footer.email[lang]}</dt>
+            <dd>
+              <a
+                href={`mailto:${company.email}`}
+                class="text-(--color-brand-600) hover:text-(--color-brand-700)"
+              >
+                {company.email}
+              </a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <div
+      class="mt-12 flex flex-col gap-3 border-t border-(--color-ink-200) pt-8 text-xs text-(--color-ink-500) sm:flex-row sm:items-center sm:justify-between"
+    >
+      <p>© {year} {dict.footer.copyright[lang]}</p>
+      <p>{company.bizType[lang]}</p>
+    </div>
+  </div>
+</footer>
