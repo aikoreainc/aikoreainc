@@ -1,8 +1,25 @@
 {
   "name": "aikoreainc-site",
+  "type": "module",
+  "version": "0.1.0",
   "private": true,
-  "description": "정적 기업 사이트 — 공통 헤더/푸터는 partials/ 편집 후 npm run build:partials",
+  "description": "한국인공지능(주) 공식 웹사이트 — Astro 기반 정적 사이트",
   "scripts": {
-    "build:partials": "node scripts/apply-partials.mjs"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.2",
+    "astro": "^5.0.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@tailwindcss/vite": "^4.0.0",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.6.0"
   }
 }

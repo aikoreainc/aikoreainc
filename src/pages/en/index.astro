@@ -1,0 +1,188 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SectionHeading from "../../components/SectionHeading.astro";
+import ServiceCard from "../../components/ServiceCard.astro";
+import ResearchCard from "../../components/ResearchCard.astro";
+import { services, serviceHref } from "../../data/services";
+import { papers } from "../../data/research";
+
+const differentiators = [
+  {
+    title: "Research-grounded reliability",
+    body: "HUFS faculty spin-off — we apply the methods we publish in SCI journals.",
+  },
+  {
+    title: "Full-stack execution",
+    body: "We build and operate everything: data, models, dashboards, SaaS.",
+  },
+  {
+    title: "Trustworthy AI",
+    body: "Explainable AI and uncertainty quantification for accountable decisions.",
+  },
+];
+---
+
+<BaseLayout
+  title="AIKoreaInc — Trustworthy AI, Built on Research"
+  description="AIKoreaInc is a research-grounded company building trustworthy AI for the data problems that matter — environment, public sector, and enterprise."
+  lang="en"
+>
+  <!-- Hero -->
+  <section class="container-page py-24 sm:py-32">
+    <div class="max-w-3xl">
+      <p
+        class="text-sm font-medium uppercase tracking-wider text-(--color-brand-600)"
+      >
+        AIKoreaInc
+      </p>
+      <h1
+        class="mt-4 text-4xl font-bold tracking-tight text-(--color-ink-900) sm:text-6xl"
+      >
+        Trustworthy AI,<br />
+        <span class="gradient-text">built on research.</span>
+      </h1>
+      <p class="mt-8 text-lg leading-relaxed text-(--color-ink-600) sm:text-xl">
+        Founded by a HUFS professor, AIKoreaInc solves data problems that matter
+        — <strong class="text-(--color-ink-900)"
+          >environment, public sector, and enterprise</strong
+        > — across data pipelines, models, dashboards, and SaaS.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a
+          href="/en/services/"
+          class="rounded-lg bg-(--color-brand-600) px-6 py-3 text-sm font-semibold text-white transition hover:bg-(--color-brand-700)"
+        >
+          Our services
+        </a>
+        <a
+          href="/en/contact/"
+          class="rounded-lg border border-(--color-ink-200) px-6 py-3 text-sm font-semibold text-(--color-ink-900) transition hover:border-(--color-ink-400)"
+        >
+          Get in touch
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust strip -->
+  <section class="border-y border-(--color-ink-200) bg-(--color-ink-50)">
+    <div class="container-page py-8">
+      <ul
+        class="flex flex-wrap items-center justify-between gap-x-8 gap-y-3 text-sm text-(--color-ink-600)"
+      >
+        <li>
+          <span class="font-semibold text-(--color-ink-900)">HUFS</span> faculty
+          spin-off
+        </li>
+        <li>
+          Published in <span class="font-semibold text-(--color-ink-900)"
+            >J. Cleaner Production</span
+          > · 2024, 2025
+        </li>
+        <li>
+          <span class="font-semibold text-(--color-ink-900)">4 business lines</span>
+          in operation
+        </li>
+        <li>
+          Our SaaS, <a
+            href="https://homosilicus.github.io"
+            target="_blank"
+            rel="noopener"
+            class="font-semibold text-(--color-brand-600) hover:text-(--color-brand-700)"
+            >Homosilicus</a
+          >
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="container-page py-24 sm:py-32">
+    <SectionHeading
+      eyebrow="SERVICES"
+      title="Four business lines, data to SaaS"
+      description="Job-posting data · environmental GIS · trustworthy AI design · Homosilicus SaaS"
+    />
+    <div class="mt-12 grid gap-6 md:grid-cols-2">
+      {
+        services.map((service) => (
+          <ServiceCard
+            service={service}
+            lang="en"
+            href={service.externalUrl ?? serviceHref(service.slug, "en")}
+          />
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Why us -->
+  <section class="bg-(--color-ink-900) text-white">
+    <div class="container-page py-24 sm:py-32">
+      <p
+        class="text-xs font-semibold uppercase tracking-wider text-(--color-brand-400)"
+      >
+        WHY US
+      </p>
+      <h2 class="mt-3 max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">
+        What makes us different
+      </h2>
+      <div class="mt-12 grid gap-8 md:grid-cols-3">
+        {
+          differentiators.map((d, i) => (
+            <div>
+              <p class="text-xs font-semibold tracking-wider text-(--color-brand-400)">
+                0{i + 1}
+              </p>
+              <h3 class="mt-3 text-lg font-bold sm:text-xl">{d.title}</h3>
+              <p class="mt-3 text-sm leading-relaxed text-(--color-ink-300) sm:text-base">
+                {d.body}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Research preview -->
+  <section class="container-page py-24 sm:py-32">
+    <SectionHeading
+      eyebrow="RESEARCH"
+      title="The methods we publish are the methods we ship"
+      description="Papers published under AIKoreaInc affiliation."
+    />
+    <div class="mt-12 grid gap-6">
+      {papers.map((paper) => <ResearchCard paper={paper} lang="en" />)}
+    </div>
+    <div class="mt-10">
+      <a
+        href="/en/research/"
+        class="inline-flex items-center gap-1.5 text-sm font-semibold text-(--color-brand-600) hover:text-(--color-brand-700)"
+      >
+        See all research →
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="container-page pb-24 sm:pb-32">
+    <div
+      class="rounded-3xl bg-(--color-brand-600) px-8 py-14 text-white sm:px-14 sm:py-20"
+    >
+      <h2 class="max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">
+        Thinking about adopting AI?
+      </h2>
+      <p class="mt-4 max-w-2xl text-base leading-relaxed text-(--color-brand-50) sm:text-lg">
+        For decisions that demand accountability, you want trustworthy AI built
+        on real research. Drop us a line.
+      </p>
+      <a
+        href="/en/contact/"
+        class="mt-8 inline-block rounded-lg bg-white px-6 py-3 text-sm font-semibold text-(--color-brand-700) transition hover:bg-(--color-brand-50)"
+      >
+        Get in touch
+      </a>
+    </div>
+  </section>
+</BaseLayout>

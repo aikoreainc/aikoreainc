@@ -1,0 +1,141 @@
+---
+import type { Lang } from "../data/company";
+import { company } from "../data/company";
+import { dict, pathFor } from "../i18n/dict";
+
+interface Props {
+  lang: Lang;
+  currentPath?: string;
+}
+
+const { lang, currentPath = "/" } = Astro.props;
+
+const navItems = [
+  { key: "about", slug: "/about" },
+  { key: "services", slug: "/services" },
+  { key: "research", slug: "/research" },
+  { key: "contact", slug: "/contact" },
+] as const;
+
+const otherLang: Lang = lang === "ko" ? "en" : "ko";
+const langTogglePath = (() => {
+  const stripped = currentPath.replace(/^\/en/, "") || "/";
+  return otherLang === "en"
+    ? `/en${stripped === "/" ? "" : stripped}`
+    : stripped;
+})();
+---
+
+<header
+  class="sticky top-0 z-40 w-full border-b border-(--color-ink-100) bg-white/80 backdrop-blur-md"
+>
+  <div
+    class="container-page flex h-16 items-center justify-between gap-8 sm:h-20"
+  >
+    <a
+      href={pathFor("/", lang)}
+      class="flex items-center gap-2.5"
+      aria-label={company.shortName[lang]}
+    >
+      <img
+        src="/img/logo/symbol-blue.png"
+        alt=""
+        width="32"
+        height="32"
+        class="h-8 w-auto"
+      />
+      <span class="text-base font-bold text-(--color-ink-900) sm:text-lg">
+        {company.shortName[lang]}
+      </span>
+    </a>
+
+    <nav
+      class="hidden items-center gap-8 md:flex"
+      aria-label={lang === "ko" ? "주메뉴" : "Primary"}
+    >
+      {
+        navItems.map((item) => {
+          const href = pathFor(item.slug, lang);
+          const isActive =
+            currentPath === href || currentPath.startsWith(href.replace(/\/$/, "") + "/");
+          return (
+            <a
+              href={href}
+              class:list={[
+                "text-sm font-medium transition-colors",
+                isActive
+                  ? "text-(--color-brand-600)"
+                  : "text-(--color-ink-700) hover:text-(--color-ink-900)",
+              ]}
+              aria-current={isActive ? "page" : undefined}
+            >
+              {dict.nav[item.key][lang]}
+            </a>
+          );
+        })
+      }
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a
+        href={langTogglePath}
+        class="rounded-md border border-(--color-ink-200) px-3 py-1.5 text-xs font-semibold tracking-wider text-(--color-ink-700) transition hover:border-(--color-ink-400) hover:text-(--color-ink-900)"
+        hreflang={otherLang}
+        aria-label={otherLang === "en" ? "Switch to English" : "한국어로 전환"}
+      >
+        {dict.langToggle[lang]}
+      </a>
+
+      <button
+        type="button"
+        class="inline-flex h-9 w-9 items-center justify-center rounded-md border border-(--color-ink-200) text-(--color-ink-700) md:hidden"
+        aria-label={lang === "ko" ? "메뉴 열기" : "Open menu"}
+        data-mobile-nav-toggle
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-5 w-5"
+          aria-hidden="true"
+        >
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="hidden border-t border-(--color-ink-100) md:hidden"
+    data-mobile-nav
+  >
+    <nav class="container-page flex flex-col py-4">
+      {
+        navItems.map((item) => (
+          <a
+            href={pathFor(item.slug, lang)}
+            class="py-3 text-base font-medium text-(--color-ink-800) hover:text-(--color-brand-600)"
+          >
+            {dict.nav[item.key][lang]}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>(
+    "[data-mobile-nav-toggle]",
+  );
+  const panel = document.querySelector<HTMLElement>("[data-mobile-nav]");
+  toggle?.addEventListener("click", () => {
+    panel?.classList.toggle("hidden");
+  });
+</script>

@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import ResearchCard from "../components/ResearchCard.astro";
+import { papers } from "../data/research";
+---
+
+<BaseLayout
+  title="연구실적 — 한국인공지능"
+  description="한국인공지능 소속으로 출판된 SCI급 학술지 논문. 신뢰가능 AI · 설명가능 AI · 환경 예측 방법론."
+>
+  <section class="container-page py-16 sm:py-24">
+    <SectionHeading
+      eyebrow="RESEARCH"
+      title="학술지 게재 방법론을 그대로 운영합니다"
+      description="한국인공지능 소속으로 Journal of Cleaner Production에 게재된 신뢰가능 AI · 설명가능 AI 연구입니다. 같은 방법론이 우리 컨설팅·대시보드·SaaS에 적용됩니다."
+    />
+
+    <div class="mt-12 grid gap-6 sm:mt-16">
+      {papers.map((paper) => <ResearchCard paper={paper} lang="ko" />)}
+    </div>
+  </section>
+</BaseLayout>
