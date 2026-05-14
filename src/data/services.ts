@@ -15,7 +15,7 @@ export const services: Service[] = [
     title: { ko: "채용공고 데이터", en: "Job Posting Data" },
     summary: {
       ko: "채용공고를 자동 수집·정제·태깅하여 의사결정 데이터로 공급합니다.",
-      en: "Job postings collected, cleaned, tagged, and served as decision-grade data.",
+      en: "Job postings collected, cleaned, tagged, and delivered as actionable data.",
     },
     description: {
       ko: "수십만 건 규모의 채용공고를 자동 수집·중복 제거·태깅하고, 직무·지역·기업 단위로 가공합니다. 노동시장 추세 분석, 정책 연구, 인재 매칭 제품에 그대로 투입할 수 있습니다. JobAI(jobai.co.kr)로 가동 중입니다.",
