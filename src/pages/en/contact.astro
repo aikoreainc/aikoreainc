@@ -9,14 +9,16 @@ import { company } from "../../data/company";
   description="Reach out about trustworthy-AI consulting, data and dashboard collaboration, or Homosilicus — aikoreainc@gmail.com"
   lang="en"
 >
-  <section class="container-page py-16 sm:py-24">
-    <SectionHeading
-      eyebrow="CONTACT"
-      title="Please reach out."
-      description="AI adoption, environmental GIS dashboards, data delivery, or joint research — all welcome. We reply within 1–2 business days."
-    />
+  <section class="relative overflow-hidden">
+    <div aria-hidden="true" class="glow-hero pointer-events-none absolute inset-x-0 top-0 -z-10"></div>
+    <div class="container-page py-16 sm:py-24">
+      <SectionHeading
+        eyebrow="CONTACT"
+        title="Please reach out."
+        description="AI adoption, environmental GIS dashboards, data delivery, or joint research — all welcome. Scope, timing, and budget can be defined together. We reply within 1–2 business days."
+      />
 
-    <div class="mt-12 grid gap-6 sm:mt-16 sm:gap-8 md:grid-cols-[1.2fr_1fr] md:items-stretch">
+      <div class="mt-12 grid gap-6 sm:mt-16 sm:gap-8 md:grid-cols-[1.2fr_1fr] md:items-stretch">
       <article
         class="flex flex-col rounded-2xl border border-(--color-ink-200) bg-white p-8 sm:p-10"
       >
@@ -37,9 +39,38 @@ import { company } from "../../data/company";
           We reply within 1–2 business days. Scope, timing, and budget can be
           defined together. Adding a tag such as
           <strong class="text-(--color-ink-900)">[Inquiry]</strong>
-          or the business line (e.g. <em class="not-italic">[Homosilicus]</em>)
-          to the subject helps us route it quickly.
+          or the business line to the subject helps us route it quickly. Tap a
+          chip below to prefill the subject.
         </p>
+        <p class="mt-5 text-xs font-semibold uppercase tracking-[0.12em] text-(--color-ink-500)">
+          Subject presets · 4
+        </p>
+        <div class="mt-2 flex flex-wrap gap-2">
+          <a
+            href={`mailto:${company.email}?subject=${encodeURIComponent("[Homosilicus Inquiry]")}`}
+            class="mailto-chip"
+          >
+            Homosilicus Inquiry
+          </a>
+          <a
+            href={`mailto:${company.email}?subject=${encodeURIComponent("[Environmental GIS Inquiry]")}`}
+            class="mailto-chip"
+          >
+            Environmental GIS Inquiry
+          </a>
+          <a
+            href={`mailto:${company.email}?subject=${encodeURIComponent("[Trustworthy AI Inquiry]")}`}
+            class="mailto-chip"
+          >
+            Trustworthy AI Inquiry
+          </a>
+          <a
+            href={`mailto:${company.email}?subject=${encodeURIComponent("[Job Posting Data Inquiry]")}`}
+            class="mailto-chip"
+          >
+            Job Posting Data Inquiry
+          </a>
+        </div>
         <a
           href={`mailto:${company.email}`}
           class="mt-6 inline-flex items-center justify-center self-start rounded-lg bg-(--color-brand-600) px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition duration-200 hover:bg-(--color-brand-700) hover:shadow-md"
@@ -68,6 +99,10 @@ import { company } from "../../data/company";
             <dd>{company.ceo.en} · {company.ceoTitle.en}</dd>
           </div>
           <div>
+            <dt>Established</dt>
+            <dd>{company.established}</dd>
+          </div>
+          <div>
             <dt>Business Reg. No.</dt>
             <dd>{company.bizRegNo}</dd>
           </div>
@@ -84,6 +119,181 @@ import { company } from "../../data/company";
             <dd>{company.email}</dd>
           </div>
         </dl>
+      </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-page pb-16 sm:pb-24">
+    <SectionHeading
+      eyebrow="HOW TO INQUIRE"
+      title="What to include."
+      description="Including the following in your email speeds up our reply and the precision of any estimate. Leave fields blank if undecided."
+    />
+    <div class="mt-10 grid gap-4 sm:grid-cols-2 sm:items-stretch md:grid-cols-3 lg:grid-cols-3">
+      <article class="lift-on-hover relative flex h-full flex-col rounded-2xl border border-(--color-ink-200) bg-white p-6 hover:border-(--color-brand-400) sm:p-7">
+        <span class="num-corner" aria-hidden="true">01</span>
+        <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)">
+          Purpose
+        </p>
+        <h3 class="mt-2 text-base font-bold text-(--color-ink-900)">
+          Problem to solve
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed text-(--color-ink-700)">
+          One or two sentences on the decision you want AI to support — e.g. air-quality forecasting for policy, or evaluating XAI adoption.
+        </p>
+      </article>
+      <article class="lift-on-hover relative flex h-full flex-col rounded-2xl border border-(--color-ink-200) bg-white p-6 hover:border-(--color-brand-400) sm:p-7">
+        <span class="num-corner" aria-hidden="true">02</span>
+        <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)">
+          Business line
+        </p>
+        <h3 class="mt-2 text-base font-bold text-(--color-ink-900)">
+          Area of interest
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed text-(--color-ink-700)">
+          Job-posting data, environmental GIS dashboards, trustworthy-AI design, or Homosilicus. "Not sure yet" is fine.
+        </p>
+      </article>
+      <article class="lift-on-hover relative flex h-full flex-col rounded-2xl border border-(--color-ink-200) bg-white p-6 hover:border-(--color-brand-400) sm:p-7">
+        <span class="num-corner" aria-hidden="true">03</span>
+        <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)">
+          Timing
+        </p>
+        <h3 class="mt-2 text-base font-bold text-(--color-ink-900)">
+          Schedule
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed text-(--color-ink-700)">
+          Kickoff window, internal deadlines, or public-sector program timelines. A quarter-level estimate is enough.
+        </p>
+      </article>
+      <article class="lift-on-hover relative flex h-full flex-col rounded-2xl border border-(--color-ink-200) bg-white p-6 hover:border-(--color-brand-400) sm:p-7">
+        <span class="num-corner" aria-hidden="true">04</span>
+        <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)">
+          Budget
+        </p>
+        <h3 class="mt-2 text-base font-bold text-(--color-ink-900)">
+          Budget range
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed text-(--color-ink-700)">
+          Indicate ceiling or floor if known. PoC engagements can start without a fixed figure.
+        </p>
+      </article>
+      <article class="lift-on-hover relative flex h-full flex-col rounded-2xl border border-(--color-ink-200) bg-white p-6 hover:border-(--color-brand-400) sm:p-7">
+        <span class="num-corner" aria-hidden="true">05</span>
+        <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)">
+          Data
+        </p>
+        <h3 class="mt-2 text-base font-bold text-(--color-ink-900)">
+          Data situation
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed text-(--color-ink-700)">
+          Type, volume, and access of any data you hold. Engagements with no data in hand are also welcome.
+        </p>
+      </article>
+      <article class="lift-on-hover relative flex h-full flex-col rounded-2xl border border-(--color-ink-200) bg-white p-6 hover:border-(--color-brand-400) sm:p-7">
+        <span class="num-corner" aria-hidden="true">06</span>
+        <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)">
+          NDA
+        </p>
+        <h3 class="mt-2 text-base font-bold text-(--color-ink-900)">
+          Confidentiality
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed text-(--color-ink-700)">
+          For sensitive data or undisclosed initiatives, we sign an NDA before detailed discussion.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="container-page pb-16 sm:pb-24">
+    <SectionHeading
+      eyebrow="NEXT STEPS"
+      title="Reply time and what follows."
+      description="A typical flow from first inquiry to signed engagement."
+    />
+    <ol class="mini-step-connect mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-4">
+      <li class="relative z-10 flex h-full flex-col items-start rounded-2xl border border-(--color-ink-200) bg-white p-6 shadow-sm">
+        <span class="mini-step-badge" aria-hidden="true">01</span>
+        <h3 class="mt-4 text-base font-bold leading-snug text-(--color-ink-900)">
+          Reply (1–2 business days)
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed text-(--color-ink-700)">
+          We acknowledge the inquiry and send first-round questions. A 30-minute call can be proposed if useful.
+        </p>
+      </li>
+      <li class="relative z-10 flex h-full flex-col items-start rounded-2xl border border-(--color-ink-200) bg-white p-6 shadow-sm">
+        <span class="mini-step-badge" aria-hidden="true">02</span>
+        <h3 class="mt-4 text-base font-bold leading-snug text-(--color-ink-900)">
+          Scoping (1–2 weeks)
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed text-(--color-ink-700)">
+          A draft of PoC scope, deliverables, and schedule. We sign an NDA at this stage if needed.
+        </p>
+      </li>
+      <li class="relative z-10 flex h-full flex-col items-start rounded-2xl border border-(--color-ink-200) bg-white p-6 shadow-sm">
+        <span class="mini-step-badge" aria-hidden="true">03</span>
+        <h3 class="mt-4 text-base font-bold leading-snug text-(--color-ink-900)">
+          Quote · proposal
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed text-(--color-ink-700)">
+          Formal quote and proposal, including public-sector procurement formats where required.
+        </p>
+      </li>
+      <li class="relative z-10 flex h-full flex-col items-start rounded-2xl border border-(--color-ink-200) bg-white p-6 shadow-sm">
+        <span class="mini-step-badge" aria-hidden="true">04</span>
+        <h3 class="mt-4 text-base font-bold leading-snug text-(--color-ink-900)">
+          Contract · kickoff
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed text-(--color-ink-700)">
+          Engagement starts under a corporate contract — invoicing and liability sit with AI Korea Inc.
+        </p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="container-page pb-24 sm:pb-32">
+    <SectionHeading
+      eyebrow="FIT"
+      title="A good fit · and what we politely decline."
+      description="What we take on, and what falls outside our identity so we politely decline."
+    />
+    <div class="mt-10 grid gap-6 md:grid-cols-2 md:items-stretch">
+      <article class="fit-card fit-card--yes flex h-full flex-col rounded-2xl border border-(--color-ink-200) bg-white p-7 pl-8 shadow-sm sm:p-8 sm:pl-10">
+        <div class="flex items-center gap-2">
+          <span class="status-badge status-badge--active">Good fit</span>
+          <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)">
+            Good fit
+          </p>
+        </div>
+        <h3 class="mt-3 text-lg font-bold text-(--color-ink-900) sm:text-xl">
+          Decisions that require accountability
+        </h3>
+        <ul class="fit-list--yes mt-4 space-y-2.5 text-sm leading-relaxed text-(--color-ink-700)">
+          <li>Trustworthy-AI adoption for public, government, and industry decisions</li>
+          <li>Data, forecasting, and dashboards for environment, public health, and labor markets</li>
+          <li>Model redesign or evaluation grounded in XAI and uncertainty quantification</li>
+          <li>Job-posting and labor-market data delivery (API or dumps)</li>
+          <li>Market and UX validation via Homosilicus (B2B)</li>
+        </ul>
+      </article>
+      <article class="fit-card fit-card--no flex h-full flex-col rounded-2xl border border-(--color-ink-200) bg-(--color-ink-50) p-7 pl-8 sm:p-8 sm:pl-10">
+        <div class="flex items-center gap-2">
+          <span class="status-badge status-badge--soon">Not a fit</span>
+          <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-ink-500)">
+            Politely declined
+          </p>
+        </div>
+        <h3 class="mt-3 text-lg font-bold text-(--color-ink-900) sm:text-xl">
+          Outside our scope
+        </h3>
+        <ul class="fit-list--no mt-4 space-y-2.5 text-sm leading-relaxed text-(--color-ink-700)">
+          <li>Stand-alone general LLM chatbots or call-center automation</li>
+          <li>Generic web or mobile SI / outsourced application development</li>
+          <li>Ad-copy or content-generation automation where reasoning is not required</li>
+          <li>One-off consumer (B2C) product engagements</li>
+          <li>Recruiting or candidate-matching beyond our data-delivery scope</li>
+        </ul>
       </article>
     </div>
   </section>

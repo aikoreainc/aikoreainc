@@ -8,14 +8,16 @@ import { company } from "../data/company";
   title="문의 — 한국인공지능"
   description="신뢰가능 AI 컨설팅, 데이터·대시보드 협업, Homosilicus 문의 — aikoreainc@gmail.com으로 연락 주세요."
 >
-  <section class="container-page py-16 sm:py-24">
-    <SectionHeading
-      eyebrow="CONTACT"
-      title="무엇이든 편하게 문의 주세요."
-      description="AI 도입 · 환경 GIS 대시보드 · 데이터 공급 · 공동 연구 의뢰 모두 환영합니다. 1~2 영업일 안에 회신합니다."
-    />
+  <section class="relative overflow-hidden">
+    <div aria-hidden="true" class="glow-hero pointer-events-none absolute inset-x-0 top-0 -z-10"></div>
+    <div class="container-page py-16 sm:py-24">
+      <SectionHeading
+        eyebrow="CONTACT"
+        title="무엇이든 편하게 문의 주세요."
+        description="AI 도입 · 환경 GIS 대시보드 · 데이터 공급 · 공동 연구 의뢰 모두 환영합니다. 의뢰 범위·일정·예산이 미확정이라도 괜찮습니다. 1~2 영업일 안에 회신합니다."
+      />
 
-    <div class="mt-12 grid gap-6 sm:mt-16 sm:gap-8 md:grid-cols-[1.2fr_1fr] md:items-stretch">
+      <div class="mt-12 grid gap-6 sm:mt-16 sm:gap-8 md:grid-cols-[1.2fr_1fr] md:items-stretch">
       <article
         class="flex flex-col rounded-2xl border border-(--color-ink-200) bg-white p-8 sm:p-10"
       >
@@ -36,9 +38,38 @@ import { company } from "../data/company";
           1~2 영업일 안에 회신합니다. 의뢰 범위·일정·예산이 미확정이라도
           괜찮습니다. 메일 제목에 <strong class="text-(--color-ink-900)"
             >[문의]</strong
-          > 또는 사업 라인(예: <em class="not-italic">[Homosilicus 문의]</em>)을
-          기입해 주시면 빠르게 분류해 드립니다.
+          > 또는 사업 라인을 함께 적어 주시면 빠르게 분류해 드립니다. 아래 칩을
+          누르면 제목이 자동 입력됩니다.
         </p>
+        <p class="mt-5 text-xs font-semibold uppercase tracking-[0.12em] text-(--color-ink-500)">
+          제목 프리셋 · 4
+        </p>
+        <div class="mt-2 flex flex-wrap gap-2">
+          <a
+            href={`mailto:${company.email}?subject=${encodeURIComponent("[Homosilicus 문의]")}`}
+            class="mailto-chip"
+          >
+            Homosilicus 문의
+          </a>
+          <a
+            href={`mailto:${company.email}?subject=${encodeURIComponent("[환경 GIS 대시보드 문의]")}`}
+            class="mailto-chip"
+          >
+            환경 GIS 대시보드 문의
+          </a>
+          <a
+            href={`mailto:${company.email}?subject=${encodeURIComponent("[신뢰가능 AI 설계 문의]")}`}
+            class="mailto-chip"
+          >
+            신뢰가능 AI 설계 문의
+          </a>
+          <a
+            href={`mailto:${company.email}?subject=${encodeURIComponent("[채용공고 데이터 문의]")}`}
+            class="mailto-chip"
+          >
+            채용공고 데이터 문의
+          </a>
+        </div>
         <a
           href={`mailto:${company.email}`}
           class="mt-6 inline-flex items-center justify-center self-start rounded-lg bg-(--color-brand-600) px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition duration-200 hover:bg-(--color-brand-700) hover:shadow-md"
@@ -67,6 +98,10 @@ import { company } from "../data/company";
             <dd>{company.ceo.ko} · {company.ceoTitle.ko}</dd>
           </div>
           <div>
+            <dt>설립연도</dt>
+            <dd>{company.established}</dd>
+          </div>
+          <div>
             <dt>사업자등록번호</dt>
             <dd>{company.bizRegNo}</dd>
           </div>
@@ -83,6 +118,181 @@ import { company } from "../data/company";
             <dd>{company.email}</dd>
           </div>
         </dl>
+      </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-page pb-16 sm:pb-24">
+    <SectionHeading
+      eyebrow="HOW TO INQUIRE"
+      title="의뢰 가이드."
+      description="메일에 다음 정보를 함께 적어 주시면, 회신 속도와 견적 정밀도가 크게 올라갑니다. 미확정 항목은 비워 두셔도 괜찮습니다."
+    />
+    <div class="mt-10 grid gap-4 sm:grid-cols-2 sm:items-stretch md:grid-cols-3 lg:grid-cols-3">
+      <article class="lift-on-hover relative flex h-full flex-col rounded-2xl border border-(--color-ink-200) bg-white p-6 hover:border-(--color-brand-400) sm:p-7">
+        <span class="num-corner" aria-hidden="true">01</span>
+        <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)">
+          목적
+        </p>
+        <h3 class="mt-2 text-base font-bold text-(--color-ink-900)">
+          해결하려는 문제
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed text-(--color-ink-700)">
+          "어떤 의사결정에 쓰고 싶은지" 한두 문장. 예: 미세먼지 예측의 정책 적용, XAI 도입 검토 등.
+        </p>
+      </article>
+      <article class="lift-on-hover relative flex h-full flex-col rounded-2xl border border-(--color-ink-200) bg-white p-6 hover:border-(--color-brand-400) sm:p-7">
+        <span class="num-corner" aria-hidden="true">02</span>
+        <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)">
+          사업 라인
+        </p>
+        <h3 class="mt-2 text-base font-bold text-(--color-ink-900)">
+          관심 영역
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed text-(--color-ink-700)">
+          채용공고 데이터 · 환경 GIS 대시보드 · 신뢰가능 AI 설계 · Homosilicus 중 해당 라인. 미정도 무방.
+        </p>
+      </article>
+      <article class="lift-on-hover relative flex h-full flex-col rounded-2xl border border-(--color-ink-200) bg-white p-6 hover:border-(--color-brand-400) sm:p-7">
+        <span class="num-corner" aria-hidden="true">03</span>
+        <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)">
+          기간
+        </p>
+        <h3 class="mt-2 text-base font-bold text-(--color-ink-900)">
+          희망 일정
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed text-(--color-ink-700)">
+          착수 시점·내부 마감일·정부 사업 일정 등. 대략적 분기만 알려주셔도 됩니다.
+        </p>
+      </article>
+      <article class="lift-on-hover relative flex h-full flex-col rounded-2xl border border-(--color-ink-200) bg-white p-6 hover:border-(--color-brand-400) sm:p-7">
+        <span class="num-corner" aria-hidden="true">04</span>
+        <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)">
+          예산
+        </p>
+        <h3 class="mt-2 text-base font-bold text-(--color-ink-900)">
+          예산 범위
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed text-(--color-ink-700)">
+          상한·하한이 잡혀 있다면 표기. PoC 단계에서는 미정인 채로 시작해도 무방합니다.
+        </p>
+      </article>
+      <article class="lift-on-hover relative flex h-full flex-col rounded-2xl border border-(--color-ink-200) bg-white p-6 hover:border-(--color-brand-400) sm:p-7">
+        <span class="num-corner" aria-hidden="true">05</span>
+        <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)">
+          데이터
+        </p>
+        <h3 class="mt-2 text-base font-bold text-(--color-ink-900)">
+          데이터 상황
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed text-(--color-ink-700)">
+          보유 데이터의 종류·규모·접근 방식. 데이터가 없는 단계에서도 협의 가능합니다.
+        </p>
+      </article>
+      <article class="lift-on-hover relative flex h-full flex-col rounded-2xl border border-(--color-ink-200) bg-white p-6 hover:border-(--color-brand-400) sm:p-7">
+        <span class="num-corner" aria-hidden="true">06</span>
+        <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)">
+          NDA
+        </p>
+        <h3 class="mt-2 text-base font-bold text-(--color-ink-900)">
+          비밀유지 필요 여부
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed text-(--color-ink-700)">
+          민감 데이터·비공개 사업이 포함되면 NDA 체결 후 상세 협의로 전환합니다.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="container-page pb-16 sm:pb-24">
+    <SectionHeading
+      eyebrow="NEXT STEPS"
+      title="응답 시한과 다음 단계."
+      description="문의 시점부터 계약 체결까지의 일반 흐름입니다."
+    />
+    <ol class="mini-step-connect mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-4">
+      <li class="relative z-10 flex h-full flex-col items-start rounded-2xl border border-(--color-ink-200) bg-white p-6 shadow-sm">
+        <span class="mini-step-badge" aria-hidden="true">01</span>
+        <h3 class="mt-4 text-base font-bold leading-snug text-(--color-ink-900)">
+          회신 (1~2 영업일)
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed text-(--color-ink-700)">
+          접수 확인과 1차 질문을 회신합니다. 필요 시 30분 화상 통화 일정 제안.
+        </p>
+      </li>
+      <li class="relative z-10 flex h-full flex-col items-start rounded-2xl border border-(--color-ink-200) bg-white p-6 shadow-sm">
+        <span class="mini-step-badge" aria-hidden="true">02</span>
+        <h3 class="mt-4 text-base font-bold leading-snug text-(--color-ink-900)">
+          범위 정리 (1~2주)
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed text-(--color-ink-700)">
+          PoC 범위·산출물·일정 초안을 정리해 송부합니다. 필요 시 NDA 체결.
+        </p>
+      </li>
+      <li class="relative z-10 flex h-full flex-col items-start rounded-2xl border border-(--color-ink-200) bg-white p-6 shadow-sm">
+        <span class="mini-step-badge" aria-hidden="true">03</span>
+        <h3 class="mt-4 text-base font-bold leading-snug text-(--color-ink-900)">
+          견적 · 제안
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed text-(--color-ink-700)">
+          공식 견적서와 제안서를 송부합니다. 정부·공공 사업 양식 대응 가능.
+        </p>
+      </li>
+      <li class="relative z-10 flex h-full flex-col items-start rounded-2xl border border-(--color-ink-200) bg-white p-6 shadow-sm">
+        <span class="mini-step-badge" aria-hidden="true">04</span>
+        <h3 class="mt-4 text-base font-bold leading-snug text-(--color-ink-900)">
+          계약 · 착수
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed text-(--color-ink-700)">
+          계약 체결 후 착수. 본사 단위 세금계산서·법인 책임 구조로 진행합니다.
+        </p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="container-page pb-24 sm:pb-32">
+    <SectionHeading
+      eyebrow="FIT"
+      title="적합한 의뢰 · 정중히 거절하는 의뢰."
+      description="다루는 영역과, 회사 정체성과 결이 달라 정중히 거절하는 영역을 미리 안내드립니다."
+    />
+    <div class="mt-10 grid gap-6 md:grid-cols-2 md:items-stretch">
+      <article class="fit-card fit-card--yes flex h-full flex-col rounded-2xl border border-(--color-ink-200) bg-white p-7 pl-8 shadow-sm sm:p-8 sm:pl-10">
+        <div class="flex items-center gap-2">
+          <span class="status-badge status-badge--active">적합</span>
+          <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)">
+            적합한 의뢰
+          </p>
+        </div>
+        <h3 class="mt-3 text-lg font-bold text-(--color-ink-900) sm:text-xl">
+          결과의 책임이 따르는 영역
+        </h3>
+        <ul class="fit-list--yes mt-4 space-y-2.5 text-sm leading-relaxed text-(--color-ink-700)">
+          <li>정부·공공·산업의 의사결정용 신뢰가능 AI 도입</li>
+          <li>환경·공중보건·노동시장 도메인의 데이터·예측·대시보드</li>
+          <li>XAI · 불확실성 정량화 기반의 모델 재설계 또는 평가</li>
+          <li>채용공고·노동시장 데이터 공급(API · 덤프)</li>
+          <li>Homosilicus 기반 시장·UX 검증 (B2B)</li>
+        </ul>
+      </article>
+      <article class="fit-card fit-card--no flex h-full flex-col rounded-2xl border border-(--color-ink-200) bg-(--color-ink-50) p-7 pl-8 sm:p-8 sm:pl-10">
+        <div class="flex items-center gap-2">
+          <span class="status-badge status-badge--soon">거절</span>
+          <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-ink-500)">
+            정중히 거절
+          </p>
+        </div>
+        <h3 class="mt-3 text-lg font-bold text-(--color-ink-900) sm:text-xl">
+          정합하지 않은 의뢰
+        </h3>
+        <ul class="fit-list--no mt-4 space-y-2.5 text-sm leading-relaxed text-(--color-ink-700)">
+          <li>일반 LLM 챗봇·콜센터 자동화 단독 구축</li>
+          <li>단순 웹/앱 SI·외주 개발</li>
+          <li>근거 제시가 불필요한 광고·콘텐츠 생성 자동화</li>
+          <li>개인 소비자 대상(B2C) 일회성 제품 의뢰</li>
+          <li>채용·인재 추천(본사 데이터 제공 범위 외 운영)</li>
+        </ul>
       </article>
     </div>
   </section>

@@ -3,6 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import SectionHeading from "../../components/SectionHeading.astro";
 import ResearchCard from "../../components/ResearchCard.astro";
 import { papers } from "../../data/research";
+import { company } from "../../data/company";
 ---
 
 <BaseLayout
@@ -10,15 +11,239 @@ import { papers } from "../../data/research";
   description="Two SCIE papers authored under AI Korea Inc. affiliation in Journal of Cleaner Production — trustworthy AI, explainable AI (XAI), and uncertainty quantification (UQ)."
   lang="en"
 >
-  <section class="container-page py-16 sm:py-24">
-    <SectionHeading
-      eyebrow="RESEARCH"
-      title="The methods we publish are the methods we ship."
-      description="Two SCIE papers in Journal of Cleaner Production, authored under AI Korea Inc. affiliation. The same methodology powers our consulting, dashboards, and SaaS."
-    />
+  <section class="relative overflow-hidden">
+    <div aria-hidden="true" class="glow-hero pointer-events-none absolute inset-x-0 top-0 -z-10"></div>
+    <div class="container-page py-16 sm:py-24">
+      <SectionHeading
+        eyebrow="RESEARCH"
+        title="The methods we publish are the methods we ship."
+        description="Two SCIE papers in Journal of Cleaner Production (2024 · 2025), authored under AI Korea Inc. affiliation. The same XAI and uncertainty-quantification procedures power our consulting, environmental GIS dashboards, and SaaS."
+      />
 
-    <div class="mt-12 grid gap-6 sm:mt-16 md:grid-cols-2 md:items-stretch">
-      {papers.map((paper) => <ResearchCard paper={paper} lang="en" />)}
+      <div class="mt-12 grid gap-6 sm:mt-16 md:grid-cols-2 md:items-stretch">
+        {papers.map((paper) => <ResearchCard paper={paper} lang="en" />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="container-page pb-16 sm:pb-24">
+    <SectionHeading
+      eyebrow="RESEARCH FOCI"
+      title="Where we focus."
+      description="Narrow and deep — four areas. Each connects directly to one of our four business lines."
+    />
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 sm:items-stretch">
+      <article class="lift-on-hover relative flex h-full flex-col overflow-hidden rounded-2xl border border-(--color-ink-200) bg-white p-6 hover:border-(--color-brand-400) sm:p-7">
+        <span aria-hidden="true" class="absolute inset-x-0 top-0 h-1 bg-(--color-brand-500)"></span>
+        <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)">
+          <span class="text-(--color-ink-400)">01</span> · XAI
+        </p>
+        <h3 class="mt-2 text-lg font-bold leading-snug text-(--color-ink-900)">
+          Explainable AI
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed text-(--color-ink-600)">
+          A multi-run CAM approach that extracts consistent model rationales. Core method of our 2025 paper.
+        </p>
+        <p class="mt-auto pt-4 text-xs font-medium text-(--color-ink-500)">
+          → Business lines: Trustworthy AI Design · Environmental GIS Dashboard
+        </p>
+      </article>
+      <article class="lift-on-hover relative flex h-full flex-col overflow-hidden rounded-2xl border border-(--color-ink-200) bg-white p-6 hover:border-(--color-brand-400) sm:p-7">
+        <span aria-hidden="true" class="absolute inset-x-0 top-0 h-1 bg-(--color-brand-500)"></span>
+        <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)">
+          <span class="text-(--color-ink-400)">02</span> · UQ
+        </p>
+        <h3 class="mt-2 text-lg font-bold leading-snug text-(--color-ink-900)">
+          Uncertainty quantification
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed text-(--color-ink-600)">
+          Confidence bounds on deep-learning predictions, supporting policy and operational decisions. Core method of our 2024 paper.
+        </p>
+        <p class="mt-auto pt-4 text-xs font-medium text-(--color-ink-500)">
+          → Business lines: Trustworthy AI Design · Environmental GIS Dashboard · Homosilicus
+        </p>
+      </article>
+      <article class="lift-on-hover relative flex h-full flex-col overflow-hidden rounded-2xl border border-(--color-ink-200) bg-white p-6 hover:border-(--color-brand-400) sm:p-7">
+        <span aria-hidden="true" class="absolute inset-x-0 top-0 h-1 bg-(--color-brand-500)"></span>
+        <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)">
+          <span class="text-(--color-ink-400)">03</span> · Environmental forecasting
+        </p>
+        <h3 class="mt-2 text-lg font-bold leading-snug text-(--color-ink-900)">
+          Climate, air, and water
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed text-(--color-ink-600)">
+          Particulate matter, algal blooms, and other environmental indicators forecast at spatial-temporal resolution and surfaced via GIS.
+        </p>
+        <p class="mt-auto pt-4 text-xs font-medium text-(--color-ink-500)">
+          → Business lines: Environmental GIS Dashboard
+        </p>
+      </article>
+      <article class="lift-on-hover relative flex h-full flex-col overflow-hidden rounded-2xl border border-(--color-ink-200) bg-white p-6 hover:border-(--color-brand-400) sm:p-7">
+        <span aria-hidden="true" class="absolute inset-x-0 top-0 h-1 bg-(--color-brand-500)"></span>
+        <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)">
+          <span class="text-(--color-ink-400)">04</span> · Public-health AI
+        </p>
+        <h3 class="mt-2 text-lg font-bold leading-snug text-(--color-ink-900)">
+          Disease and epidemiology
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed text-(--color-ink-600)">
+          Avian influenza and other zoonotic disease data, modeled and operated as live dashboards.
+        </p>
+        <p class="mt-auto pt-4 text-xs font-medium text-(--color-ink-500)">
+          → Business lines: Environmental GIS Dashboard · Job Posting Data (shared pipeline)
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="container-page pb-16 sm:pb-24">
+    <SectionHeading
+      eyebrow="HOW WE APPLY"
+      title="From paper to product line."
+      description="Where each published method is applied across our business lines."
+    />
+    <div class="mt-10 overflow-hidden rounded-2xl border border-(--color-ink-200) bg-white shadow-sm">
+      <ul class="divide-y divide-(--color-ink-200)">
+        <li class="grid gap-4 p-6 sm:grid-cols-[auto_1.2fr_2fr] sm:gap-8 sm:p-7">
+          <span class="shrink-0 inline-flex h-9 w-9 items-center justify-center rounded-full bg-(--color-brand-50) font-mono text-xs font-bold text-(--color-brand-700) ring-1 ring-(--color-brand-200)">01</span>
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)">
+              UQ · 2024
+            </p>
+            <p class="mt-1 text-sm font-semibold text-(--color-ink-900)">
+              Particulate-matter uncertainty
+            </p>
+          </div>
+          <p class="text-sm leading-relaxed text-(--color-ink-700)">
+            Applied to the air-quality module of our environmental GIS dashboard line (Air-Report). Also a core menu item of our trustworthy-AI design consulting.
+          </p>
+        </li>
+        <li class="grid gap-4 p-6 sm:grid-cols-[auto_1.2fr_2fr] sm:gap-8 sm:p-7">
+          <span class="shrink-0 inline-flex h-9 w-9 items-center justify-center rounded-full bg-(--color-brand-50) font-mono text-xs font-bold text-(--color-brand-700) ring-1 ring-(--color-brand-200)">02</span>
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)">
+              XAI · 2025
+            </p>
+            <p class="mt-1 text-sm font-semibold text-(--color-ink-900)">
+              Explainable algal-bloom forecasting
+            </p>
+          </div>
+          <p class="text-sm leading-relaxed text-(--color-ink-700)">
+            Carried over into our water and marine forecasting dashboards, and into the reporting pipelines we design for decisions that require accountability.
+          </p>
+        </li>
+        <li class="grid gap-4 p-6 sm:grid-cols-[auto_1.2fr_2fr] sm:gap-8 sm:p-7">
+          <span class="shrink-0 inline-flex h-9 w-9 items-center justify-center rounded-full bg-(--color-brand-50) font-mono text-xs font-bold text-(--color-brand-700) ring-1 ring-(--color-brand-200)">03</span>
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)">
+              Data pipeline
+            </p>
+            <p class="mt-1 text-sm font-semibold text-(--color-ink-900)">
+              Auditable training data
+            </p>
+          </div>
+          <p class="text-sm leading-relaxed text-(--color-ink-700)">
+            The collection, cleaning, and tagging procedures established in our papers are reused as a standard on both the job-posting pipeline (JobAI) and the environmental observation pipeline.
+          </p>
+        </li>
+        <li class="grid gap-4 p-6 sm:grid-cols-[auto_1.2fr_2fr] sm:gap-8 sm:p-7">
+          <span class="shrink-0 inline-flex h-9 w-9 items-center justify-center rounded-full bg-(--color-brand-50) font-mono text-xs font-bold text-(--color-brand-700) ring-1 ring-(--color-brand-200)">04</span>
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)">
+              UQ · XAI → SaaS
+            </p>
+            <p class="mt-1 text-sm font-semibold text-(--color-ink-900)">
+              Homosilicus persona-response reliability
+            </p>
+          </div>
+          <p class="text-sm leading-relaxed text-(--color-ink-700)">
+            UQ methods provide confidence bounds and multi-run variance checks for persona responses; XAI methods audit the consistency of underlying rationales. <a href="/en/services/" class="font-semibold text-(--color-brand-700) underline-offset-4 hover:underline">Homosilicus business line →</a> · <a href="https://homosilicus.github.io" target="_blank" rel="noopener" class="font-semibold text-(--color-brand-700) underline-offset-4 hover:underline">homosilicus.github.io ↗</a>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="container-page pb-16 sm:pb-24">
+    <SectionHeading
+      eyebrow="COLLABORATIVE RESEARCH"
+      title="Validated with partners."
+      description="Operational performance and data integrity, verified with seven institutional partners."
+    />
+    <p class="mt-10 text-xs font-semibold uppercase tracking-[0.12em] text-(--color-ink-500)">
+      Primary partners · 3
+    </p>
+    <div class="mt-3 grid gap-4 sm:grid-cols-2 sm:items-stretch lg:grid-cols-3">
+      <article class="lift-on-hover relative flex h-full flex-col rounded-2xl border border-(--color-ink-200) bg-(--color-ink-50) p-6 hover:border-(--color-brand-400) hover:bg-white">
+        <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)">
+          Environment · climate
+        </p>
+        <h3 class="mt-2 text-base font-bold text-(--color-ink-900)">
+          Korea Environment Institute (KEI)
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed text-(--color-ink-700)">
+          Collaboration on the policy relevance of air- and water-quality forecasting.
+        </p>
+      </article>
+      <article class="lift-on-hover relative flex h-full flex-col rounded-2xl border border-(--color-ink-200) bg-(--color-ink-50) p-6 hover:border-(--color-brand-400) hover:bg-white">
+        <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)">
+          Public health
+        </p>
+        <h3 class="mt-2 text-base font-bold text-(--color-ink-900)">
+          National Institute of Wildlife Disease Control (NIWDC)
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed text-(--color-ink-700)">
+          Collaboration on modeling and visualizing wildlife disease data, including avian influenza.
+        </p>
+      </article>
+      <article class="lift-on-hover relative flex h-full flex-col rounded-2xl border border-(--color-ink-200) bg-(--color-ink-50) p-6 hover:border-(--color-brand-400) hover:bg-white">
+        <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)">
+          Labor · market
+        </p>
+        <h3 class="mt-2 text-base font-bold text-(--color-ink-900)">
+          KRIVET
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed text-(--color-ink-700)">
+          Korea Research Institute for Vocational Education and Training — collaboration on the use of labor-market and job-posting data for policy research.
+        </p>
+      </article>
+    </div>
+    <p class="mt-8 text-xs font-semibold uppercase tracking-[0.12em] text-(--color-ink-500)">
+      Additional partners · 4
+    </p>
+    <div class="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="partner-chip rounded-lg border border-(--color-ink-200) bg-white p-4">
+        <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)">
+          Medical
+        </p>
+        <p class="mt-1 text-sm font-semibold text-(--color-ink-900)">
+          Samsung Medical Center (SMC)
+        </p>
+      </div>
+      <div class="partner-chip rounded-lg border border-(--color-ink-200) bg-white p-4">
+        <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)">
+          Regional R&amp;D
+        </p>
+        <p class="mt-1 text-sm font-semibold text-(--color-ink-900)">
+          BISTEP
+        </p>
+      </div>
+      <div class="partner-chip rounded-lg border border-(--color-ink-200) bg-white p-4">
+        <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)">
+          Testing · certification
+        </p>
+        <p class="mt-1 text-sm font-semibold text-(--color-ink-900)">
+          Korea Testing Laboratory (KTL)
+        </p>
+      </div>
+      <div class="partner-chip rounded-lg border border-(--color-ink-200) bg-white p-4">
+        <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)">
+          Veterinary · industry
+        </p>
+        <p class="mt-1 text-sm font-semibold text-(--color-ink-900)">
+          Green Vet Inc.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -45,7 +270,7 @@ import { papers } from "../../data/research";
           View services
         </a>
         <a
-          href="/en/contact/"
+          href={`mailto:${company.email}?subject=${encodeURIComponent("[Trustworthy AI Inquiry]")}`}
           class="inline-flex items-center justify-center rounded-lg border border-(--color-ink-200) bg-white px-5 py-2.5 text-sm font-semibold text-(--color-ink-900) transition duration-200 hover:border-(--color-ink-400)"
         >
           Inquire about trustworthy-AI design

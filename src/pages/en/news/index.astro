@@ -2,6 +2,7 @@
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import SectionHeading from "../../../components/SectionHeading.astro";
 import NewsEntry from "../../../components/NewsEntry.astro";
+import { company } from "../../../data/company";
 import { getCollection } from "astro:content";
 
 const entries = (await getCollection("newsEn")).sort(
@@ -14,27 +15,174 @@ const entries = (await getCollection("newsEn")).sort(
   description="Recent research publications, partnerships, and product updates from AI Korea Inc."
   lang="en"
 >
-  <section class="container-page py-16 sm:py-24">
-    <SectionHeading
-      eyebrow="NEWS"
-      title="News"
-      description="Recent publications, partnerships, and product updates from AI Korea Inc., listed newest first."
-    />
+  <section class="relative overflow-hidden">
+    <div aria-hidden="true" class="glow-hero pointer-events-none absolute inset-x-0 top-0 -z-10"></div>
+    <div class="container-page py-16 sm:py-24">
+      <SectionHeading
+        eyebrow="NEWS"
+        title="News."
+        description="Recent publications, partnerships, and product updates from AI Korea Inc., listed newest first. We post verified facts only."
+      />
 
-    <div class="mt-12 sm:mt-16">
-      {
-        entries.map((entry) => (
-          <NewsEntry
-            lang="en"
-            title={entry.data.title}
-            date={entry.data.date}
-            tags={entry.data.tags}
-            summary={entry.data.summary}
-            details={entry.data.details}
-            link={entry.data.link}
-          />
-        ))
-      }
+      <div class="mt-12 sm:mt-16">
+        {
+          entries.map((entry) => (
+            <NewsEntry
+              lang="en"
+              title={entry.data.title}
+              date={entry.data.date}
+              tags={entry.data.tags}
+              summary={entry.data.summary}
+              details={entry.data.details}
+              link={entry.data.link}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="container-page pb-16 sm:pb-24">
+    <SectionHeading
+      eyebrow="CATEGORIES"
+      title="What you will see here."
+      description="Entries on this page fall into the following categories."
+    />
+    <div class="mt-10 grid gap-4 sm:grid-cols-2 sm:items-stretch lg:grid-cols-3">
+      <article class="lift-on-hover relative flex h-full flex-col rounded-2xl border border-(--color-ink-200) bg-white p-6 hover:border-(--color-brand-400) sm:p-7">
+        <div class="flex items-start justify-between gap-3">
+          <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)">
+            Research
+          </p>
+          <span class="status-badge status-badge--active">In operation</span>
+        </div>
+        <h3 class="mt-2 text-base font-bold text-(--color-ink-900)">
+          Journal publications
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed text-(--color-ink-700)">
+          SCIE journal articles, conference talks, and new methods — always with DOI, journal name, and volume.
+        </p>
+        <p class="mt-auto pt-4 text-xs text-(--color-ink-500)">
+          Currently active — J. Cleaner Production 2024 · 2025
+        </p>
+      </article>
+      <article class="lift-on-hover relative flex h-full flex-col rounded-2xl border border-(--color-ink-200) bg-white p-6 hover:border-(--color-brand-400) sm:p-7">
+        <div class="flex items-start justify-between gap-3">
+          <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)">
+            Partnerships
+          </p>
+          <span class="status-badge status-badge--active">In operation</span>
+        </div>
+        <h3 class="mt-2 text-base font-bold text-(--color-ink-900)">
+          Agreements and joint work
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed text-(--color-ink-700)">
+          Agreements with public and industry partners, kickoffs of joint projects, and data collaboration.
+        </p>
+        <p class="mt-auto pt-4 text-xs text-(--color-ink-500)">
+          Currently active — KEI · NIWDC · KRIVET and 7 partners
+        </p>
+      </article>
+      <article class="relative flex h-full flex-col rounded-2xl border border-dashed border-(--color-ink-200) bg-(--color-ink-50) p-6 sm:p-7">
+        <div class="flex items-start justify-between gap-3">
+          <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-ink-500)">
+            Product
+          </p>
+          <span class="status-badge status-badge--soon">In preparation</span>
+        </div>
+        <h3 class="mt-2 text-base font-bold text-(--color-ink-700)">
+          Releases and updates
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed text-(--color-ink-600)">
+          New features, data refreshes, and API changes across JobAI, BirdFluAI, Air-Report, and Homosilicus.
+        </p>
+        <p class="mt-auto pt-4 text-xs text-(--color-ink-500)">
+          Coming soon — 0 entries published
+        </p>
+      </article>
+      <article class="relative flex h-full flex-col rounded-2xl border border-dashed border-(--color-ink-200) bg-(--color-ink-50) p-6 sm:p-7">
+        <div class="flex items-start justify-between gap-3">
+          <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-ink-500)">
+            Company
+          </p>
+          <span class="status-badge status-badge--soon">In preparation</span>
+        </div>
+        <h3 class="mt-2 text-base font-bold text-(--color-ink-700)">
+          Company news
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed text-(--color-ink-600)">
+          New business lines, hires and organizational changes, and selected government programs.
+        </p>
+        <p class="mt-auto pt-4 text-xs text-(--color-ink-500)">
+          Coming soon — 0 entries published
+        </p>
+      </article>
+      <article class="relative flex h-full flex-col rounded-2xl border border-dashed border-(--color-ink-200) bg-(--color-ink-50) p-6 sm:p-7">
+        <div class="flex items-start justify-between gap-3">
+          <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-ink-500)">
+            Media
+          </p>
+          <span class="status-badge status-badge--soon">In preparation</span>
+        </div>
+        <h3 class="mt-2 text-base font-bold text-(--color-ink-700)">
+          Interviews and contributions
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed text-(--color-ink-600)">
+          External interviews, columns, and conference talks on trustworthy AI and environmental AI.
+        </p>
+        <p class="mt-auto pt-4 text-xs text-(--color-ink-500)">
+          Coming soon — 0 entries published
+        </p>
+      </article>
+      <article class="relative flex h-full flex-col rounded-2xl border border-dashed border-(--color-ink-200) bg-(--color-ink-50) p-6 sm:p-7">
+        <div class="flex items-start justify-between gap-3">
+          <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-ink-500)">
+            Data
+          </p>
+          <span class="status-badge status-badge--soon">In preparation</span>
+        </div>
+        <h3 class="mt-2 text-base font-bold text-(--color-ink-700)">
+          Datasets and benchmarks
+        </h3>
+        <p class="mt-2 text-sm leading-relaxed text-(--color-ink-600)">
+          Public datasets and benchmark results released for research and evaluation.
+        </p>
+        <p class="mt-auto pt-4 text-xs text-(--color-ink-500)">
+          Coming soon — 0 entries published
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="container-page pb-24 sm:pb-32">
+    <div
+      class="rounded-2xl border border-(--color-ink-200) bg-(--color-ink-50) px-8 py-10 sm:px-12 sm:py-12"
+    >
+      <p
+        class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)"
+      >
+        Stay updated
+      </p>
+      <h2 class="mt-3 text-2xl font-bold tracking-tight text-balance text-(--color-ink-900) sm:text-3xl">
+        Get new entries by email.
+      </h2>
+      <p class="mt-3 max-w-2xl text-sm leading-relaxed text-(--color-ink-600) sm:text-base">
+        We do not run a separate subscription form. To subscribe to publications, partnership news, and product updates, send a one-line email with <strong class="text-(--color-ink-900)">[News]</strong> in the subject. We will batch new entries into a single update. The Korean and English inboxes are operated together, so either language is fine.
+      </p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a
+          href={`mailto:${company.email}?subject=${encodeURIComponent("[News]")}`}
+          class="inline-flex items-center justify-center rounded-lg bg-(--color-brand-600) px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition duration-200 hover:bg-(--color-brand-700) hover:shadow-md"
+        >
+          Subscribe to news
+        </a>
+        <a
+          href="/en/contact/"
+          class="inline-flex items-center justify-center rounded-lg border border-(--color-ink-200) bg-white px-5 py-2.5 text-sm font-semibold text-(--color-ink-900) transition duration-200 hover:border-(--color-ink-400)"
+        >
+          Contact us
+        </a>
+      </div>
     </div>
   </section>
 </BaseLayout>
