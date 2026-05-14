@@ -113,4 +113,125 @@
   .lift-on-hover:hover {
     box-shadow: 0 10px 30px -12px color-mix(in oklab, var(--color-ink-900) 14%, transparent);
   }
+
+  /* Process stepper — connector line between numbered steps (lg+) */
+  .step-connect {
+    position: relative;
+  }
+  .step-connect::before {
+    content: "";
+    position: absolute;
+    top: 1.5rem;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--color-ink-200) 12%,
+      var(--color-ink-200) 88%,
+      transparent
+    );
+    z-index: 0;
+    pointer-events: none;
+  }
+  @media (max-width: 1023px) {
+    .step-connect::before {
+      display: none;
+    }
+  }
+  /* Tablet (md, 2-col) — subtle dotted progress between rows */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .step-connect {
+      position: relative;
+    }
+    .step-connect::after {
+      content: "";
+      position: absolute;
+      top: 1.5rem;
+      bottom: 1.5rem;
+      left: 50%;
+      width: 0;
+      border-left: 1px dashed var(--color-ink-300);
+      z-index: 0;
+      pointer-events: none;
+    }
+  }
+  .step-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 9999px;
+    background: var(--color-ink-900);
+    color: white;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    box-shadow: 0 0 0 4px white, 0 0 0 5px var(--color-ink-200);
+  }
+
+  /* FAQ details accordion — native <details>/<summary> styling */
+  .faq-item {
+    border: 1px solid var(--color-ink-200);
+    background: white;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: border-color 200ms ease, box-shadow 200ms ease;
+  }
+  .faq-item[open] {
+    border-color: var(--color-brand-400);
+    box-shadow: 0 1px 0 0 var(--color-brand-100) inset;
+  }
+  .faq-item > summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    color: var(--color-ink-900);
+    font-weight: 700;
+  }
+  .faq-item > summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-item > summary::after {
+    content: "";
+    flex-shrink: 0;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-right: 2px solid var(--color-ink-500);
+    border-bottom: 2px solid var(--color-ink-500);
+    transform: rotate(45deg);
+    transition: transform 200ms ease, border-color 200ms ease;
+    margin-top: -0.25rem;
+  }
+  .faq-item[open] > summary::after {
+    transform: rotate(-135deg);
+    margin-top: 0.25rem;
+    border-color: var(--color-brand-600);
+  }
+  .faq-item > .faq-body {
+    padding: 0 1.5rem 1.25rem;
+    color: var(--color-ink-700);
+    font-size: 0.875rem;
+    line-height: 1.7;
+  }
+  @media (min-width: 640px) {
+    .faq-item > summary {
+      padding: 1.5rem 1.75rem;
+    }
+    .faq-item > .faq-body {
+      padding: 0 1.75rem 1.5rem;
+    }
+  }
+
+  /* Inline anchor CTA — flat neutral strip (gradient demoted per visual hierarchy) */
+  .inline-cta {
+    background: var(--color-ink-50);
+    border: 1px solid var(--color-ink-200);
+  }
 }
