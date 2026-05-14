@@ -21,6 +21,7 @@ export const partners: Partner[] = [
   {
     slug: "greenvet",
     name: { ko: "(주)그린벳", en: "Green Vet Inc." },
+    logo: "/img/partners/greenvet.svg",
   },
   {
     slug: "bistep",
