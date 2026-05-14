@@ -27,19 +27,14 @@ const navItems = [
       <div>
         <a
           href={pathFor("/", lang)}
-          class="flex items-center gap-2.5"
+          class="flex items-center"
           aria-label={company.shortName[lang]}
         >
           <img
-            src="/img/logo/symbol-blue.png"
-            alt=""
-            width="36"
-            height="36"
+            src="/img/logo/wordmark-symbol-blue-ko.png"
+            alt={company.shortName.ko}
             class="h-9 w-auto"
           />
-          <span class="text-lg font-bold text-(--color-ink-900)">
-            {company.shortName[lang]}
-          </span>
         </a>
         <p class="mt-4 max-w-sm text-sm leading-relaxed text-(--color-ink-600)">
           {tagline[lang]}
@@ -111,12 +106,7 @@ const navItems = [
           </div>
           <div>
             <dt>{dict.footer.address[lang]}</dt>
-            <dd>
-              {company.address[lang]}
-              <span class="mt-0.5 block text-xs text-(--color-ink-500)">
-                {company.addressNote[lang]}
-              </span>
-            </dd>
+            <dd>{company.address[lang]}</dd>
           </div>
           <div>
             <dt>{dict.footer.email[lang]}</dt>

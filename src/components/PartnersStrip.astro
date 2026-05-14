@@ -1,0 +1,65 @@
+---
+import type { Lang } from "../data/company";
+import { partners } from "../data/partners";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const heading = lang === "ko" ? "협력 기관" : "Partners";
+const sub =
+  lang === "ko"
+    ? "정부·연구·의료·산업 분야의 기관·기업과 협력하고 있습니다."
+    : "We collaborate with public, research, medical, and industry partners.";
+---
+
+<section class="border-t border-(--color-ink-200) bg-white">
+  <div class="container-page py-16 sm:py-20">
+    <div class="text-center">
+      <p
+        class="text-xs font-semibold uppercase tracking-wider text-(--color-brand-600)"
+      >
+        {lang === "ko" ? "PARTNERS" : "PARTNERS"}
+      </p>
+      <h2 class="mt-3 text-2xl font-bold tracking-tight text-(--color-ink-900) sm:text-3xl">
+        {heading}
+      </h2>
+      <p class="mx-auto mt-3 max-w-2xl text-sm text-(--color-ink-600) sm:text-base">
+        {sub}
+      </p>
+    </div>
+
+    <ul
+      class="mx-auto mt-10 flex flex-wrap items-center justify-center gap-3 sm:mt-12 sm:gap-4"
+    >
+      {
+        partners.map((p) => {
+          const Tag = p.url ? "a" : "div";
+          const props = p.url
+            ? { href: p.url, target: "_blank", rel: "noopener" }
+            : {};
+          return (
+            <li>
+              <Tag
+                {...props}
+                class="flex h-16 min-w-[160px] items-center justify-center rounded-xl border border-(--color-ink-200) bg-(--color-ink-50) px-6 text-sm font-semibold text-(--color-ink-700) transition hover:border-(--color-brand-400) hover:text-(--color-brand-700) sm:h-20 sm:min-w-[180px] sm:text-base"
+              >
+                {p.logo ? (
+                  <img
+                    src={p.logo}
+                    alt={p.name[lang]}
+                    class="max-h-10 w-auto sm:max-h-12"
+                  />
+                ) : (
+                  <span>{p.name[lang]}</span>
+                )}
+              </Tag>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+</section>

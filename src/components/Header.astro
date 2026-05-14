@@ -35,19 +35,14 @@ const langTogglePath = (() => {
   >
     <a
       href={pathFor("/", lang)}
-      class="flex items-center gap-2.5"
+      class="flex items-center"
       aria-label={company.shortName[lang]}
     >
       <img
-        src="/img/logo/symbol-blue.png"
-        alt=""
-        width="32"
-        height="32"
-        class="h-8 w-auto"
+        src="/img/logo/wordmark-symbol-blue-ko.png"
+        alt={company.shortName.ko}
+        class="h-7 w-auto sm:h-8"
       />
-      <span class="text-base font-bold text-(--color-ink-900) sm:text-lg">
-        {company.shortName[lang]}
-      </span>
     </a>
 
     <nav

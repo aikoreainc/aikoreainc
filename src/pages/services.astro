@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 import ServiceCard from "../components/ServiceCard.astro";
-import { services, serviceHref } from "../data/services";
+import { services } from "../data/services";
 ---
 
 <BaseLayout
@@ -17,15 +17,7 @@ import { services, serviceHref } from "../data/services";
     />
 
     <div class="mt-12 grid gap-6 sm:mt-16 md:grid-cols-2">
-      {
-        services.map((service) => (
-          <ServiceCard
-            service={service}
-            lang="ko"
-            href={service.externalUrl ?? serviceHref(service.slug, "ko")}
-          />
-        ))
-      }
+      {services.map((service) => <ServiceCard service={service} lang="ko" />)}
     </div>
   </section>
 </BaseLayout>

@@ -4,7 +4,8 @@ import SectionHeading from "../components/SectionHeading.astro";
 import ServiceCard from "../components/ServiceCard.astro";
 import ResearchCard from "../components/ResearchCard.astro";
 import BusinessLinesDiagram from "../components/BusinessLinesDiagram.astro";
-import { services, serviceHref } from "../data/services";
+import PartnersStrip from "../components/PartnersStrip.astro";
+import { services } from "../data/services";
 import { papers } from "../data/research";
 import { getCollection } from "astro:content";
 
@@ -156,17 +157,12 @@ const formatDate = (d: Date) =>
       <BusinessLinesDiagram lang="ko" />
     </div>
     <div class="mt-16 grid gap-6 md:grid-cols-2">
-      {
-        services.map((service) => (
-          <ServiceCard
-            service={service}
-            lang="ko"
-            href={service.externalUrl ?? serviceHref(service.slug, "ko")}
-          />
-        ))
-      }
+      {services.map((service) => <ServiceCard service={service} lang="ko" />)}
     </div>
   </section>
+
+  <!-- Partners -->
+  <PartnersStrip lang="ko" />
 
   <!-- Why us -->
   <section class="bg-(--color-ink-900) text-white">

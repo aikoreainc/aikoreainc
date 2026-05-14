@@ -6,7 +6,7 @@ export interface Service {
   summary: { ko: string; en: string };
   description: { ko: string; en: string };
   highlights: { ko: string[]; en: string[] };
-  externalUrl?: string;
+  products?: { name: string; url: string }[];
 }
 
 export const services: Service[] = [
@@ -33,13 +33,14 @@ export const services: Service[] = [
         "Delivered as API or data dumps",
       ],
     },
+    products: [{ name: "JobAI", url: "https://jobai.co.kr" }],
   },
   {
     slug: "eco-gis",
     title: { ko: "환경 GIS 대시보드", en: "Environmental GIS Dashboard" },
     summary: {
-      ko: "대기·수질·해양 등 환경 데이터를 GIS 기반으로 예측·시각화합니다.",
-      en: "GIS-based forecasting and visualization for air, water, and marine environmental data.",
+      ko: "대기·수질·해양·공중보건 등 환경 데이터를 GIS 기반으로 예측·시각화합니다.",
+      en: "GIS-based forecasting and visualization for air, water, marine, and public-health data.",
     },
     description: {
       ko: "관측·예보 데이터와 자체 AI 모델을 결합해 시·공간 해상도의 환경 지표를 대시보드로 제공합니다. 정부·연구기관과의 협력 실적을 바탕으로 운영성·정확성을 모두 검증했습니다.",
@@ -57,6 +58,10 @@ export const services: Service[] = [
         "REST API and embeddable widgets",
       ],
     },
+    products: [
+      { name: "BirdFluAI", url: "https://birdfluai.com" },
+      { name: "Air-Report", url: "https://air-report.github.io" },
+    ],
   },
   {
     slug: "trustworthy-ai",
@@ -105,7 +110,7 @@ export const services: Service[] = [
         "Privacy-first architecture",
       ],
     },
-    externalUrl: "https://homosilicus.github.io",
+    products: [{ name: "Homosilicus", url: "https://homosilicus.github.io" }],
   },
 ];
 

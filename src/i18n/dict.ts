@@ -21,7 +21,7 @@ export const dict = {
     email: { ko: "이메일", en: "Email" },
     copyright: {
       ko: "한국인공지능 주식회사. All rights reserved.",
-      en: "AIKoreaInc Co., Ltd. All rights reserved.",
+      en: "AI Korea Inc. All rights reserved.",
     },
     productLink: {
       ko: "주력 SaaS 제품 Homosilicus 보기",
