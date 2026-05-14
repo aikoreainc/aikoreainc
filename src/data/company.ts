@@ -7,7 +7,7 @@ export const company = {
   },
   shortName: {
     ko: "한국인공지능",
-    en: "AIKoreaInc",
+    en: "AI Korea Inc.",
   },
   ceo: {
     ko: "이동현",
