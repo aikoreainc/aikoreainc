@@ -2,25 +2,28 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SectionHeading from "../../components/SectionHeading.astro";
 import PartnersStrip from "../../components/PartnersStrip.astro";
+import ResearchCard from "../../components/ResearchCard.astro";
 import { company } from "../../data/company";
+import { services } from "../../data/services";
+import { papers } from "../../data/research";
 ---
 
 <BaseLayout
   title="About — AI Korea Inc."
-  description="AI Korea Inc. is a HUFS faculty-founded company. We operate trustworthy-AI methods published in SCIE journals, validated together with government and research partners."
+  description="AI Korea Inc. is a HUFS faculty-founded company. We operate trustworthy AI methods — XAI and uncertainty quantification — published in Journal of Cleaner Production (2024 · 2025) across four product lines, with seven institutional partners."
   lang="en"
 >
   <section class="container-page py-16 sm:py-24">
     <SectionHeading
       eyebrow="ABOUT"
       title="Where research becomes product."
-      description="AI Korea Inc. is a HUFS faculty-founded company. Published methods from Journal of Cleaner Production (2024 · 2025) become operating dashboards and a B2B SaaS."
+      description="AI Korea Inc. is a HUFS faculty-founded company. We take Trustworthy AI methods published in Journal of Cleaner Production (2024 · 2025) and operate them as environmental GIS dashboards and an in-house B2B SaaS."
     />
   </section>
 
   <section class="container-page pb-16 sm:pb-24">
     <div
-      class="grid gap-10 rounded-2xl border border-(--color-ink-200) bg-(--color-ink-50) p-8 sm:gap-12 sm:p-12 md:grid-cols-[1fr_1.5fr] md:gap-16"
+      class="grid gap-10 rounded-2xl border border-(--color-ink-200) bg-(--color-ink-50) p-8 sm:gap-12 sm:p-12 md:grid-cols-[1fr_2fr] md:gap-16"
     >
       <div>
         <p
@@ -57,64 +60,272 @@ import { company } from "../../data/company";
           </svg>
         </a>
       </div>
-      <div class="text-sm leading-relaxed text-(--color-ink-700) sm:text-base">
+      <div class="text-base leading-relaxed text-(--color-ink-700) sm:text-lg">
         <p>
           His research focuses on <strong class="text-(--color-ink-900)"
-            >reliable AI, explainable AI, environmental prediction, and
-            public-health AI</strong
-          >. He runs a research–industry bridge model at HUFS Division of
-          Social Science &amp; AI.
+            >trustworthy AI design, explainable AI (XAI), uncertainty
+            quantification (UQ), environmental prediction, and public-health
+            AI</strong
+          >. Based at HUFS Division of Social Science &amp; AI, he has
+          published two SCIE papers as corresponding author — and the company
+          runs those exact methods as its services.
         </p>
         <p class="mt-4">
-          AI Korea Inc. applies that research to job-posting data, environmental
-          GIS dashboards, and trustworthy-AI consulting — and operates its own
-          SaaS, <a
+          AI Korea Inc. runs four product lines directly — job-posting data,
+          environmental GIS dashboards, Trustworthy AI design, and our in-house
+          B2B SaaS <a
             href={company.links.homosilicus}
             target="_blank"
             rel="noopener"
             class="font-semibold text-(--color-brand-600) hover:text-(--color-brand-700)"
             >Homosilicus</a
-          >.
+          >. Data, models, dashboards, and SaaS are handled end-to-end by one
+          team.
         </p>
         <p class="mt-4">
-          We collaborate with seven institutions: Korea Environment Institute
-          (KEI), Samsung Medical Center (SMC), Korea Research Institute for
-          Vocational Education and Training (KRIVET), Busan Institute of S&amp;T
-          Evaluation and Planning (BISTEP), Korea Testing Laboratory (KTL),
-          National Institute of Wildlife Disease Control (NIWDC), and Green Vet
-          Inc.
+          Seven institutional partners have helped us validate operations and
+          data integrity — Korea Environment Institute (KEI), Samsung Medical
+          Center (SMC), Korea Research Institute for Vocational Education and
+          Training (KRIVET), Busan Institute of S&amp;T Evaluation and Planning
+          (BISTEP), Korea Testing Laboratory (KTL), National Institute of
+          Wildlife Disease Control (NIWDC), and Green Vet Inc.
         </p>
       </div>
     </div>
   </section>
 
-  <PartnersStrip lang="en" />
+  <section class="container-page pb-16 sm:pb-24">
+    <SectionHeading
+      eyebrow="WHY US"
+      title="Three axes, all at once."
+      description="Research-grounded reliability, full-stack execution, and Trustworthy AI expertise — we hold all three simultaneously."
+    />
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:items-stretch">
+      <article
+        class="lift-on-hover relative flex h-full flex-col overflow-hidden rounded-2xl border border-(--color-ink-200) bg-white p-7 hover:border-(--color-brand-400) sm:p-8"
+      >
+        <span aria-hidden="true" class="absolute inset-x-0 top-0 h-1 bg-(--color-brand-500)"></span>
+        <p
+          class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)"
+        >
+          01 · Research-grounded
+        </p>
+        <h3 class="mt-3 text-lg font-bold leading-snug text-(--color-ink-900) sm:text-xl">
+          We run the methods we publish.
+        </h3>
+        <p class="mt-3 text-sm leading-relaxed text-(--color-ink-700)">
+          The Trustworthy AI methods we published in J. Cleaner Production (2024 · 2025) are the same ones we run as services.
+        </p>
+      </article>
+      <article
+        class="lift-on-hover relative flex h-full flex-col overflow-hidden rounded-2xl border border-(--color-ink-200) bg-white p-7 hover:border-(--color-brand-400) sm:p-8"
+      >
+        <span aria-hidden="true" class="absolute inset-x-0 top-0 h-1 bg-(--color-brand-500)"></span>
+        <p
+          class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)"
+        >
+          02 · Full-stack execution
+        </p>
+        <h3 class="mt-3 text-lg font-bold leading-snug text-(--color-ink-900) sm:text-xl">
+          Data, models, dashboards, and SaaS — one team.
+        </h3>
+        <p class="mt-3 text-sm leading-relaxed text-(--color-ink-700)">
+          Not just proofs of concept — four live products operated in-house. Clients don't have to coordinate multiple vendors.
+        </p>
+      </article>
+      <article
+        class="lift-on-hover relative flex h-full flex-col overflow-hidden rounded-2xl border border-(--color-ink-200) bg-white p-7 hover:border-(--color-brand-400) sm:p-8"
+      >
+        <span aria-hidden="true" class="absolute inset-x-0 top-0 h-1 bg-(--color-brand-500)"></span>
+        <p
+          class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)"
+        >
+          03 · Trustworthy AI expertise
+        </p>
+        <h3 class="mt-3 text-lg font-bold leading-snug text-(--color-ink-900) sm:text-xl">
+          We design AI you can put into decisions.
+        </h3>
+        <p class="mt-3 text-sm leading-relaxed text-(--color-ink-700)">
+          Narrowed to two themes — explainable AI (XAI) and uncertainty quantification (UQ) — for decisions that carry accountability.
+        </p>
+      </article>
+    </div>
+  </section>
 
-  <section class="container-page py-16 sm:py-24">
+  <section class="container-page pb-16 sm:pb-24">
+    <SectionHeading
+      eyebrow="WHAT WE DO"
+      title="Four product lines."
+      description="From data to SaaS — four lines, all operated by one team."
+    />
+    <ul class="mt-10 grid gap-4 sm:grid-cols-2">
+      {
+        services.map((svc, i) => (
+          <li class="flex h-full items-start gap-4 rounded-xl border border-(--color-ink-200) bg-white p-5 sm:p-6">
+            <span class="shrink-0 rounded-md bg-(--color-ink-50) px-2 py-1 font-mono text-xs font-semibold tracking-[0.08em] text-(--color-brand-700) ring-1 ring-(--color-ink-200)">
+              {String(i + 1).padStart(2, "0")}
+            </span>
+            <div class="min-w-0">
+              <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)">
+                {svc.slug}
+              </p>
+              <h3 class="mt-1.5 text-lg font-bold leading-snug text-(--color-ink-900) sm:text-xl">
+                {svc.title.en}
+              </h3>
+              <p class="mt-2 text-sm leading-relaxed text-(--color-ink-600)">
+                {svc.summary.en}
+              </p>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="container-page pb-16 sm:pb-24">
+    <SectionHeading
+      eyebrow="RESEARCH"
+      title="Two SCIE papers."
+      description="Trustworthy AI methods we published in SCIE journals under the company affiliation."
+    />
+    <div class="mt-10 grid gap-6 md:grid-cols-2">
+      {papers.map((paper) => <ResearchCard paper={paper} lang="en" />)}
+    </div>
+    <div class="mt-8">
+      <a
+        href="/en/research/"
+        class="inline-flex items-center gap-1.5 text-sm font-semibold text-(--color-brand-600) hover:text-(--color-brand-700)"
+      >
+        View research
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-3.5 w-3.5"
+          aria-hidden="true"
+        >
+          <path d="M7 17L17 7"></path>
+          <polyline points="7 7 17 7 17 17"></polyline>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="container-page pb-16 sm:pb-24">
     <div
-      class="rounded-2xl border border-(--color-ink-200) bg-(--color-ink-50) px-8 py-10 sm:px-12 sm:py-12"
+      class="rounded-2xl border border-(--color-ink-200) bg-white px-8 py-10 sm:px-12 sm:py-12"
     >
       <p
         class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)"
       >
-        Next step
+        Company information
       </p>
-      <h2 class="mt-3 text-2xl font-bold tracking-tight text-balance text-(--color-ink-900) sm:text-3xl">
-        Explore our services, or contact us directly.
+      <h2 class="mt-3 text-2xl font-bold tracking-tight text-(--color-ink-900) sm:text-3xl">
+        AI Korea Inc.
       </h2>
-      <div class="mt-6 flex flex-wrap gap-3">
+      <div class="mt-6 h-px w-12 bg-(--color-brand-500)" aria-hidden="true"></div>
+      <dl class="mt-6 grid gap-x-8 gap-y-5 text-sm leading-relaxed text-(--color-ink-700) sm:grid-cols-2 sm:gap-y-6 sm:text-base">
+        <div>
+          <dt class="text-xs font-semibold uppercase tracking-wider text-(--color-ink-500)">
+            Legal name
+          </dt>
+          <dd class="mt-1">{company.legalName.en}</dd>
+        </div>
+        <div>
+          <dt class="text-xs font-semibold uppercase tracking-wider text-(--color-ink-500)">
+            CEO
+          </dt>
+          <dd class="mt-1">{company.ceo.en} (Professor, HUFS)</dd>
+        </div>
+        <div>
+          <dt class="text-xs font-semibold uppercase tracking-wider text-(--color-ink-500)">
+            Business reg. no.
+          </dt>
+          <dd class="mt-1">{company.bizRegNo}</dd>
+        </div>
+        <div>
+          <dt class="text-xs font-semibold uppercase tracking-wider text-(--color-ink-500)">
+            Established
+          </dt>
+          <dd class="mt-1">{company.established}</dd>
+        </div>
+        <div>
+          <dt class="text-xs font-semibold uppercase tracking-wider text-(--color-ink-500)">
+            Industry
+          </dt>
+          <dd class="mt-1">{company.bizType.en}</dd>
+        </div>
+        <div>
+          <dt class="text-xs font-semibold uppercase tracking-wider text-(--color-ink-500)">
+            Address
+          </dt>
+          <dd class="mt-1">{company.address.en}</dd>
+        </div>
+        <div>
+          <dt class="text-xs font-semibold uppercase tracking-wider text-(--color-ink-500)">
+            Email
+          </dt>
+          <dd class="mt-1">
+            <a
+              href={`mailto:${company.email}`}
+              class="font-semibold text-(--color-brand-600) hover:text-(--color-brand-700)"
+              >{company.email}</a
+            >
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <PartnersStrip lang="en" />
+
+  <section class="container-page pt-8 pb-16 sm:pt-12 sm:pb-24">
+    <div
+      class="relative overflow-hidden rounded-2xl border border-l-4 border-(--color-ink-200) border-l-(--color-brand-500) bg-white px-8 py-10 sm:px-12 sm:py-12"
+    >
+      <div aria-hidden="true" class="glow-cta pointer-events-none absolute inset-0 opacity-60"></div>
+      <div class="relative">
+        <p
+          class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)"
+        >
+          Next step
+        </p>
+        <h2 class="mt-3 text-2xl font-bold tracking-tight text-balance text-(--color-ink-900) sm:text-3xl">
+          Explore our services, or contact us directly.
+        </h2>
+        <p class="mt-3 max-w-2xl text-sm leading-relaxed text-(--color-ink-700) sm:text-base">
+          Review the engagement scope on each service page, or email us for a PoC
+          scope reply. As a company roadmap, through 2027 we are accumulating
+          operational references in the environmental and public sectors; by 2028
+          we aim to grow product revenue — led by Homosilicus — to a scale
+          comparable to our services revenue. We reply to inquiries within 1–2
+          business days.
+        </p>
+        <div class="mt-8 h-px w-full bg-(--color-ink-200)" aria-hidden="true"></div>
+        <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
         <a
           href="/en/services/"
-          class="inline-flex items-center justify-center rounded-lg bg-(--color-brand-600) px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition duration-200 hover:bg-(--color-brand-700) hover:shadow-md"
+          class="inline-flex w-full items-center justify-center rounded-lg bg-(--color-brand-600) px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition duration-200 hover:bg-(--color-brand-700) hover:shadow-md sm:w-auto"
         >
           View services
         </a>
         <a
+          href="/en/research/"
+          class="inline-flex w-full items-center justify-center rounded-lg border border-(--color-ink-200) bg-white px-5 py-2.5 text-sm font-semibold text-(--color-ink-900) transition duration-200 hover:border-(--color-ink-400) sm:w-auto"
+        >
+          View research
+        </a>
+        <a
           href="/en/contact/"
-          class="inline-flex items-center justify-center rounded-lg border border-(--color-ink-200) bg-white px-5 py-2.5 text-sm font-semibold text-(--color-ink-900) transition duration-200 hover:border-(--color-ink-400)"
+          class="inline-flex w-full items-center justify-center rounded-lg border border-(--color-ink-200) bg-white px-5 py-2.5 text-sm font-semibold text-(--color-ink-900) transition duration-200 hover:border-(--color-ink-400) sm:w-auto"
         >
           Contact us
         </a>
+        </div>
       </div>
     </div>
   </section>

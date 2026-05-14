@@ -2,24 +2,27 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 import PartnersStrip from "../components/PartnersStrip.astro";
+import ResearchCard from "../components/ResearchCard.astro";
 import { company } from "../data/company";
+import { services } from "../data/services";
+import { papers } from "../data/research";
 ---
 
 <BaseLayout
   title="회사소개 — 한국인공지능"
-  description="한국인공지능 주식회사는 HUFS 이동현 교수 교원창업기업입니다. SCIE 학술지에 발표한 신뢰가능 AI 방법론을 정부·연구기관과 함께 검증하며 운영합니다."
+  description="한국인공지능 주식회사는 HUFS 이동현 교수 교원창업기업입니다. Journal of Cleaner Production 2024·2025에 발표한 신뢰가능 AI(Trustworthy AI) 방법론을, 4개 사업 라인과 7개 협력기관을 통해 운영합니다."
 >
   <section class="container-page py-16 sm:py-24">
     <SectionHeading
       eyebrow="ABOUT"
       title="연구가 그대로 제품이 되는 회사."
-      description="한국인공지능 주식회사는 한국외국어대학교(HUFS) 이동현 교수 교원창업기업입니다. 연구 기반의 신뢰가능 AI를, 정부·연구기관과 함께 검증하며 운영합니다."
+      description="한국인공지능 주식회사는 한국외국어대학교(HUFS) 이동현 교수 교원창업기업입니다. Journal of Cleaner Production(2024·2025)에 발표한 신뢰가능 AI(Trustworthy AI) 방법론을, 환경 GIS 대시보드와 자체 SaaS로 옮겨 운영합니다."
     />
   </section>
 
   <section class="container-page pb-16 sm:pb-24">
     <div
-      class="grid gap-10 rounded-2xl border border-(--color-ink-200) bg-(--color-ink-50) p-8 sm:gap-12 sm:p-12 md:grid-cols-[1fr_1.5fr] md:gap-16"
+      class="grid gap-10 rounded-2xl border border-(--color-ink-200) bg-(--color-ink-50) p-8 sm:gap-12 sm:p-12 md:grid-cols-[1fr_2fr] md:gap-16"
     >
       <div>
         <p
@@ -56,60 +59,267 @@ import { company } from "../data/company";
           </svg>
         </a>
       </div>
-      <div class="text-sm leading-relaxed text-(--color-ink-700) sm:text-base">
+      <div class="text-base leading-relaxed text-(--color-ink-700) sm:text-lg">
         <p>
-          연구 분야는 <strong class="text-(--color-ink-900)">신뢰성 AI ·
-            설명가능 AI · 환경 예측 · 공중보건 AI</strong>입니다. 한국외국어대학교
-          Division of Social Science &amp; AI 소속으로, 학계와 산업을 잇는
-          연구·창업 모델을 운영합니다.
+          연구 분야는 <strong class="text-(--color-ink-900)">신뢰가능 AI(Trustworthy AI) ·
+            설명가능 AI(XAI) · 불확실성 정량화(UQ) · 환경 예측 · 공중보건 AI</strong>입니다.
+          한국외국어대학교 Division of Social Science &amp; AI 소속으로,
+          교신저자로 발표한 SCIE 논문 2편의 방법론을 그대로 회사 사업으로
+          운영합니다.
         </p>
         <p class="mt-4">
-          한국인공지능 주식회사는 이 연구를 토대로 채용 데이터·환경 GIS 대시보드·신뢰가능
-          AI 컨설팅, 그리고 자체 SaaS 제품 <a
+          한국인공지능 주식회사는 이 연구를 토대로 4개 사업 라인을 직접
+          운영합니다 — 채용공고 데이터, 환경 GIS 대시보드, 신뢰가능 AI 설계,
+          그리고 자체 B2B SaaS <a
             href={company.links.homosilicus}
             target="_blank"
             rel="noopener"
             class="font-semibold text-(--color-brand-600) hover:text-(--color-brand-700)"
             >Homosilicus</a
-          >를 운영합니다.
+          >. 데이터 수집·모델·대시보드·SaaS 전 단계를 한 팀 안에서 처리합니다.
         </p>
         <p class="mt-4">
-          한국환경연구원(KEI) · 삼성서울병원(SMC) · 한국직업능력연구원(KRIVET) ·
-          부산산업과학혁신원(BISTEP) · 한국산업기술시험원(KTL) ·
-          국립야생동물질병관리원(NIWDC) · (주)그린벳 등 7개 기관과
-          협력합니다.
+          7개 기관과 협력하며 운영 성과와 데이터 정합성을 검증해 왔습니다 —
+          한국환경연구원(KEI) · 삼성서울병원(SMC) ·
+          한국직업능력연구원(KRIVET) · 부산산업과학혁신원(BISTEP) ·
+          한국산업기술시험원(KTL) · 국립야생동물질병관리원(NIWDC) ·
+          (주)그린벳.
         </p>
       </div>
     </div>
   </section>
 
-  <PartnersStrip lang="ko" />
+  <section class="container-page pb-16 sm:pb-24">
+    <SectionHeading
+      eyebrow="WHY US"
+      title="세 축으로 좁힌 차별점."
+      description="연구 기반 신뢰성 · 풀스택 실행 · 신뢰가능 AI 전문성 — 세 축 모두를 동시에 충족합니다."
+    />
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:items-stretch">
+      <article
+        class="lift-on-hover relative flex h-full flex-col overflow-hidden rounded-2xl border border-(--color-ink-200) bg-white p-7 hover:border-(--color-brand-400) sm:p-8"
+      >
+        <span aria-hidden="true" class="absolute inset-x-0 top-0 h-1 bg-(--color-brand-500)"></span>
+        <p
+          class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)"
+        >
+          01 · 연구 기반 신뢰성
+        </p>
+        <h3 class="mt-3 text-lg font-bold leading-snug text-(--color-ink-900) sm:text-xl">
+          학술지 게재 방법론을 그대로 운영합니다.
+        </h3>
+        <p class="mt-3 text-sm leading-relaxed text-(--color-ink-700)">
+          J. Cleaner Production 2024·2025에 발표한 신뢰가능 AI 방법론을, 본사가 직접 사업으로 옮겨 운영합니다.
+        </p>
+      </article>
+      <article
+        class="lift-on-hover relative flex h-full flex-col overflow-hidden rounded-2xl border border-(--color-ink-200) bg-white p-7 hover:border-(--color-brand-400) sm:p-8"
+      >
+        <span aria-hidden="true" class="absolute inset-x-0 top-0 h-1 bg-(--color-brand-500)"></span>
+        <p
+          class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)"
+        >
+          02 · 풀스택 실행
+        </p>
+        <h3 class="mt-3 text-lg font-bold leading-snug text-(--color-ink-900) sm:text-xl">
+          데이터·모델·대시보드·SaaS를 직접 운영합니다.
+        </h3>
+        <p class="mt-3 text-sm leading-relaxed text-(--color-ink-700)">
+          PoC에 그치지 않고 운영 제품 4종을 한 팀에서 직접 가동합니다. 의뢰자가 벤더를 조율할 필요가 없습니다.
+        </p>
+      </article>
+      <article
+        class="lift-on-hover relative flex h-full flex-col overflow-hidden rounded-2xl border border-(--color-ink-200) bg-white p-7 hover:border-(--color-brand-400) sm:p-8"
+      >
+        <span aria-hidden="true" class="absolute inset-x-0 top-0 h-1 bg-(--color-brand-500)"></span>
+        <p
+          class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)"
+        >
+          03 · Trustworthy AI 전문성
+        </p>
+        <h3 class="mt-3 text-lg font-bold leading-snug text-(--color-ink-900) sm:text-xl">
+          결정에 쓸 수 있는 AI를 설계합니다.
+        </h3>
+        <p class="mt-3 text-sm leading-relaxed text-(--color-ink-700)">
+          설명가능 AI(XAI)·불확실성 정량화(UQ) 두 주제로 좁혀, 공공·환경·산업 등 결과의 책임이 따르는 영역의 의사결정을 위한 AI를 설계합니다.
+        </p>
+      </article>
+    </div>
+  </section>
 
-  <section class="container-page py-16 sm:py-24">
+  <section class="container-page pb-16 sm:pb-24">
+    <SectionHeading
+      eyebrow="WHAT WE DO"
+      title="4개 사업 라인."
+      description="데이터에서 SaaS까지 — 네 라인을 한 팀에서 직접 운영합니다."
+    />
+    <ul class="mt-10 grid gap-4 sm:grid-cols-2">
+      {
+        services.map((svc, i) => (
+          <li class="flex h-full items-start gap-4 rounded-xl border border-(--color-ink-200) bg-white p-5 sm:p-6">
+            <span class="shrink-0 rounded-md bg-(--color-ink-50) px-2 py-1 font-mono text-xs font-semibold tracking-[0.08em] text-(--color-brand-700) ring-1 ring-(--color-ink-200)">
+              {String(i + 1).padStart(2, "0")}
+            </span>
+            <div class="min-w-0">
+              <p class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)">
+                {svc.slug}
+              </p>
+              <h3 class="mt-1.5 text-lg font-bold leading-snug text-(--color-ink-900) sm:text-xl">
+                {svc.title.ko}
+              </h3>
+              <p class="mt-2 text-sm leading-relaxed text-(--color-ink-600)">
+                {svc.summary.ko}
+              </p>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="container-page pb-16 sm:pb-24">
+    <SectionHeading
+      eyebrow="RESEARCH"
+      title="SCIE 게재 논문 2편."
+      description="본사 소속으로 SCIE 학술지에 발표한 신뢰가능 AI 방법론입니다."
+    />
+    <div class="mt-10 grid gap-6 md:grid-cols-2">
+      {papers.map((paper) => <ResearchCard paper={paper} lang="ko" />)}
+    </div>
+    <div class="mt-8">
+      <a
+        href="/research/"
+        class="inline-flex items-center gap-1.5 text-sm font-semibold text-(--color-brand-600) hover:text-(--color-brand-700)"
+      >
+        연구 자세히 보기
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-3.5 w-3.5"
+          aria-hidden="true"
+        >
+          <path d="M7 17L17 7"></path>
+          <polyline points="7 7 17 7 17 17"></polyline>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="container-page pb-16 sm:pb-24">
     <div
-      class="rounded-2xl border border-(--color-ink-200) bg-(--color-ink-50) px-8 py-10 sm:px-12 sm:py-12"
+      class="rounded-2xl border border-(--color-ink-200) bg-white px-8 py-10 sm:px-12 sm:py-12"
     >
       <p
         class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)"
       >
-        다음 단계
+        회사정보
       </p>
-      <h2 class="mt-3 text-2xl font-bold tracking-tight text-balance text-(--color-ink-900) sm:text-3xl">
-        사업 라인을 확인하거나, 바로 문의하세요.
+      <h2 class="mt-3 text-2xl font-bold tracking-tight text-(--color-ink-900) sm:text-3xl">
+        한국인공지능 주식회사
       </h2>
-      <div class="mt-6 flex flex-wrap gap-3">
+      <div class="mt-6 h-px w-12 bg-(--color-brand-500)" aria-hidden="true"></div>
+      <dl class="mt-6 grid gap-x-8 gap-y-5 text-sm leading-relaxed text-(--color-ink-700) sm:grid-cols-2 sm:gap-y-6 sm:text-base">
+        <div>
+          <dt class="text-xs font-semibold uppercase tracking-wider text-(--color-ink-500)">
+            법인명
+          </dt>
+          <dd class="mt-1">{company.legalName.ko}</dd>
+        </div>
+        <div>
+          <dt class="text-xs font-semibold uppercase tracking-wider text-(--color-ink-500)">
+            대표이사
+          </dt>
+          <dd class="mt-1">{company.ceo.ko} (HUFS 교수)</dd>
+        </div>
+        <div>
+          <dt class="text-xs font-semibold uppercase tracking-wider text-(--color-ink-500)">
+            사업자등록번호
+          </dt>
+          <dd class="mt-1">{company.bizRegNo}</dd>
+        </div>
+        <div>
+          <dt class="text-xs font-semibold uppercase tracking-wider text-(--color-ink-500)">
+            설립연도
+          </dt>
+          <dd class="mt-1">{company.established}</dd>
+        </div>
+        <div>
+          <dt class="text-xs font-semibold uppercase tracking-wider text-(--color-ink-500)">
+            업태
+          </dt>
+          <dd class="mt-1">{company.bizType.ko}</dd>
+        </div>
+        <div>
+          <dt class="text-xs font-semibold uppercase tracking-wider text-(--color-ink-500)">
+            주소
+          </dt>
+          <dd class="mt-1">{company.address.ko}</dd>
+        </div>
+        <div>
+          <dt class="text-xs font-semibold uppercase tracking-wider text-(--color-ink-500)">
+            이메일
+          </dt>
+          <dd class="mt-1">
+            <a
+              href={`mailto:${company.email}`}
+              class="font-semibold text-(--color-brand-600) hover:text-(--color-brand-700)"
+              >{company.email}</a
+            >
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <PartnersStrip lang="ko" />
+
+  <section class="container-page pt-8 pb-16 sm:pt-12 sm:pb-24">
+    <div
+      class="relative overflow-hidden rounded-2xl border border-l-4 border-(--color-ink-200) border-l-(--color-brand-500) bg-white px-8 py-10 sm:px-12 sm:py-12"
+    >
+      <div aria-hidden="true" class="glow-cta pointer-events-none absolute inset-0 opacity-60"></div>
+      <div class="relative">
+        <p
+          class="text-xs font-semibold uppercase tracking-[0.12em] text-(--color-brand-600)"
+        >
+          다음 단계
+        </p>
+        <h2 class="mt-3 text-2xl font-bold tracking-tight text-balance text-(--color-ink-900) sm:text-3xl">
+          사업 라인을 확인하거나, 바로 문의하세요.
+        </h2>
+        <p class="mt-3 max-w-2xl text-sm leading-relaxed text-(--color-ink-700) sm:text-base">
+          사업 라인 페이지에서 도입 범위를 확인하시거나, 이메일로 PoC 범위 회신을
+          받으실 수 있습니다. 회사 로드맵으로는 2027년까지 환경·공공 도메인의 운영
+          사례를 축적하고, 2028년에는 Homosilicus를 비롯한 제품 매출 비중을 용역
+          매출과 같은 규모로 키우는 것이 다음 단계입니다. 문의 시 1–2 영업일 안에
+          회신합니다.
+        </p>
+        <div class="mt-8 h-px w-full bg-(--color-ink-200)" aria-hidden="true"></div>
+        <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
         <a
           href="/services/"
-          class="inline-flex items-center justify-center rounded-lg bg-(--color-brand-600) px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition duration-200 hover:bg-(--color-brand-700) hover:shadow-md"
+          class="inline-flex w-full items-center justify-center rounded-lg bg-(--color-brand-600) px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition duration-200 hover:bg-(--color-brand-700) hover:shadow-md sm:w-auto"
         >
           서비스 보기
         </a>
         <a
+          href="/research/"
+          class="inline-flex w-full items-center justify-center rounded-lg border border-(--color-ink-200) bg-white px-5 py-2.5 text-sm font-semibold text-(--color-ink-900) transition duration-200 hover:border-(--color-ink-400) sm:w-auto"
+        >
+          연구실적 보기
+        </a>
+        <a
           href="/contact/"
-          class="inline-flex items-center justify-center rounded-lg border border-(--color-ink-200) bg-white px-5 py-2.5 text-sm font-semibold text-(--color-ink-900) transition duration-200 hover:border-(--color-ink-400)"
+          class="inline-flex w-full items-center justify-center rounded-lg border border-(--color-ink-200) bg-white px-5 py-2.5 text-sm font-semibold text-(--color-ink-900) transition duration-200 hover:border-(--color-ink-400) sm:w-auto"
         >
           문의하기
         </a>
+        </div>
       </div>
     </div>
   </section>

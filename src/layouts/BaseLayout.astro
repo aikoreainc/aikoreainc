@@ -29,6 +29,9 @@ const siteOrigin = "https://aikoreainc.com";
 const canonical = new URL(currentPath, siteOrigin).toString();
 const altUrl = new URL(altPath, siteOrigin).toString();
 const ogImage = new URL("/img/logo/wordmark-symbol-blue-ko.png", siteOrigin).toString();
+
+const GA_ID = "G-824905R5KV";
+const isProd = import.meta.env.PROD;
 ---
 
 <!doctype html>
@@ -61,6 +64,25 @@ const ogImage = new URL("/img/logo/wordmark-symbol-blue-ko.png", siteOrigin).toS
     <meta name="twitter:image" content={ogImage} />
 
     <title>{title}</title>
+
+    {
+      isProd && (
+        <>
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          />
+          <script is:inline define:vars={{ GA_ID }}>
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', GA_ID, { anonymize_ip: true });
+            `}
+          </script>
+        </>
+      )
+    }
   </head>
   <body class="flex min-h-screen flex-col">
     <a

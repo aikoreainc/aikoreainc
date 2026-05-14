@@ -67,8 +67,8 @@ export const services: Service[] = [
     slug: "trustworthy-ai",
     title: { ko: "신뢰가능 AI 설계", en: "Trustworthy AI Design" },
     summary: {
-      ko: "학술 IP 그대로, 도입 가능한 메뉴로. J. Cleaner Production 2024·2025 방법론 적용.",
-      en: "Published methods, packaged for adoption — from J. Cleaner Production 2024 and 2025.",
+      ko: "XAI·UQ 컨설팅 라인 — J. Cleaner Production 2024·2025 방법론을 의뢰자 시스템에 도입합니다.",
+      en: "Our XAI and UQ consulting line — J. Cleaner Production 2024 and 2025 methods applied to client systems.",
     },
     description: {
       ko: "정부·공공·산업의 의사결정에 AI를 도입할 때, 결과뿐 아니라 \"왜 그런 결론인지\"를 함께 제시할 수 있도록 모델·평가·보고 체계를 설계합니다. 본사가 SCIE 학술지에 발표한 설명가능 AI(XAI)·불확실성 정량화(UQ) 방법론을 그대로 적용합니다.",
