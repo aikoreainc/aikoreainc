@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SectionHeading from "../../components/SectionHeading.astro";
+import NewsEntry from "../../components/NewsEntry.astro";
+import { getCollection } from "astro:content";
+
+const entries = (await getCollection("newsKo")).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
+---
+
+<BaseLayout
+  title="소식 — 한국인공지능"
+  description="한국인공지능(주)의 최근 연구·협력·제품 소식. 학술지 게재, 협약, 제품 출시 등을 시간순으로 정리합니다."
+>
+  <section class="container-page py-16 sm:py-24">
+    <SectionHeading
+      eyebrow="NEWS"
+      title="소식"
+      description="학술지 게재, 협력 협약, 제품 출시 등 한국인공지능의 최근 활동을 시간 역순으로 정리합니다."
+    />
+
+    <div class="mt-12 sm:mt-16">
+      {
+        entries.map((entry) => (
+          <NewsEntry
+            lang="ko"
+            title={entry.data.title}
+            date={entry.data.date}
+            tags={entry.data.tags}
+            summary={entry.data.summary}
+            details={entry.data.details}
+            link={entry.data.link}
+          />
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

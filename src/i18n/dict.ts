@@ -5,6 +5,7 @@ export const dict = {
     about: { ko: "회사소개", en: "About" },
     services: { ko: "서비스", en: "Services" },
     research: { ko: "연구", en: "Research" },
+    news: { ko: "소식", en: "News" },
     contact: { ko: "문의", en: "Contact" },
   },
   langToggle: {

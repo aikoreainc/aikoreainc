@@ -1,0 +1,194 @@
+---
+import type { Lang } from "../data/company";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const t = {
+  ko: {
+    hub_title: "Trustworthy AI",
+    hub_sub: "연구 기반 · HUFS 교원창업",
+    nodes: [
+      { title: "채용공고 데이터", sub: "데이터 서비스" },
+      { title: "환경 GIS 대시보드", sub: "시각화 · 예측" },
+      { title: "신뢰가능 AI 설계", sub: "컨설팅 · 연구" },
+      { title: "Homosilicus", sub: "자체 B2B SaaS" },
+    ],
+    caption:
+      "4개 사업 라인은 모두 한국인공지능의 신뢰가능 AI 연구를 기반으로 운영됩니다.",
+  },
+  en: {
+    hub_title: "Trustworthy AI",
+    hub_sub: "Research-grounded · HUFS spin-off",
+    nodes: [
+      { title: "Job Posting Data", sub: "Data service" },
+      { title: "Environmental GIS", sub: "Visualization · Forecasting" },
+      { title: "Trustworthy AI Design", sub: "Consulting · Research" },
+      { title: "Homosilicus", sub: "Our B2B SaaS" },
+    ],
+    caption:
+      "Four business lines, all powered by AIKoreaInc's trustworthy-AI research.",
+  },
+}[lang];
+---
+
+<figure class="mx-auto max-w-4xl">
+  <svg
+    viewBox="0 0 800 460"
+    xmlns="http://www.w3.org/2000/svg"
+    role="img"
+    aria-label={t.caption}
+    class="h-auto w-full"
+  >
+    <defs>
+      <linearGradient id="bld-hub-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="var(--color-brand-400)"></stop>
+        <stop offset="100%" stop-color="var(--color-brand-600)"></stop>
+      </linearGradient>
+    </defs>
+
+    <!-- Connecting lines (under cards) -->
+    <g stroke="var(--color-ink-200)" stroke-width="1.5" fill="none">
+      <path d="M 270 90 Q 350 130 380 200"></path>
+      <path d="M 530 90 Q 450 130 420 200"></path>
+      <path d="M 270 370 Q 350 330 380 260"></path>
+      <path d="M 530 370 Q 450 330 420 260"></path>
+    </g>
+
+    <!-- Center hub -->
+    <rect
+      x="280"
+      y="180"
+      width="240"
+      height="100"
+      rx="14"
+      fill="url(#bld-hub-grad)"></rect>
+    <text
+      x="400"
+      y="218"
+      text-anchor="middle"
+      fill="white"
+      font-size="20"
+      font-weight="700"
+      font-family="var(--font-sans)">{t.hub_title}</text>
+    <text
+      x="400"
+      y="246"
+      text-anchor="middle"
+      fill="rgba(255,255,255,0.92)"
+      font-size="13"
+      font-family="var(--font-sans)">{t.hub_sub}</text>
+
+    <!-- Top-left card -->
+    <rect
+      x="50"
+      y="40"
+      width="220"
+      height="100"
+      rx="12"
+      fill="white"
+      stroke="var(--color-ink-200)"
+      stroke-width="1.5"></rect>
+    <text
+      x="160"
+      y="80"
+      text-anchor="middle"
+      fill="var(--color-ink-900)"
+      font-size="16"
+      font-weight="700"
+      font-family="var(--font-sans)">{t.nodes[0].title}</text>
+    <text
+      x="160"
+      y="102"
+      text-anchor="middle"
+      fill="var(--color-ink-500)"
+      font-size="12"
+      font-family="var(--font-sans)">{t.nodes[0].sub}</text>
+
+    <!-- Top-right card -->
+    <rect
+      x="530"
+      y="40"
+      width="220"
+      height="100"
+      rx="12"
+      fill="white"
+      stroke="var(--color-ink-200)"
+      stroke-width="1.5"></rect>
+    <text
+      x="640"
+      y="80"
+      text-anchor="middle"
+      fill="var(--color-ink-900)"
+      font-size="16"
+      font-weight="700"
+      font-family="var(--font-sans)">{t.nodes[1].title}</text>
+    <text
+      x="640"
+      y="102"
+      text-anchor="middle"
+      fill="var(--color-ink-500)"
+      font-size="12"
+      font-family="var(--font-sans)">{t.nodes[1].sub}</text>
+
+    <!-- Bottom-left card -->
+    <rect
+      x="50"
+      y="320"
+      width="220"
+      height="100"
+      rx="12"
+      fill="white"
+      stroke="var(--color-ink-200)"
+      stroke-width="1.5"></rect>
+    <text
+      x="160"
+      y="360"
+      text-anchor="middle"
+      fill="var(--color-ink-900)"
+      font-size="16"
+      font-weight="700"
+      font-family="var(--font-sans)">{t.nodes[2].title}</text>
+    <text
+      x="160"
+      y="382"
+      text-anchor="middle"
+      fill="var(--color-ink-500)"
+      font-size="12"
+      font-family="var(--font-sans)">{t.nodes[2].sub}</text>
+
+    <!-- Bottom-right card -->
+    <rect
+      x="530"
+      y="320"
+      width="220"
+      height="100"
+      rx="12"
+      fill="white"
+      stroke="var(--color-ink-200)"
+      stroke-width="1.5"></rect>
+    <text
+      x="640"
+      y="360"
+      text-anchor="middle"
+      fill="var(--color-ink-900)"
+      font-size="16"
+      font-weight="700"
+      font-family="var(--font-sans)">{t.nodes[3].title}</text>
+    <text
+      x="640"
+      y="382"
+      text-anchor="middle"
+      fill="var(--color-ink-500)"
+      font-size="12"
+      font-family="var(--font-sans)">{t.nodes[3].sub}</text>
+  </svg>
+  <figcaption
+    class="mt-6 text-center text-sm text-(--color-ink-500) sm:text-base"
+  >
+    {t.caption}
+  </figcaption>
+</figure>

@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import SectionHeading from "../../../components/SectionHeading.astro";
+import NewsEntry from "../../../components/NewsEntry.astro";
+import { getCollection } from "astro:content";
+
+const entries = (await getCollection("newsEn")).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
+---
+
+<BaseLayout
+  title="News — AIKoreaInc"
+  description="Recent research publications, partnerships, and product updates from AIKoreaInc."
+  lang="en"
+>
+  <section class="container-page py-16 sm:py-24">
+    <SectionHeading
+      eyebrow="NEWS"
+      title="News"
+      description="Recent publications, partnerships, and product updates from AIKoreaInc, listed newest first."
+    />
+
+    <div class="mt-12 sm:mt-16">
+      {
+        entries.map((entry) => (
+          <NewsEntry
+            lang="en"
+            title={entry.data.title}
+            date={entry.data.date}
+            tags={entry.data.tags}
+            summary={entry.data.summary}
+            details={entry.data.details}
+            link={entry.data.link}
+          />
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>
