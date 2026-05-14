@@ -4,6 +4,7 @@ import SectionHeading from "../../components/SectionHeading.astro";
 import ServiceCard from "../../components/ServiceCard.astro";
 import ResearchCard from "../../components/ResearchCard.astro";
 import BusinessLinesDiagram from "../../components/BusinessLinesDiagram.astro";
+import HeroProcessDiagram from "../../components/HeroProcessDiagram.astro";
 import PartnersStrip from "../../components/PartnersStrip.astro";
 import { services } from "../../data/services";
 import { papers } from "../../data/research";
@@ -82,14 +83,11 @@ const formatDate = (d: Date) =>
           </a>
         </div>
       </div>
-      
-      <div class="mt-16 sm:mt-24 relative max-w-5xl mx-auto">
-        <div class="relative w-full overflow-hidden rounded-2xl shadow-2xl ring-1 ring-(--color-ink-200)">
-          <img src="/img/hero-dashboard-mockup.jpg" alt="Environmental GIS Dashboard Mockup" class="w-full h-auto object-cover" />
-        </div>
-      </div>
     </div>
   </section>
+
+  <!-- Operating process diagram -->
+  <HeroProcessDiagram lang="en" />
 
   <!-- Trust strip -->
   <section class="border-y border-(--color-ink-200) bg-(--color-ink-50)">

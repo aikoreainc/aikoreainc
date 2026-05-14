@@ -27,7 +27,7 @@ export const company = {
     en: "Songdo-dong, Yeonsu-gu, Incheon, Republic of Korea",
   },
   email: "aikoreainc@gmail.com",
-  established: 2024,
+  established: 2022,
   links: {
     homosilicus: "https://homosilicus.github.io",
     professor: "https://donghyunlee-ai.github.io",

@@ -1,0 +1,129 @@
+---
+import type { Lang } from "../data/company";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const t = {
+  ko: {
+    eyebrow: "OPERATING PROCESS",
+    caption: "연구가 운영으로 이어지는 4단계 — 한 팀이 끝까지 책임집니다.",
+    stages: [
+      {
+        num: "01",
+        title: "데이터",
+        sub: "공공·관측·의뢰자 데이터를 한 파이프라인으로 통합합니다.",
+        products: ["JobAI", "공공 API"],
+      },
+      {
+        num: "02",
+        title: "모델·연구",
+        sub: "설명가능 AI(XAI)·불확실성 정량화(UQ)를 학술지 게재 수준으로 검증합니다.",
+        products: ["J. Cleaner Production 2024·2025"],
+      },
+      {
+        num: "03",
+        title: "대시보드",
+        sub: "시·공간 해상도의 의사결정 자산을 상시 운영합니다.",
+        products: ["BirdFluAI", "Air-Report"],
+      },
+      {
+        num: "04",
+        title: "SaaS",
+        sub: "결과물을 자체 B2B 제품으로 패키지화합니다.",
+        products: ["Homosilicus"],
+      },
+    ],
+  },
+  en: {
+    eyebrow: "OPERATING PROCESS",
+    caption: "Four stages from research to production — one team, end-to-end.",
+    stages: [
+      {
+        num: "01",
+        title: "Data",
+        sub: "Public, observation, and client data unified in one pipeline.",
+        products: ["JobAI", "Public APIs"],
+      },
+      {
+        num: "02",
+        title: "Model · Research",
+        sub: "Explainable AI (XAI) and uncertainty quantification (UQ), validated at journal-publication level.",
+        products: ["J. Cleaner Production 2024 · 2025"],
+      },
+      {
+        num: "03",
+        title: "Dashboards",
+        sub: "Spatial-temporal decision assets, operated as always-on services.",
+        products: ["BirdFluAI", "Air-Report"],
+      },
+      {
+        num: "04",
+        title: "SaaS",
+        sub: "Outcomes packaged into our own B2B products.",
+        products: ["Homosilicus"],
+      },
+    ],
+  },
+}[lang];
+---
+
+<section class="container-page pb-16 sm:pb-24" aria-labelledby="process-heading">
+  <div class="mx-auto max-w-6xl">
+    <div class="text-center">
+      <p
+        class="text-xs font-semibold uppercase tracking-[0.14em] text-(--color-brand-600)"
+      >
+        {t.eyebrow}
+      </p>
+      <h2
+        id="process-heading"
+        class="mt-3 text-2xl font-bold leading-snug tracking-tight text-balance text-(--color-ink-900) sm:text-3xl"
+      >
+        {t.caption}
+      </h2>
+    </div>
+
+    <div class="relative mt-14 sm:mt-16">
+      <!-- 데스크톱 전용 연결선: 첫 배지 중심 ~ 마지막 배지 중심 -->
+      <div
+        class="pointer-events-none absolute top-7 hidden border-t border-dashed border-(--color-ink-300) lg:block"
+        style="left: calc(((100% - 3 * var(--spacing) * 8) / 4) / 2); right: calc(((100% - 3 * var(--spacing) * 8) / 4) / 2);"
+        aria-hidden="true"
+      >
+      </div>
+
+      <ol
+        class="relative grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-12 lg:grid-cols-4 lg:gap-8"
+      >
+        {
+          t.stages.map((s) => (
+            <li class="relative flex flex-col items-start">
+              <div
+                class="relative z-10 flex h-14 w-14 items-center justify-center rounded-full bg-white font-mono text-sm font-bold text-(--color-brand-700) shadow-sm ring-2 ring-(--color-brand-200)"
+              >
+                {s.num}
+              </div>
+              <h3 class="mt-6 text-lg font-bold leading-snug text-(--color-ink-900) sm:text-xl">
+                {s.title}
+              </h3>
+              <p class="mt-3 text-sm leading-relaxed text-(--color-ink-600) sm:text-base">
+                {s.sub}
+              </p>
+              <div class="mt-4 flex flex-wrap gap-1.5">
+                {s.products.map((p) => (
+                  <span class="inline-flex items-center rounded-md bg-(--color-ink-50) px-2.5 py-1 text-xs font-medium text-(--color-ink-700) ring-1 ring-inset ring-(--color-ink-200)">
+                    {p}
+                  </span>
+                ))}
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </div>
+</section>
