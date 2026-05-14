@@ -23,3 +23,6 @@ pnpm-debug.log*
 
 # OS
 .DS_Store
+
+# 내부 AI 에이전트 작업물 — 저장소·배포에서 제외
+ai-agent/
