@@ -41,58 +41,64 @@ const formatDate = (d: Date) =>
   description="한국인공지능 주식회사는 SCIE 학술지에 발표한 신뢰가능 AI 방법론을, 데이터·모델·대시보드·SaaS로 한 팀에서 운영하는 HUFS 교원창업 연구 기반 회사입니다."
 >
   <!-- Hero -->
-  <section class="container-page py-24 sm:py-32">
-    <div class="max-w-3xl">
-      <p
-        class="text-sm font-medium uppercase tracking-wider text-(--color-brand-600)"
-      >
-        AI Korea Inc.
-      </p>
-      <h1
-        class="mt-4 text-4xl font-bold tracking-tight text-(--color-ink-900) sm:text-6xl"
-      >
-        신뢰가능 AI를<br />
-        <span class="gradient-text">설계하고 운영합니다.</span>
-      </h1>
-      <p class="mt-8 text-lg leading-relaxed text-(--color-ink-600) sm:text-xl">
-        SCIE 학술지에 발표한 방법론을, <strong class="text-(--color-ink-900)"
-          >데이터·모델·대시보드·SaaS</strong
-        >로 한 팀에서 운영합니다.<br />
-        HUFS 교원창업 연구 기반 회사 — 환경·공공·산업의 의사결정 영역에 적용합니다.
-      </p>
-      <div class="mt-10 flex flex-wrap gap-4">
-        <a
-          href="/services/"
-          class="rounded-lg bg-(--color-brand-600) px-6 py-3 text-sm font-semibold text-white transition hover:bg-(--color-brand-700)"
+  <section class="relative overflow-hidden">
+    <div
+      class="glow-hero pointer-events-none absolute inset-x-0 top-0 -z-10"
+      aria-hidden="true"
+    ></div>
+    <div class="container-page py-24 sm:py-32">
+      <div class="max-w-3xl">
+        <p
+          class="text-xs font-semibold uppercase tracking-[0.14em] text-(--color-brand-600)"
         >
-          서비스 보기
-        </a>
-        <a
-          href="/contact/"
-          class="rounded-lg border border-(--color-ink-200) px-6 py-3 text-sm font-semibold text-(--color-ink-900) transition hover:border-(--color-ink-400)"
+          AI Korea Inc.
+        </p>
+        <h1
+          class="mt-5 text-4xl font-bold leading-[1.1] tracking-tight text-balance text-(--color-ink-900) sm:text-6xl sm:leading-[1.05]"
         >
-          문의하기
-        </a>
+          신뢰가능 AI를<br />
+          <span class="gradient-text">설계하고 운영합니다.</span>
+        </h1>
+        <p class="mt-8 max-w-2xl text-lg leading-relaxed text-(--color-ink-600) sm:text-xl">
+          SCIE 학술지에 발표한 방법론을, <strong class="text-(--color-ink-900)"
+            >데이터·모델·대시보드·SaaS</strong
+          >로 한 팀에서 운영합니다.<br />
+          HUFS 교원창업 연구 기반 회사 — 환경·공공·산업의 의사결정 영역에 적용합니다.
+        </p>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <a
+            href="/services/"
+            class="inline-flex items-center justify-center rounded-lg bg-(--color-brand-600) px-6 py-3 text-sm font-semibold text-white shadow-sm transition duration-200 hover:bg-(--color-brand-700) hover:shadow-md"
+          >
+            서비스 보기
+          </a>
+          <a
+            href="/contact/"
+            class="inline-flex items-center justify-center rounded-lg border border-(--color-ink-200) bg-white px-6 py-3 text-sm font-semibold text-(--color-ink-900) transition duration-200 hover:border-(--color-ink-400) hover:bg-(--color-ink-50)"
+          >
+            문의하기
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Trust strip -->
   <section class="border-y border-(--color-ink-200) bg-(--color-ink-50)">
-    <div class="container-page py-8">
+    <div class="container-page py-6 sm:py-8">
       <ul
-        class="flex flex-wrap items-center justify-between gap-x-8 gap-y-3 text-sm text-(--color-ink-600)"
+        class="grid grid-cols-2 gap-x-6 gap-y-3 text-sm text-(--color-ink-600) sm:grid-cols-4 sm:divide-x sm:divide-(--color-ink-200)"
       >
-        <li>
+        <li class="sm:px-6 sm:first:pl-0">
           <span class="font-semibold text-(--color-ink-900)">HUFS</span> 교원창업
         </li>
-        <li>
+        <li class="sm:px-6">
           <span class="font-semibold text-(--color-ink-900)">SCIE 논문</span> 2편
         </li>
-        <li>
+        <li class="sm:px-6">
           <span class="font-semibold text-(--color-ink-900)">협력기관</span> 7곳
         </li>
-        <li>
+        <li class="sm:px-6 sm:last:pr-0">
           <span class="font-semibold text-(--color-ink-900)">풀스택</span> 운영
         </li>
       </ul>
@@ -100,29 +106,29 @@ const formatDate = (d: Date) =>
   </section>
 
   <!-- Recent news -->
-  <section class="container-page py-20 sm:py-24">
+  <section class="container-page py-16 sm:py-24">
     <div class="flex items-end justify-between gap-6">
       <SectionHeading eyebrow="RECENT" title="최근 소식" />
       <a
         href="/news/"
-        class="hidden shrink-0 text-sm font-semibold text-(--color-brand-600) hover:text-(--color-brand-700) sm:inline"
+        class="hidden shrink-0 text-sm font-semibold text-(--color-brand-600) transition-colors hover:text-(--color-brand-700) sm:inline"
         >전체 소식 →</a
       >
     </div>
-    <div class="mt-10 grid gap-4 md:grid-cols-3">
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
       {
         recentNews.map((entry) => (
-          <article class="rounded-2xl border border-(--color-ink-200) bg-white p-6 transition hover:border-(--color-brand-400)">
+          <article class="lift-on-hover flex flex-col rounded-2xl border border-(--color-ink-200) bg-white p-6 hover:-translate-y-0.5 hover:border-(--color-brand-400)">
             <time
               datetime={entry.data.date.toISOString().slice(0, 10)}
-              class="text-xs font-semibold uppercase tracking-wider text-(--color-ink-500)"
+              class="text-xs font-semibold uppercase tracking-[0.1em] text-(--color-ink-500)"
             >
               {formatDate(entry.data.date)}
             </time>
-            <h3 class="mt-3 text-base font-bold leading-snug text-(--color-ink-900)">
+            <h3 class="mt-3 text-lg font-bold leading-snug text-(--color-ink-900)">
               {entry.data.title}
             </h3>
-            <p class="mt-2 text-sm leading-relaxed text-(--color-ink-600)">
+            <p class="mt-3 text-sm leading-relaxed text-(--color-ink-600)">
               {entry.data.summary}
             </p>
           </article>
@@ -131,13 +137,13 @@ const formatDate = (d: Date) =>
     </div>
     <a
       href="/news/"
-      class="mt-6 inline-block text-sm font-semibold text-(--color-brand-600) hover:text-(--color-brand-700) sm:hidden"
+      class="mt-8 inline-block text-sm font-semibold text-(--color-brand-600) hover:text-(--color-brand-700) sm:hidden"
       >전체 소식 →</a
     >
   </section>
 
   <!-- Business lines diagram + services -->
-  <section class="container-page pb-24 sm:pb-32">
+  <section class="container-page pb-16 sm:pb-24">
     <SectionHeading
       eyebrow="SERVICES"
       title="환경·공공·산업의 의사결정을 신뢰가능 AI로 운영합니다."
@@ -146,7 +152,7 @@ const formatDate = (d: Date) =>
     <div class="mt-12 sm:mt-16">
       <BusinessLinesDiagram lang="ko" />
     </div>
-    <div class="mt-16 grid gap-6 md:grid-cols-2">
+    <div class="mt-16 grid gap-6 md:grid-cols-2 md:items-stretch">
       {services.map((service) => <ServiceCard service={service} lang="ko" />)}
     </div>
   </section>
@@ -155,25 +161,29 @@ const formatDate = (d: Date) =>
   <PartnersStrip lang="ko" />
 
   <!-- Why us -->
-  <section class="bg-(--color-ink-900) text-white">
-    <div class="container-page py-24 sm:py-32">
+  <section class="relative overflow-hidden bg-(--color-ink-900) text-white">
+    <div
+      class="glow-dark pointer-events-none absolute inset-0 -z-0"
+      aria-hidden="true"
+    ></div>
+    <div class="container-page relative py-24 sm:py-32">
       <p
-        class="text-xs font-semibold uppercase tracking-wider text-(--color-brand-400)"
+        class="text-xs font-semibold uppercase tracking-[0.14em] text-(--color-brand-400)"
       >
         WHY US
       </p>
-      <h2 class="mt-3 max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">
+      <h2 class="mt-3 max-w-2xl text-3xl font-bold leading-[1.15] tracking-tight text-balance sm:text-4xl">
         세 가지 차별 — 연구·풀스택·Trustworthy AI.
       </h2>
-      <div class="mt-12 grid gap-8 md:grid-cols-3">
+      <div class="mt-14 grid gap-8 md:grid-cols-3 md:gap-10">
         {
           differentiators.map((d, i) => (
-            <div>
-              <p class="text-xs font-semibold tracking-wider text-(--color-brand-400)">
+            <div class="relative">
+              <p class="font-mono text-sm font-semibold tracking-[0.08em] text-(--color-brand-400)">
                 0{i + 1}
               </p>
-              <h3 class="mt-3 text-lg font-bold sm:text-xl">{d.title}</h3>
-              <p class="mt-3 text-sm leading-relaxed text-(--color-ink-300) sm:text-base">
+              <h3 class="mt-3 text-lg font-bold leading-snug text-white sm:text-xl">{d.title}</h3>
+              <p class="mt-3 text-sm leading-relaxed text-(--color-ink-200) sm:text-base">
                 {d.body}
               </p>
             </div>
@@ -190,13 +200,13 @@ const formatDate = (d: Date) =>
       title="학술지 게재 방법론을 그대로 운영합니다."
       description="한국인공지능 소속으로 J. Cleaner Production에 발표한 SCIE 논문 2편 — 같은 방법론이 컨설팅·대시보드·SaaS에 적용됩니다."
     />
-    <div class="mt-12 grid gap-6">
+    <div class="mt-12 grid gap-6 md:grid-cols-2 md:items-stretch">
       {papers.map((paper) => <ResearchCard paper={paper} lang="ko" />)}
     </div>
     <div class="mt-10">
       <a
         href="/research/"
-        class="inline-flex items-center gap-1.5 text-sm font-semibold text-(--color-brand-600) hover:text-(--color-brand-700)"
+        class="inline-flex items-center gap-1.5 text-sm font-semibold text-(--color-brand-600) transition-colors hover:text-(--color-brand-700)"
       >
         모든 연구실적 보기 →
       </a>
@@ -206,20 +216,26 @@ const formatDate = (d: Date) =>
   <!-- CTA -->
   <section class="container-page pb-24 sm:pb-32">
     <div
-      class="rounded-3xl bg-(--color-brand-600) px-8 py-14 text-white sm:px-14 sm:py-20"
+      class="relative overflow-hidden rounded-3xl bg-(--color-brand-600) px-8 py-14 text-white sm:px-14 sm:py-20"
     >
-      <h2 class="max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">
-        AI 도입의 데이터·모델·대시보드를 한 팀에서 운영합니다. 의뢰 범위는 함께 정하면 됩니다.
-      </h2>
-      <p class="mt-4 max-w-2xl text-base leading-relaxed text-(--color-brand-50) sm:text-lg">
-        의뢰 범위·일정·예산은 함께 정하면 됩니다. 1~2 영업일 안에 회신합니다.
-      </p>
-      <a
-        href="/contact/"
-        class="mt-8 inline-block rounded-lg bg-white px-6 py-3 text-sm font-semibold text-(--color-brand-700) transition hover:bg-(--color-brand-50)"
-      >
-        문의하기
-      </a>
+      <div
+        class="glow-cta pointer-events-none absolute inset-0"
+        aria-hidden="true"
+      ></div>
+      <div class="relative">
+        <h2 class="max-w-3xl text-3xl font-bold leading-[1.15] tracking-tight text-balance sm:text-4xl">
+          AI 도입의 데이터·모델·대시보드를 한 팀에서 운영합니다. 의뢰 범위는 함께 정하면 됩니다.
+        </h2>
+        <p class="mt-5 max-w-2xl text-base leading-relaxed text-(--color-brand-50) sm:text-lg">
+          의뢰 범위·일정·예산은 함께 정하면 됩니다. 1~2 영업일 안에 회신합니다.
+        </p>
+        <a
+          href="/contact/"
+          class="mt-8 inline-flex items-center justify-center rounded-lg bg-white px-6 py-3 text-sm font-semibold text-(--color-brand-700) shadow-sm transition duration-200 hover:bg-(--color-brand-50) hover:shadow-md"
+        >
+          문의하기
+        </a>
+      </div>
     </div>
   </section>
 </BaseLayout>

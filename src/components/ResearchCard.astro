@@ -13,11 +13,11 @@ const readDoi = lang === "ko" ? "DOI로 이동" : "View on DOI";
 ---
 
 <article
-  class="rounded-2xl border border-(--color-ink-200) bg-white p-7 sm:p-8"
+  class="lift-on-hover flex h-full flex-col rounded-2xl border border-(--color-ink-200) bg-white p-7 hover:border-(--color-brand-400) sm:p-8"
 >
   <div class="flex flex-wrap items-center gap-2">
     <span
-      class="rounded-full bg-(--color-brand-50) px-2.5 py-1 text-xs font-semibold tracking-wider text-(--color-brand-700)"
+      class="rounded-full bg-(--color-brand-50) px-2.5 py-1 text-xs font-semibold tracking-[0.08em] text-(--color-brand-700)"
     >
       {paper.year}
     </span>

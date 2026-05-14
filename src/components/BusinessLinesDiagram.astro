@@ -41,6 +41,7 @@ const t = {
     xmlns="http://www.w3.org/2000/svg"
     role="img"
     aria-label={t.caption}
+    preserveAspectRatio="xMidYMid meet"
     class="h-auto w-full"
   >
     <defs>
@@ -48,10 +49,13 @@ const t = {
         <stop offset="0%" stop-color="var(--color-brand-400)"></stop>
         <stop offset="100%" stop-color="var(--color-brand-600)"></stop>
       </linearGradient>
+      <filter id="bld-hub-shadow" x="-10%" y="-10%" width="120%" height="120%">
+        <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="var(--color-brand-600)" flood-opacity="0.18"></feDropShadow>
+      </filter>
     </defs>
 
     <!-- Connecting lines (under cards) -->
-    <g stroke="var(--color-ink-200)" stroke-width="1.5" fill="none">
+    <g stroke="var(--color-ink-300)" stroke-width="1.5" fill="none" stroke-linecap="round">
       <path d="M 270 90 Q 350 130 380 200"></path>
       <path d="M 530 90 Q 450 130 420 200"></path>
       <path d="M 270 370 Q 350 330 380 260"></path>
@@ -64,8 +68,9 @@ const t = {
       y="180"
       width="240"
       height="100"
-      rx="14"
-      fill="url(#bld-hub-grad)"></rect>
+      rx="16"
+      fill="url(#bld-hub-grad)"
+      filter="url(#bld-hub-shadow)"></rect>
     <text
       x="400"
       y="218"

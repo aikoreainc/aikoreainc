@@ -49,6 +49,19 @@
   }
 }
 
+@layer base {
+  :focus-visible {
+    outline: 2px solid var(--color-brand-500);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: var(--color-brand-100);
+    color: var(--color-brand-900);
+  }
+}
+
 @layer components {
   .container-page {
     margin-inline: auto;
@@ -65,5 +78,39 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-brand-600);
+  }
+
+  /* Soft brand glow for hero / CTA / dark sections — uses brand tokens only */
+  .glow-hero {
+    height: 32rem;
+    background:
+      radial-gradient(ellipse at top left, color-mix(in oklab, var(--color-brand-400) 14%, transparent), transparent 55%),
+      radial-gradient(ellipse at top right, color-mix(in oklab, var(--color-brand-600) 10%, transparent), transparent 60%);
+  }
+  .glow-dark {
+    background:
+      radial-gradient(ellipse at top right, color-mix(in oklab, var(--color-brand-400) 14%, transparent), transparent 55%),
+      radial-gradient(ellipse at bottom left, color-mix(in oklab, var(--color-brand-600) 18%, transparent), transparent 60%);
+  }
+  .glow-cta {
+    background:
+      radial-gradient(ellipse at top right, color-mix(in oklab, var(--color-brand-400) 28%, transparent), transparent 55%);
+  }
+
+  /* Soft card lift shadow on hover — neutral ink token */
+  .lift-on-hover {
+    transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+  }
+  .lift-on-hover:hover {
+    box-shadow: 0 10px 30px -12px color-mix(in oklab, var(--color-ink-900) 14%, transparent);
   }
 }

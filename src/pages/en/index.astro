@@ -42,60 +42,66 @@ const formatDate = (d: Date) =>
   lang="en"
 >
   <!-- Hero -->
-  <section class="container-page py-24 sm:py-32">
-    <div class="max-w-3xl">
-      <p
-        class="text-sm font-medium uppercase tracking-wider text-(--color-brand-600)"
-      >
-        AI Korea Inc.
-      </p>
-      <h1
-        class="mt-4 text-4xl font-bold tracking-tight text-(--color-ink-900) sm:text-6xl"
-      >
-        Trustworthy AI,<br />
-        <span class="gradient-text">built on research.</span>
-      </h1>
-      <p class="mt-8 text-lg leading-relaxed text-(--color-ink-600) sm:text-xl">
-        Designed and operated by a HUFS faculty-founded company — end-to-end
-        across <strong class="text-(--color-ink-900)"
-          >data, models, dashboards, and SaaS</strong
-        >.<br />
-        Built for environmental, public, and industrial decisions that require accountability.
-      </p>
-      <div class="mt-10 flex flex-wrap gap-4">
-        <a
-          href="/en/services/"
-          class="rounded-lg bg-(--color-brand-600) px-6 py-3 text-sm font-semibold text-white transition hover:bg-(--color-brand-700)"
+  <section class="relative overflow-hidden">
+    <div
+      class="glow-hero pointer-events-none absolute inset-x-0 top-0 -z-10"
+      aria-hidden="true"
+    ></div>
+    <div class="container-page py-24 sm:py-32">
+      <div class="max-w-3xl">
+        <p
+          class="text-xs font-semibold uppercase tracking-[0.14em] text-(--color-brand-600)"
         >
-          View services
-        </a>
-        <a
-          href="/en/contact/"
-          class="rounded-lg border border-(--color-ink-200) px-6 py-3 text-sm font-semibold text-(--color-ink-900) transition hover:border-(--color-ink-400)"
+          AI Korea Inc.
+        </p>
+        <h1
+          class="mt-5 text-4xl font-bold leading-[1.1] tracking-tight text-balance text-(--color-ink-900) sm:text-6xl sm:leading-[1.05]"
         >
-          Contact us
-        </a>
+          Trustworthy AI,<br />
+          <span class="gradient-text">built on research.</span>
+        </h1>
+        <p class="mt-8 max-w-2xl text-lg leading-relaxed text-(--color-ink-600) sm:text-xl">
+          Designed and operated by a HUFS faculty-founded company — end-to-end
+          across <strong class="text-(--color-ink-900)"
+            >data, models, dashboards, and SaaS</strong
+          >.<br />
+          Built for environmental, public, and industrial decisions that require accountability.
+        </p>
+        <div class="mt-10 flex flex-wrap gap-3">
+          <a
+            href="/en/services/"
+            class="inline-flex items-center justify-center rounded-lg bg-(--color-brand-600) px-6 py-3 text-sm font-semibold text-white shadow-sm transition duration-200 hover:bg-(--color-brand-700) hover:shadow-md"
+          >
+            View services
+          </a>
+          <a
+            href="/en/contact/"
+            class="inline-flex items-center justify-center rounded-lg border border-(--color-ink-200) bg-white px-6 py-3 text-sm font-semibold text-(--color-ink-900) transition duration-200 hover:border-(--color-ink-400) hover:bg-(--color-ink-50)"
+          >
+            Contact us
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Trust strip -->
   <section class="border-y border-(--color-ink-200) bg-(--color-ink-50)">
-    <div class="container-page py-8">
+    <div class="container-page py-6 sm:py-8">
       <ul
-        class="flex flex-wrap items-center justify-between gap-x-8 gap-y-3 text-sm text-(--color-ink-600)"
+        class="grid grid-cols-2 gap-x-6 gap-y-3 text-sm text-(--color-ink-600) sm:grid-cols-4 sm:divide-x sm:divide-(--color-ink-200)"
       >
-        <li>
+        <li class="sm:px-6 sm:first:pl-0">
           <span class="font-semibold text-(--color-ink-900)">HUFS</span> faculty-founded
         </li>
-        <li>
+        <li class="sm:px-6">
           <span class="font-semibold text-(--color-ink-900)">2 SCIE</span> papers
         </li>
-        <li>
+        <li class="sm:px-6">
           <span class="font-semibold text-(--color-ink-900)">7</span> institutional
           partners
         </li>
-        <li>
+        <li class="sm:px-6 sm:last:pr-0">
           <span class="font-semibold text-(--color-ink-900)">End-to-end</span> stack
         </li>
       </ul>
@@ -103,29 +109,29 @@ const formatDate = (d: Date) =>
   </section>
 
   <!-- Recent news -->
-  <section class="container-page py-20 sm:py-24">
+  <section class="container-page py-16 sm:py-24">
     <div class="flex items-end justify-between gap-6">
       <SectionHeading eyebrow="RECENT" title="Latest" />
       <a
         href="/en/news/"
-        class="hidden shrink-0 text-sm font-semibold text-(--color-brand-600) hover:text-(--color-brand-700) sm:inline"
+        class="hidden shrink-0 text-sm font-semibold text-(--color-brand-600) transition-colors hover:text-(--color-brand-700) sm:inline"
         >All news →</a
       >
     </div>
-    <div class="mt-10 grid gap-4 md:grid-cols-3">
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
       {
         recentNews.map((entry) => (
-          <article class="rounded-2xl border border-(--color-ink-200) bg-white p-6 transition hover:border-(--color-brand-400)">
+          <article class="lift-on-hover flex flex-col rounded-2xl border border-(--color-ink-200) bg-white p-6 hover:-translate-y-0.5 hover:border-(--color-brand-400)">
             <time
               datetime={entry.data.date.toISOString().slice(0, 10)}
-              class="text-xs font-semibold uppercase tracking-wider text-(--color-ink-500)"
+              class="text-xs font-semibold uppercase tracking-[0.1em] text-(--color-ink-500)"
             >
               {formatDate(entry.data.date)}
             </time>
-            <h3 class="mt-3 text-base font-bold leading-snug text-(--color-ink-900)">
+            <h3 class="mt-3 text-lg font-bold leading-snug text-(--color-ink-900)">
               {entry.data.title}
             </h3>
-            <p class="mt-2 text-sm leading-relaxed text-(--color-ink-600)">
+            <p class="mt-3 text-sm leading-relaxed text-(--color-ink-600)">
               {entry.data.summary}
             </p>
           </article>
@@ -134,13 +140,13 @@ const formatDate = (d: Date) =>
     </div>
     <a
       href="/en/news/"
-      class="mt-6 inline-block text-sm font-semibold text-(--color-brand-600) hover:text-(--color-brand-700) sm:hidden"
+      class="mt-8 inline-block text-sm font-semibold text-(--color-brand-600) hover:text-(--color-brand-700) sm:hidden"
       >All news →</a
     >
   </section>
 
   <!-- Business lines diagram + services -->
-  <section class="container-page pb-24 sm:pb-32">
+  <section class="container-page pb-16 sm:pb-24">
     <SectionHeading
       eyebrow="SERVICES"
       title="Trustworthy AI for environmental, public, and industrial decisions."
@@ -149,7 +155,7 @@ const formatDate = (d: Date) =>
     <div class="mt-12 sm:mt-16">
       <BusinessLinesDiagram lang="en" />
     </div>
-    <div class="mt-16 grid gap-6 md:grid-cols-2">
+    <div class="mt-16 grid gap-6 md:grid-cols-2 md:items-stretch">
       {services.map((service) => <ServiceCard service={service} lang="en" />)}
     </div>
   </section>
@@ -158,25 +164,29 @@ const formatDate = (d: Date) =>
   <PartnersStrip lang="en" />
 
   <!-- Why us -->
-  <section class="bg-(--color-ink-900) text-white">
-    <div class="container-page py-24 sm:py-32">
+  <section class="relative overflow-hidden bg-(--color-ink-900) text-white">
+    <div
+      class="glow-dark pointer-events-none absolute inset-0 -z-0"
+      aria-hidden="true"
+    ></div>
+    <div class="container-page relative py-24 sm:py-32">
       <p
-        class="text-xs font-semibold uppercase tracking-wider text-(--color-brand-400)"
+        class="text-xs font-semibold uppercase tracking-[0.14em] text-(--color-brand-400)"
       >
         WHY US
       </p>
-      <h2 class="mt-3 max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">
+      <h2 class="mt-3 max-w-2xl text-3xl font-bold leading-[1.15] tracking-tight text-balance sm:text-4xl">
         Three differences — research, full-stack, Trustworthy AI.
       </h2>
-      <div class="mt-12 grid gap-8 md:grid-cols-3">
+      <div class="mt-14 grid gap-8 md:grid-cols-3 md:gap-10">
         {
           differentiators.map((d, i) => (
-            <div>
-              <p class="text-xs font-semibold tracking-wider text-(--color-brand-400)">
+            <div class="relative">
+              <p class="font-mono text-sm font-semibold tracking-[0.08em] text-(--color-brand-400)">
                 0{i + 1}
               </p>
-              <h3 class="mt-3 text-lg font-bold sm:text-xl">{d.title}</h3>
-              <p class="mt-3 text-sm leading-relaxed text-(--color-ink-300) sm:text-base">
+              <h3 class="mt-3 text-lg font-bold leading-snug text-white sm:text-xl">{d.title}</h3>
+              <p class="mt-3 text-sm leading-relaxed text-(--color-ink-200) sm:text-base">
                 {d.body}
               </p>
             </div>
@@ -193,13 +203,13 @@ const formatDate = (d: Date) =>
       title="The methods we publish are the methods we ship."
       description="Two SCIE papers in J. Cleaner Production, authored under AI Korea Inc. affiliation — the same methods power our consulting, dashboards, and SaaS."
     />
-    <div class="mt-12 grid gap-6">
+    <div class="mt-12 grid gap-6 md:grid-cols-2 md:items-stretch">
       {papers.map((paper) => <ResearchCard paper={paper} lang="en" />)}
     </div>
     <div class="mt-10">
       <a
         href="/en/research/"
-        class="inline-flex items-center gap-1.5 text-sm font-semibold text-(--color-brand-600) hover:text-(--color-brand-700)"
+        class="inline-flex items-center gap-1.5 text-sm font-semibold text-(--color-brand-600) transition-colors hover:text-(--color-brand-700)"
       >
         See all research →
       </a>
@@ -209,21 +219,27 @@ const formatDate = (d: Date) =>
   <!-- CTA -->
   <section class="container-page pb-24 sm:pb-32">
     <div
-      class="rounded-3xl bg-(--color-brand-600) px-8 py-14 text-white sm:px-14 sm:py-20"
+      class="relative overflow-hidden rounded-3xl bg-(--color-brand-600) px-8 py-14 text-white sm:px-14 sm:py-20"
     >
-      <h2 class="max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">
-        We operate the full AI stack — data, models, and dashboards — as one team. Scope can be defined together.
-      </h2>
-      <p class="mt-4 max-w-2xl text-base leading-relaxed text-(--color-brand-50) sm:text-lg">
-        Scope, timing, and budget can be defined together. We reply within 1–2
-        business days.
-      </p>
-      <a
-        href="/en/contact/"
-        class="mt-8 inline-block rounded-lg bg-white px-6 py-3 text-sm font-semibold text-(--color-brand-700) transition hover:bg-(--color-brand-50)"
-      >
-        Get in touch
-      </a>
+      <div
+        class="glow-cta pointer-events-none absolute inset-0"
+        aria-hidden="true"
+      ></div>
+      <div class="relative">
+        <h2 class="max-w-3xl text-3xl font-bold leading-[1.15] tracking-tight text-balance sm:text-4xl">
+          We operate the full AI stack — data, models, and dashboards — as one team. Scope can be defined together.
+        </h2>
+        <p class="mt-5 max-w-2xl text-base leading-relaxed text-(--color-brand-50) sm:text-lg">
+          Scope, timing, and budget can be defined together. We reply within 1–2
+          business days.
+        </p>
+        <a
+          href="/en/contact/"
+          class="mt-8 inline-flex items-center justify-center rounded-lg bg-white px-6 py-3 text-sm font-semibold text-(--color-brand-700) shadow-sm transition duration-200 hover:bg-(--color-brand-50) hover:shadow-md"
+        >
+          Get in touch
+        </a>
+      </div>
     </div>
   </section>
 </BaseLayout>

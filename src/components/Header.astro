@@ -28,7 +28,7 @@ const langTogglePath = (() => {
 ---
 
 <header
-  class="sticky top-0 z-40 w-full border-b border-(--color-ink-100) bg-white/80 backdrop-blur-md"
+  class="sticky top-0 z-40 w-full border-b border-(--color-ink-100)/80 bg-white/85 backdrop-blur-md supports-[backdrop-filter]:bg-white/70"
 >
   <div
     class="container-page flex h-16 items-center justify-between gap-8 sm:h-20"
@@ -46,7 +46,7 @@ const langTogglePath = (() => {
     </a>
 
     <nav
-      class="hidden items-center gap-8 md:flex"
+      class="hidden items-center gap-1 md:flex"
       aria-label={lang === "ko" ? "주메뉴" : "Primary"}
     >
       {
@@ -58,10 +58,10 @@ const langTogglePath = (() => {
             <a
               href={href}
               class:list={[
-                "text-sm font-medium transition-colors",
+                "relative rounded-md px-3 py-2 text-sm font-medium transition-colors",
                 isActive
                   ? "text-(--color-brand-600)"
-                  : "text-(--color-ink-700) hover:text-(--color-ink-900)",
+                  : "text-(--color-ink-700) hover:bg-(--color-ink-50) hover:text-(--color-ink-900)",
               ]}
               aria-current={isActive ? "page" : undefined}
             >
@@ -108,8 +108,9 @@ const langTogglePath = (() => {
   </div>
 
   <div
-    class="hidden border-t border-(--color-ink-100) md:hidden"
+    class="border-t border-(--color-ink-100) md:!hidden"
     data-mobile-nav
+    hidden
   >
     <nav class="container-page flex flex-col py-4">
       {
@@ -131,7 +132,19 @@ const langTogglePath = (() => {
     "[data-mobile-nav-toggle]",
   );
   const panel = document.querySelector<HTMLElement>("[data-mobile-nav]");
-  toggle?.addEventListener("click", () => {
-    panel?.classList.toggle("hidden");
-  });
+  if (toggle && panel) {
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-controls", "mobile-nav-panel");
+    panel.id = "mobile-nav-panel";
+    toggle.addEventListener("click", () => {
+      const open = panel.hasAttribute("hidden");
+      if (open) {
+        panel.removeAttribute("hidden");
+        toggle.setAttribute("aria-expanded", "true");
+      } else {
+        panel.setAttribute("hidden", "");
+        toggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
 </script>
