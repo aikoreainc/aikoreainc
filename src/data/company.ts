@@ -35,6 +35,6 @@ export const company = {
 } as const;
 
 export const tagline = {
-  ko: "신뢰가능 AI를 설계하고 운영하는 연구 기반 회사",
+  ko: "신뢰가능 AI를 설계하고 운영합니다.",
   en: "Trustworthy AI, built on research.",
 } as const;

@@ -29,8 +29,8 @@ export const dict = {
     },
   },
   hero: {
-    cta_primary: { ko: "서비스 보기", en: "Our services" },
-    cta_secondary: { ko: "문의하기", en: "Get in touch" },
+    cta_primary: { ko: "서비스 보기", en: "View services" },
+    cta_secondary: { ko: "문의하기", en: "Contact us" },
   },
 } as const;
 

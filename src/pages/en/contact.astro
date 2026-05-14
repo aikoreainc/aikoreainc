@@ -12,8 +12,8 @@ import { company } from "../../data/company";
   <section class="container-page py-16 sm:py-24">
     <SectionHeading
       eyebrow="CONTACT"
-      title="Let's talk"
-      description="Consulting, data and dashboard work, SaaS adoption, government and public-sector collaboration, research partnerships — all welcome."
+      title="Please reach out."
+      description="AI adoption, environmental GIS dashboards, data delivery, or joint research — all welcome. We reply within 1–2 business days."
     />
 
     <div class="mt-12 grid gap-8 sm:mt-16 md:grid-cols-[1.2fr_1fr]">
@@ -34,7 +34,8 @@ import { company } from "../../data/company";
           </a>
         </h3>
         <p class="mt-4 text-sm leading-relaxed text-(--color-ink-600) sm:text-base">
-          We typically reply within 1–2 business days. Adding a tag such as
+          We reply within 1–2 business days. Scope, timing, and budget can be
+          defined together. Adding a tag such as
           <strong class="text-(--color-ink-900)">[Inquiry]</strong>
           or the business line (e.g. <em class="not-italic">[Homosilicus]</em>)
           to the subject helps us route it quickly.
@@ -43,7 +44,7 @@ import { company } from "../../data/company";
           href={`mailto:${company.email}`}
           class="mt-6 inline-block rounded-lg bg-(--color-brand-600) px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-(--color-brand-700)"
         >
-          Write an email
+          Get in touch
         </a>
       </article>
 
@@ -77,6 +78,10 @@ import { company } from "../../data/company";
           <div>
             <dt>Address</dt>
             <dd>{company.address.en}</dd>
+          </div>
+          <div>
+            <dt>Email</dt>
+            <dd>{company.email}</dd>
           </div>
         </dl>
       </article>

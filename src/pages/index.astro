@@ -15,16 +15,16 @@ const recentNews = (await getCollection("newsKo"))
 
 const differentiators = [
   {
-    title: "연구 기반 신뢰성",
-    body: "HUFS 교수 창업 · SCI 학술지 게재 방법론을 그대로 적용합니다.",
+    title: "학술지 게재 방법론을 그대로 운영합니다.",
+    body: "HUFS 교원창업기업으로, J. Cleaner Production 2024·2025에 발표한 신뢰가능 AI 방법론을 사업에 그대로 적용합니다.",
   },
   {
-    title: "풀스택 실행",
-    body: "데이터 수집·모델·대시보드·SaaS까지 직접 운영합니다.",
+    title: "데이터·모델·대시보드·SaaS를 직접 운영합니다.",
+    body: "JobAI, BirdFluAI, Air-Report, Homosilicus — 4개 라인을 한 팀 안에서 운영합니다. 외부 벤더를 조율할 필요가 없습니다.",
   },
   {
-    title: "Trustworthy AI",
-    body: "설명가능 AI와 불확실성 정량화로 근거 있는 의사결정을 지원합니다.",
+    title: "결정에 쓸 수 있는 AI를 설계합니다.",
+    body: "설명가능 AI(XAI)와 불확실성 정량화(UQ)로, 의사결정 책임이 따르는 정부·공공·산업 영역에 맞춰 모델·평가·보고 체계를 설계합니다.",
   },
 ];
 
@@ -38,7 +38,7 @@ const formatDate = (d: Date) =>
 
 <BaseLayout
   title="한국인공지능 — 신뢰가능 AI 연구 기반 회사"
-  description="한국인공지능(주)은 신뢰가능 AI를 설계하고 운영하는 교수 창업 연구 기반 회사입니다. 환경·공공·산업의 데이터 난제를 데이터·모델·대시보드·SaaS로 풀어냅니다."
+  description="한국인공지능(주)은 SCIE 학술지에 발표한 신뢰가능 AI 방법론을, 데이터·모델·대시보드·SaaS로 한 팀에서 운영하는 HUFS 교원창업 연구 기반 회사입니다."
 >
   <!-- Hero -->
   <section class="container-page py-24 sm:py-32">
@@ -55,10 +55,10 @@ const formatDate = (d: Date) =>
         <span class="gradient-text">설계하고 운영합니다.</span>
       </h1>
       <p class="mt-8 text-lg leading-relaxed text-(--color-ink-600) sm:text-xl">
-        한국인공지능(주)은 HUFS 교원창업 연구 기반 회사입니다.<br />
-        환경·공공·산업의 데이터 난제를 <strong
-          class="text-(--color-ink-900)">데이터·모델·대시보드·SaaS</strong
-        >로 풀어냅니다.
+        SCIE 학술지에 발표한 방법론을, <strong class="text-(--color-ink-900)"
+          >데이터·모델·대시보드·SaaS</strong
+        >로 한 팀에서 운영합니다.<br />
+        HUFS 교원창업 연구 기반 회사 — 환경·공공·산업의 의사결정 영역에 적용합니다.
       </p>
       <div class="mt-10 flex flex-wrap gap-4">
         <a
@@ -84,26 +84,16 @@ const formatDate = (d: Date) =>
         class="flex flex-wrap items-center justify-between gap-x-8 gap-y-3 text-sm text-(--color-ink-600)"
       >
         <li>
-          <span class="font-semibold text-(--color-ink-900)">HUFS</span> 교원창업기업
+          <span class="font-semibold text-(--color-ink-900)">HUFS</span> 교원창업
         </li>
         <li>
-          <span class="font-semibold text-(--color-ink-900)"
-            >J. Cleaner Production</span
-          >
-           2024 · 2025 게재
+          <span class="font-semibold text-(--color-ink-900)">SCIE 논문</span> 2편
         </li>
         <li>
-          <span class="font-semibold text-(--color-ink-900)">4개 사업 라인</span>
-           운영 중
+          <span class="font-semibold text-(--color-ink-900)">협력기관</span> 7곳
         </li>
         <li>
-          자체 SaaS <a
-            href="https://homosilicus.github.io"
-            target="_blank"
-            rel="noopener"
-            class="font-semibold text-(--color-brand-600) hover:text-(--color-brand-700)"
-            >Homosilicus</a
-          >
+          <span class="font-semibold text-(--color-ink-900)">풀스택</span> 운영
         </li>
       </ul>
     </div>
@@ -150,8 +140,8 @@ const formatDate = (d: Date) =>
   <section class="container-page pb-24 sm:pb-32">
     <SectionHeading
       eyebrow="SERVICES"
-      title="데이터부터 SaaS까지, 4개 사업 라인"
-      description="채용 데이터 · 환경 GIS · 신뢰가능 AI 설계 · Homosilicus SaaS — 모두 한국인공지능의 신뢰가능 AI 연구를 토대로 운영됩니다."
+      title="환경·공공·산업의 의사결정을 신뢰가능 AI로 운영합니다."
+      description="채용공고 데이터 · 환경 GIS 대시보드 · 신뢰가능 AI 설계 · Homosilicus SaaS — 데이터·모델·대시보드·SaaS를 한 팀에서 풀스택으로 운영합니다."
     />
     <div class="mt-12 sm:mt-16">
       <BusinessLinesDiagram lang="ko" />
@@ -173,7 +163,7 @@ const formatDate = (d: Date) =>
         WHY US
       </p>
       <h2 class="mt-3 max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">
-        다른 AI 회사와 무엇이 다른가
+        세 가지 차별 — 연구·풀스택·Trustworthy AI.
       </h2>
       <div class="mt-12 grid gap-8 md:grid-cols-3">
         {
@@ -197,8 +187,8 @@ const formatDate = (d: Date) =>
   <section class="container-page py-24 sm:py-32">
     <SectionHeading
       eyebrow="RESEARCH"
-      title="학술지 게재 방법론을 그대로 운영"
-      description="한국인공지능 소속으로 출판된 신뢰가능 AI 연구입니다."
+      title="학술지 게재 방법론을 그대로 운영합니다."
+      description="한국인공지능 소속으로 J. Cleaner Production에 발표한 SCIE 논문 2편 — 같은 방법론이 컨설팅·대시보드·SaaS에 적용됩니다."
     />
     <div class="mt-12 grid gap-6">
       {papers.map((paper) => <ResearchCard paper={paper} lang="ko" />)}
@@ -219,11 +209,10 @@ const formatDate = (d: Date) =>
       class="rounded-3xl bg-(--color-brand-600) px-8 py-14 text-white sm:px-14 sm:py-20"
     >
       <h2 class="max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">
-        AI 도입을 고민 중이신가요?
+        AI 도입의 데이터·모델·대시보드를 한 팀에서 운영합니다. 의뢰 범위는 함께 정하면 됩니다.
       </h2>
       <p class="mt-4 max-w-2xl text-base leading-relaxed text-(--color-brand-50) sm:text-lg">
-        의사결정의 근거가 필요한 영역일수록, 연구 기반의 신뢰가능 AI가 필요합니다.
-        편하게 메일 주세요.
+        의뢰 범위·일정·예산은 함께 정하면 됩니다. 1~2 영업일 안에 회신합니다.
       </p>
       <a
         href="/contact/"

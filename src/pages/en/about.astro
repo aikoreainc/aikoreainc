@@ -1,34 +1,35 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SectionHeading from "../../components/SectionHeading.astro";
+import PartnersStrip from "../../components/PartnersStrip.astro";
 import { company } from "../../data/company";
 
 const differentiators = [
   {
-    title: "Research-grounded reliability",
-    body: "Founded by Prof. Donghyun Lee of HUFS. Our trustworthy-AI methods are published in Journal of Cleaner Production (2024, 2025). We surface not only the answer but the reasoning behind it.",
+    title: "We run the methods we publish.",
+    body: "Founded by Prof. Donghyun Lee of HUFS. Two SCIE papers in Journal of Cleaner Production (2024 and 2025) define the trustworthy-AI methods we ship.",
   },
   {
-    title: "Full-stack execution, data to SaaS",
-    body: "Job-posting data pipelines, environmental GIS dashboards, and Homosilicus — our own SaaS. We do not stop at prototypes; we ship and operate.",
+    title: "Data, models, dashboards, and SaaS — one team.",
+    body: "Job-posting data (JobAI), environmental GIS dashboards (BirdFluAI · Air-Report), and our B2B SaaS (Homosilicus) — four product lines, all operated in-house.",
   },
   {
-    title: "Trustworthy AI expertise",
-    body: "Explainable AI and uncertainty quantification are at our core. Built for accountability-critical decisions in government, public sector, and enterprise.",
+    title: "We design AI you can put into decisions.",
+    body: "Explainable AI (XAI) and uncertainty quantification (UQ) at the core — built for public-, government-, and industry-sector decisions that require accountability.",
   },
 ];
 ---
 
 <BaseLayout
   title="About — AIKoreaInc"
-  description="AIKoreaInc is a HUFS faculty spin-off applying trustworthy-AI methods published in SCI journals to real industry and public-sector problems."
+  description="AIKoreaInc is a HUFS faculty-founded company. We operate trustworthy-AI methods published in SCIE journals, validated together with government and research partners."
   lang="en"
 >
   <section class="container-page py-16 sm:py-24">
     <SectionHeading
       eyebrow="ABOUT"
-      title="Trustworthy AI, grounded in research"
-      description="AIKoreaInc is a spin-off from Prof. Donghyun Lee's lab at Hankuk University of Foreign Studies (HUFS). We carry academic methodology into industry and the public sector, building AI that explains its own reasoning."
+      title="Where research becomes product."
+      description="AIKoreaInc is a HUFS faculty-founded company. Published methods from Journal of Cleaner Production (2024 · 2025) become operating dashboards and a B2B SaaS."
     />
   </section>
 
@@ -90,12 +91,20 @@ const differentiators = [
             >Homosilicus</a
           >.
         </p>
+        <p class="mt-4">
+          We collaborate with seven institutions: Korea Environment Institute
+          (KEI), Samsung Medical Center (SMC), Korea Research Institute for
+          Vocational Education and Training (KRIVET), Busan Institute of S&amp;T
+          Evaluation and Planning (BISTEP), Korea Testing Laboratory (KTL),
+          National Institute of Wildlife Disease Control (NIWDC), and Green Vet
+          Inc.
+        </p>
       </div>
     </div>
   </section>
 
   <section class="container-page pb-24 sm:pb-32">
-    <SectionHeading eyebrow="WHY US" title="What makes us different" />
+    <SectionHeading eyebrow="WHY US" title="Three differences — research, full-stack, Trustworthy AI." />
     <div class="mt-12 grid gap-6 md:grid-cols-3">
       {
         differentiators.map((d, i) => (
@@ -112,6 +121,37 @@ const differentiators = [
           </div>
         ))
       }
+    </div>
+  </section>
+
+  <PartnersStrip lang="en" />
+
+  <section class="container-page py-16 sm:py-20">
+    <div
+      class="rounded-2xl border border-(--color-ink-200) bg-(--color-ink-50) px-8 py-10 sm:px-12 sm:py-12"
+    >
+      <p
+        class="text-xs font-semibold uppercase tracking-wider text-(--color-brand-600)"
+      >
+        Next step
+      </p>
+      <h2 class="mt-3 text-2xl font-bold tracking-tight text-(--color-ink-900) sm:text-3xl">
+        Explore our services, or contact us directly.
+      </h2>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a
+          href="/en/services/"
+          class="rounded-lg bg-(--color-brand-600) px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-(--color-brand-700)"
+        >
+          View services
+        </a>
+        <a
+          href="/en/contact/"
+          class="rounded-lg border border-(--color-ink-200) bg-white px-5 py-2.5 text-sm font-semibold text-(--color-ink-900) transition hover:border-(--color-ink-400)"
+        >
+          Contact us
+        </a>
+      </div>
     </div>
   </section>
 </BaseLayout>

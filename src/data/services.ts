@@ -14,22 +14,22 @@ export const services: Service[] = [
     slug: "jobs-data",
     title: { ko: "채용공고 데이터", en: "Job Posting Data" },
     summary: {
-      ko: "국내 채용 공고를 수집·정제하여 인력시장 분석·연구에 활용 가능한 형태로 제공합니다.",
-      en: "Curated job-posting data for labor market analytics, policy research, and product development.",
+      ko: "채용공고를 자동 수집·정제·태깅하여 의사결정 데이터로 공급합니다.",
+      en: "Job postings collected, cleaned, tagged, and served as decision-grade data.",
     },
     description: {
-      ko: "수십만 건 규모의 채용공고를 자동 수집·중복 제거·태깅하고, 직무·지역·기업 단위로 가공합니다. 노동 시장 추세 분석, 정책 연구, 인재 매칭 제품에 그대로 투입할 수 있습니다.",
-      en: "Hundreds of thousands of postings are automatically collected, deduplicated, and tagged across role, region, and employer dimensions. Ready for trend analysis, policy research, and talent-matching products.",
+      ko: "수십만 건 규모의 채용공고를 자동 수집·중복 제거·태깅하고, 직무·지역·기업 단위로 가공합니다. 노동시장 추세 분석, 정책 연구, 인재 매칭 제품에 그대로 투입할 수 있습니다. JobAI(jobai.co.kr)로 가동 중입니다.",
+      en: "Hundreds of thousands of postings are automatically collected, deduplicated, and tagged across role, region, and employer dimensions. Ready for trend analysis, policy research, and talent-matching products. Operated as JobAI (jobai.co.kr).",
     },
     highlights: {
       ko: [
-        "주요 채용 플랫폼 다회 수집·중복 정합",
-        "직무·산업·지역 단위 태깅",
-        "API/덤프 형태로 제공",
+        "수십만 건 규모 자동 수집·중복 정합",
+        "직무·지역·기업 단위 태깅",
+        "API·덤프로 공급",
       ],
       en: [
-        "Multi-source collection with dedup",
-        "Role · industry · region tagging",
+        "Hundreds of thousands of postings, deduplicated",
+        "Tagged by role, region, and employer",
         "Delivered as API or data dumps",
       ],
     },
@@ -39,22 +39,22 @@ export const services: Service[] = [
     slug: "eco-gis",
     title: { ko: "환경 GIS 대시보드", en: "Environmental GIS Dashboard" },
     summary: {
-      ko: "대기·수질·해양·공중보건 등 환경 데이터를 GIS 기반으로 예측·시각화합니다.",
-      en: "GIS-based forecasting and visualization for air, water, marine, and public-health data.",
+      ko: "대기·수질·해양·공중보건 지표를 시·공간 해상도로 상시 운영합니다.",
+      en: "Air, water, marine, and public-health indicators at spatial-temporal resolution.",
     },
     description: {
-      ko: "관측·예보 데이터와 자체 AI 모델을 결합해 시·공간 해상도의 환경 지표를 대시보드로 제공합니다. 정부·연구기관과의 협력 실적을 바탕으로 운영성·정확성을 모두 검증했습니다.",
-      en: "Combines observation and forecast data with in-house AI models to deliver spatial-temporal environmental indicators via dashboards. Operationally validated with government and research partners.",
+      ko: "관측·예보 데이터와 자체 AI 모델을 결합해 시·공간 해상도의 환경 지표를 대시보드로 제공합니다. 단발 예측이 아니라 상시 운영 자산으로, 정부·연구기관과 함께 검증해 왔습니다. BirdFluAI와 Air-Report가 운영 중입니다.",
+      en: "Combines observation and forecast data with in-house AI models to deliver spatial-temporal environmental indicators via dashboards. Not one-off models — always-on assets, validated together with government and research partners. BirdFluAI and Air-Report are in production.",
     },
     highlights: {
       ko: [
         "AI 예측 + GIS 시각화 통합",
-        "정부·연구기관 협력 검증",
+        "정부·연구기관과 함께 검증",
         "REST API·임베드 위젯 지원",
       ],
       en: [
-        "AI forecasting + GIS visualization",
-        "Validated with public-sector partners",
+        "AI forecasting plus GIS visualization",
+        "Validated with public partners",
         "REST API and embeddable widgets",
       ],
     },
@@ -67,23 +67,23 @@ export const services: Service[] = [
     slug: "trustworthy-ai",
     title: { ko: "신뢰가능 AI 설계", en: "Trustworthy AI Design" },
     summary: {
-      ko: "설명가능 AI·불확실성 정량화 기반 컨설팅. 의사결정 근거가 필요한 영역에 특화.",
-      en: "Explainable AI and uncertainty quantification consulting for decision-grade systems.",
+      ko: "학술 IP 그대로, 도입 가능한 메뉴로. J. Cleaner Production 2024·2025 방법론 적용.",
+      en: "Published methods, packaged for adoption — from J. Cleaner Production 2024 and 2025.",
     },
     description: {
-      ko: "정부·공공·기업의 의사결정에 AI를 도입할 때, 결과뿐 아니라 \"왜 그런 결론인지\"를 함께 제시할 수 있도록 모델·평가·보고 체계를 설계합니다. 본사가 SCI 학술지에 발표한 방법론을 그대로 적용합니다.",
-      en: "We design model, evaluation, and reporting pipelines that surface both the answer and the reasoning, so AI can be deployed in decisions that require accountability. Built on methods we have published in SCI journals.",
+      ko: "정부·공공·산업의 의사결정에 AI를 도입할 때, 결과뿐 아니라 \"왜 그런 결론인지\"를 함께 제시할 수 있도록 모델·평가·보고 체계를 설계합니다. 본사가 SCIE 학술지에 발표한 설명가능 AI(XAI)·불확실성 정량화(UQ) 방법론을 그대로 적용합니다.",
+      en: "For decisions that require accountability in the public, government, and industry sectors, we design model, evaluation, and reporting pipelines that surface both the answer and the reasoning. We apply the explainability and uncertainty-quantification methods we published in SCIE journals.",
     },
     highlights: {
       ko: [
         "설명가능 AI(XAI) · CAM 기반",
-        "불확실성 정량화",
-        "Journal of Cleaner Production 2024·2025 게재 방법론",
+        "불확실성 정량화(UQ)",
+        "J. Cleaner Production 2024·2025 게재 방법론",
       ],
       en: [
         "Explainable AI · CAM-based",
-        "Uncertainty quantification",
-        "Methods from J. Cleaner Production 2024·2025",
+        "Uncertainty quantification (UQ)",
+        "Methods from J. Cleaner Production 2024 and 2025",
       ],
     },
   },
@@ -91,12 +91,12 @@ export const services: Service[] = [
     slug: "homosilicus",
     title: { ko: "Homosilicus", en: "Homosilicus" },
     summary: {
-      ko: "합성 고객 페르소나로 10분 만에 시장조사를 끝내는 자체 B2B SaaS 제품.",
-      en: "Our B2B SaaS — synthetic customer personas for market validation in 10 minutes.",
+      ko: "자체 B2B SaaS — AI 합성 페르소나로 신제품·가격·UX를 10분 만에 검증합니다.",
+      en: "Our B2B SaaS — synthetic personas validate products, pricing, and UX in 10 minutes.",
     },
     description: {
-      ko: "기업 고객을 AI 페르소나로 복제해 신제품·가격·UX를 즉시 검증합니다. 무한 확장 페르소나, 10분 인사이트, 데이터 프라이버시 우선.",
-      en: "Replicate enterprise customers as AI personas to validate new products, pricing, and UX instantly. Infinite persona scaling, 10-minute insights, privacy-first.",
+      ko: "기업 고객을 AI 페르소나로 복제해 신제품·가격·UX를 즉시 검증합니다. 무한 확장 페르소나와 프라이버시 우선 아키텍처를 갖춘 자체 B2B SaaS로, 컨설팅·연구 용역과 병행하는 제품 매출 축입니다.",
+      en: "Replicate enterprise customers as AI personas to validate new products, pricing, and UX instantly. Infinite persona scaling on a privacy-first architecture — an in-house SaaS revenue line running alongside consulting and research engagements.",
     },
     highlights: {
       ko: [

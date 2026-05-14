@@ -15,16 +15,16 @@ const recentNews = (await getCollection("newsEn"))
 
 const differentiators = [
   {
-    title: "Research-grounded reliability",
-    body: "HUFS faculty spin-off — we apply the methods we publish in SCI journals.",
+    title: "We run the methods we publish.",
+    body: "A HUFS faculty-founded company — the trustworthy-AI methods in J. Cleaner Production 2024 and 2025 are the same methods we ship.",
   },
   {
-    title: "Full-stack execution",
-    body: "We build and operate everything: data, models, dashboards, SaaS.",
+    title: "Data, models, dashboards, and SaaS — one team.",
+    body: "JobAI, BirdFluAI, Air-Report, and Homosilicus — four product lines operated in-house. No vendor chains to orchestrate.",
   },
   {
-    title: "Trustworthy AI",
-    body: "Explainable AI and uncertainty quantification for accountable decisions.",
+    title: "We design AI you can put into decisions.",
+    body: "Explainable AI (XAI) and uncertainty quantification (UQ), built for public-, government-, and industry-sector decisions that require accountability.",
   },
 ];
 
@@ -38,7 +38,7 @@ const formatDate = (d: Date) =>
 
 <BaseLayout
   title="AIKoreaInc — Trustworthy AI, Built on Research"
-  description="AIKoreaInc is a research-grounded company building trustworthy AI for the data problems that matter — environment, public sector, and enterprise."
+  description="AIKoreaInc is a HUFS faculty-founded company that operates published trustworthy-AI methods end-to-end — data, models, dashboards, and SaaS — for environmental, public, and industry decisions."
   lang="en"
 >
   <!-- Hero -->
@@ -56,23 +56,24 @@ const formatDate = (d: Date) =>
         <span class="gradient-text">built on research.</span>
       </h1>
       <p class="mt-8 text-lg leading-relaxed text-(--color-ink-600) sm:text-xl">
-        Founded by a HUFS professor, AIKoreaInc solves data problems that matter
-        — <strong class="text-(--color-ink-900)"
-          >environment, public sector, and enterprise</strong
-        > — across data pipelines, models, dashboards, and SaaS.
+        Designed and operated by a HUFS faculty-founded company — end-to-end
+        across <strong class="text-(--color-ink-900)"
+          >data, models, dashboards, and SaaS</strong
+        >.<br />
+        Built for environmental, public, and industrial decisions that require accountability.
       </p>
       <div class="mt-10 flex flex-wrap gap-4">
         <a
           href="/en/services/"
           class="rounded-lg bg-(--color-brand-600) px-6 py-3 text-sm font-semibold text-white transition hover:bg-(--color-brand-700)"
         >
-          Our services
+          View services
         </a>
         <a
           href="/en/contact/"
           class="rounded-lg border border-(--color-ink-200) px-6 py-3 text-sm font-semibold text-(--color-ink-900) transition hover:border-(--color-ink-400)"
         >
-          Get in touch
+          Contact us
         </a>
       </div>
     </div>
@@ -85,26 +86,17 @@ const formatDate = (d: Date) =>
         class="flex flex-wrap items-center justify-between gap-x-8 gap-y-3 text-sm text-(--color-ink-600)"
       >
         <li>
-          <span class="font-semibold text-(--color-ink-900)">HUFS</span> faculty
-          spin-off
+          <span class="font-semibold text-(--color-ink-900)">HUFS</span> faculty-founded
         </li>
         <li>
-          Published in <span class="font-semibold text-(--color-ink-900)"
-            >J. Cleaner Production</span
-          > · 2024, 2025
+          <span class="font-semibold text-(--color-ink-900)">2 SCIE</span> papers
         </li>
         <li>
-          <span class="font-semibold text-(--color-ink-900)">4 business lines</span>
-           in operation
+          <span class="font-semibold text-(--color-ink-900)">7</span> institutional
+          partners
         </li>
         <li>
-          Our SaaS, <a
-            href="https://homosilicus.github.io"
-            target="_blank"
-            rel="noopener"
-            class="font-semibold text-(--color-brand-600) hover:text-(--color-brand-700)"
-            >Homosilicus</a
-          >
+          <span class="font-semibold text-(--color-ink-900)">End-to-end</span> stack
         </li>
       </ul>
     </div>
@@ -151,8 +143,8 @@ const formatDate = (d: Date) =>
   <section class="container-page pb-24 sm:pb-32">
     <SectionHeading
       eyebrow="SERVICES"
-      title="Four business lines, data to SaaS"
-      description="Job-posting data · environmental GIS · trustworthy AI design · Homosilicus SaaS — all powered by AIKoreaInc's trustworthy-AI research."
+      title="Trustworthy AI for environmental, public, and industrial decisions."
+      description="Job-posting data, environmental GIS dashboards, trustworthy-AI design, and Homosilicus SaaS — data, models, dashboards, and SaaS, operated end-to-end by one team."
     />
     <div class="mt-12 sm:mt-16">
       <BusinessLinesDiagram lang="en" />
@@ -174,7 +166,7 @@ const formatDate = (d: Date) =>
         WHY US
       </p>
       <h2 class="mt-3 max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">
-        What makes us different
+        Three differences — research, full-stack, Trustworthy AI.
       </h2>
       <div class="mt-12 grid gap-8 md:grid-cols-3">
         {
@@ -198,8 +190,8 @@ const formatDate = (d: Date) =>
   <section class="container-page py-24 sm:py-32">
     <SectionHeading
       eyebrow="RESEARCH"
-      title="The methods we publish are the methods we ship"
-      description="Papers published under AIKoreaInc affiliation."
+      title="The methods we publish are the methods we ship."
+      description="Two SCIE papers in J. Cleaner Production, authored under AIKoreaInc affiliation — the same methods power our consulting, dashboards, and SaaS."
     />
     <div class="mt-12 grid gap-6">
       {papers.map((paper) => <ResearchCard paper={paper} lang="en" />)}
@@ -220,11 +212,11 @@ const formatDate = (d: Date) =>
       class="rounded-3xl bg-(--color-brand-600) px-8 py-14 text-white sm:px-14 sm:py-20"
     >
       <h2 class="max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">
-        Thinking about adopting AI?
+        We operate the full AI stack — data, models, and dashboards — as one team. Scope can be defined together.
       </h2>
       <p class="mt-4 max-w-2xl text-base leading-relaxed text-(--color-brand-50) sm:text-lg">
-        For decisions that demand accountability, you want trustworthy AI built
-        on real research. Drop us a line.
+        Scope, timing, and budget can be defined together. We reply within 1–2
+        business days.
       </p>
       <a
         href="/en/contact/"

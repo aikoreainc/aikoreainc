@@ -10,6 +10,7 @@ export const partners: Partner[] = [
     slug: "kei",
     name: { ko: "한국환경연구원", en: "Korea Environment Institute" },
     url: "https://www.kei.re.kr",
+    logo: "/img/partners/kei.jpg",
   },
   {
     slug: "smc",
@@ -18,17 +19,12 @@ export const partners: Partner[] = [
     logo: "/img/partners/smc.png",
   },
   {
-    slug: "skku",
-    name: { ko: "성균관대학교", en: "Sungkyunkwan University" },
-    url: "https://www.skku.edu",
-  },
-  {
     slug: "greenvet",
     name: { ko: "(주)그린벳", en: "Green Vet Inc." },
   },
   {
     slug: "bistep",
-    name: { ko: "BISTEP", en: "BISTEP" },
+    name: { ko: "부산산업과학혁신원", en: "Busan Institute of S&T Evaluation and Planning" },
     url: "https://www.bistep.re.kr",
     logo: "/img/partners/bistep.png",
   },

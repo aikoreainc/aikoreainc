@@ -11,8 +11,8 @@ import { company } from "../data/company";
   <section class="container-page py-16 sm:py-24">
     <SectionHeading
       eyebrow="CONTACT"
-      title="무엇이든 편하게 문의 주세요"
-      description="컨설팅·데이터·대시보드·SaaS 도입, 정부·공공기관 협업, 연구 협력 — 모두 환영합니다."
+      title="무엇이든 편하게 문의 주세요."
+      description="AI 도입 · 환경 GIS 대시보드 · 데이터 공급 · 공동 연구 의뢰 모두 환영합니다. 1~2 영업일 안에 회신합니다."
     />
 
     <div class="mt-12 grid gap-8 sm:mt-16 md:grid-cols-[1.2fr_1fr]">
@@ -33,8 +33,9 @@ import { company } from "../data/company";
           </a>
         </h3>
         <p class="mt-4 text-sm leading-relaxed text-(--color-ink-600) sm:text-base">
-          영업일 기준 1~2일 내 답신드립니다. 메일 제목에 <strong
-            class="text-(--color-ink-900)">[문의]</strong
+          1~2 영업일 안에 회신합니다. 의뢰 범위·일정·예산이 미확정이라도
+          괜찮습니다. 메일 제목에 <strong class="text-(--color-ink-900)"
+            >[문의]</strong
           > 또는 사업 라인(예: <em class="not-italic">[Homosilicus 문의]</em>)을
           기입해 주시면 빠르게 분류해 드립니다.
         </p>
@@ -42,7 +43,7 @@ import { company } from "../data/company";
           href={`mailto:${company.email}`}
           class="mt-6 inline-block rounded-lg bg-(--color-brand-600) px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-(--color-brand-700)"
         >
-          메일 작성
+          메일로 문의
         </a>
       </article>
 
@@ -76,6 +77,10 @@ import { company } from "../data/company";
           <div>
             <dt>주소</dt>
             <dd>{company.address.ko}</dd>
+          </div>
+          <div>
+            <dt>이메일</dt>
+            <dd>{company.email}</dd>
           </div>
         </dl>
       </article>
