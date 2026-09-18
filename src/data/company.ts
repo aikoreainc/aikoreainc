@@ -30,7 +30,7 @@ export const company = {
   established: 2022,
   links: {
     homosilicus: "https://homosilicus.github.io",
-    professor: "https://donghyunlee-ai.github.io",
+    professor: "https://donghyunlee.kr",
   },
 } as const;
 

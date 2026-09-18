@@ -31,6 +31,9 @@ const altUrl = new URL(altPath, siteOrigin).toString();
 const hreflangMap: Record<string, string> = { ko: "ko-KR", en: "en-US" };
 const ogImage = new URL("/img/logo/wordmark-symbol-blue-ko-trimmed.png", siteOrigin).toString();
 
+const pretendardCss =
+  "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css";
+
 const GA_ID = "G-824905R5KV";
 const isProd = import.meta.env.PROD;
 
@@ -54,10 +57,27 @@ const jsonLd = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Pretendard: 개인 허브(donghyunlee.kr)와 동일한 버전·동적 서브셋.
+         허브와 달리 비차단 로드(preload→stylesheet) — 차단 방식은 모바일에서
+         렌더를 약 790ms 지연시킨다(Lighthouse 측정). 폰트 자체는 font-display:swap. -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href={pretendardCss}
+      crossorigin
+      onload="this.rel='stylesheet'"
+    />
+    <noscript>
+      <link rel="stylesheet" href={pretendardCss} crossorigin />
+    </noscript>
+
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <link rel="icon" type="image/png" href="/img/logo/symbol-blue.png" />
-    <link rel="apple-touch-icon" href="/img/logo/symbol-blue.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="alternate" hreflang={hreflangMap[altLang]} href={altUrl} />
     <link rel="alternate" hreflang={hreflangMap[lang]} href={canonical} />
     <link rel="alternate" hreflang="x-default" href={siteOrigin + "/"} />
@@ -83,6 +103,7 @@ const jsonLd = {
     {
       isProd && (
         <>
+          <link rel="preconnect" href="https://www.googletagmanager.com" />
           <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
