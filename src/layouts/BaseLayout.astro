@@ -29,7 +29,9 @@ const siteOrigin = "https://aikoreainc.com";
 const canonical = new URL(currentPath, siteOrigin).toString();
 const altUrl = new URL(altPath, siteOrigin).toString();
 const hreflangMap: Record<string, string> = { ko: "ko-KR", en: "en-US" };
-const ogImage = new URL("/img/logo/wordmark-symbol-blue-ko-trimmed.png", siteOrigin).toString();
+// 링크 미리보기 전용 1200x630 이미지. 로고 PNG를 그대로 쓰면 1.91:1로 잘리고
+// 투명 배경이 검게 합성되는 클라이언트가 있다.
+const ogImage = new URL(lang === "en" ? "/og-en.jpg" : "/og-ko.jpg", siteOrigin).toString();
 
 const pretendardCss =
   "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css";
@@ -76,6 +78,7 @@ const jsonLd = {
 
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="alternate" hreflang={hreflangMap[altLang]} href={altUrl} />
@@ -90,6 +93,9 @@ const jsonLd = {
     <meta property="og:locale" content={lang === "ko" ? "ko_KR" : "en_US"} />
     <meta property="og:locale:alternate" content={altLang === "ko" ? "ko_KR" : "en_US"} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:alt" content="한국인공지능 AI Korea Inc." />
     <meta property="og:site_name" content="AI Korea Inc." />
 

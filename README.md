@@ -57,7 +57,7 @@ npm run check     # TypeScript 타입 검사
 
 ### 배포
 - `main` 브랜치 push → GitHub Actions → GitHub Pages 자동 배포
-- `dist/` 폴더는 gitignore 대상 아님 (GitHub Pages 소스)
+- `dist/`는 gitignore 대상 — 저장소에 커밋하지 않는다. Actions가 빌드해 Pages에 올린다
 - CNAME: `aikoreainc.com`
 
 ### 외부 설정 변경 기록

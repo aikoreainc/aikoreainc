@@ -51,6 +51,9 @@ const sub =
                     src={p.logo}
                     alt={p.name[lang]}
                     loading="lazy"
+                    decoding="async"
+                    width={p.size?.w}
+                    height={p.size?.h}
                     class="max-h-10 w-auto opacity-90 transition-opacity hover:opacity-100 sm:max-h-12"
                   />
                 ) : (

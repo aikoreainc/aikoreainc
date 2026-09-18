@@ -31,7 +31,7 @@ const langTogglePath = (() => {
   class="sticky top-0 z-40 w-full border-b border-(--color-ink-100)/80 bg-white/85 backdrop-blur-md supports-[backdrop-filter]:bg-white/70"
 >
   <div
-    class="container-page flex h-16 items-center justify-between gap-8 sm:h-20"
+    class="container-page flex h-16 items-center justify-between gap-3 sm:h-20 sm:gap-8"
   >
     <a
       href={pathFor("/", lang)}
@@ -39,9 +39,11 @@ const langTogglePath = (() => {
       aria-label={company.shortName[lang]}
     >
       <img
-        src="/img/logo/wordmark-symbol-blue-ko-trimmed.png"
+        src="/img/logo/wordmark.svg"
         alt={company.shortName.ko}
-        class="h-14 w-auto sm:h-16"
+        width="702"
+        height="117"
+        class="h-7 w-auto sm:h-9"
       />
     </a>
 
