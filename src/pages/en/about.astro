@@ -66,8 +66,9 @@ import { papers } from "../../data/research";
             >trustworthy AI design, explainable AI (XAI), uncertainty
             quantification (UQ), environmental prediction, and public-health
             AI</strong
-          >. He has published two SCIE papers as corresponding author — and the
-          company runs those exact methods as its services.
+          >. He has published three SCIE papers as corresponding author, and the
+          company runs the XAI and uncertainty-quantification methods among them
+          as its services.
         </p>
         <p class="mt-4">
           AI Korea Inc. runs four product lines directly — job-posting data,
@@ -184,10 +185,10 @@ import { papers } from "../../data/research";
   <section class="container-page pb-16 sm:pb-24">
     <SectionHeading
       eyebrow="RESEARCH"
-      title="Two SCIE papers."
-      description="Trustworthy AI methods we published in SCIE journals under the company affiliation."
+      title="Three SCIE papers."
+      description="Trustworthy AI and infectious-disease forecasting research we published in SCIE journals under the company affiliation."
     />
-    <div class="mt-10 grid gap-6 md:grid-cols-2">
+    <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       {papers.map((paper) => <ResearchCard paper={paper} lang="en" />)}
     </div>
     <div class="mt-8">

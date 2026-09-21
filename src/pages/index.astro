@@ -97,7 +97,7 @@ const formatDate = (d: Date) =>
           <span class="font-semibold text-(--color-ink-900)">HUFS</span> 교원창업
         </li>
         <li class="sm:px-6">
-          <span class="font-semibold text-(--color-ink-900)">SCIE 논문</span> 2편
+          <span class="font-semibold text-(--color-ink-900)">SCIE 논문</span> 3편
         </li>
         <li class="sm:px-6">
           <span class="font-semibold text-(--color-ink-900)">협력기관</span> 7곳
@@ -202,9 +202,9 @@ const formatDate = (d: Date) =>
     <SectionHeading
       eyebrow="RESEARCH"
       title="학술지 게재 방법론을 그대로 운영합니다."
-      description="한국인공지능 소속으로 J. Cleaner Production에 발표한 SCIE 논문 2편 — 같은 방법론이 컨설팅·대시보드·SaaS에 적용됩니다."
+      description="한국인공지능 소속으로 발표한 SCIE 논문 3편 — 그중 XAI·불확실성 정량화 방법론이 컨설팅·대시보드·SaaS에 그대로 적용됩니다."
     />
-    <div class="mt-12 grid gap-6 md:grid-cols-2 md:items-stretch">
+    <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3 md:items-stretch">
       {papers.map((paper) => <ResearchCard paper={paper} lang="ko" />)}
     </div>
     <div class="mt-10">

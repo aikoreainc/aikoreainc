@@ -8,7 +8,7 @@ import { company } from "../../data/company";
 
 <BaseLayout
   title="Research — AI Korea Inc."
-  description="Two SCIE papers authored under AI Korea Inc. affiliation in Journal of Cleaner Production — trustworthy AI, explainable AI (XAI), and uncertainty quantification (UQ)."
+  description="Three SCIE papers authored under AI Korea Inc. affiliation — trustworthy AI, explainable AI (XAI), uncertainty quantification (UQ), and transfer learning."
   lang="en"
 >
   <section class="relative overflow-hidden">
@@ -17,10 +17,10 @@ import { company } from "../../data/company";
       <SectionHeading
         eyebrow="RESEARCH"
         title="The methods we publish are the methods we ship."
-        description="Two SCIE papers in Journal of Cleaner Production (2024 · 2025), authored under AI Korea Inc. affiliation. The same XAI and uncertainty-quantification procedures power our consulting, environmental GIS dashboards, and SaaS."
+        description="Three SCIE papers in Journal of Cleaner Production (2024 · 2025) and Expert Systems with Applications (2026), authored under AI Korea Inc. affiliation. The XAI and uncertainty-quantification procedures among them power our consulting, environmental GIS dashboards, and SaaS."
       />
 
-      <div class="mt-12 grid gap-6 sm:mt-16 md:grid-cols-2 md:items-stretch">
+      <div class="mt-12 grid gap-6 sm:mt-16 md:grid-cols-2 lg:grid-cols-3 md:items-stretch">
         {papers.map((paper) => <ResearchCard paper={paper} lang="en" />)}
       </div>
     </div>

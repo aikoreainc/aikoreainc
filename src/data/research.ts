@@ -14,6 +14,23 @@ export interface Paper {
 
 export const papers: Paper[] = [
   {
+    id: "heterogeneous-tl-2026",
+    title:
+      "Heterogeneous transfer learning for robust infectious disease forecasting: A data-centric approach",
+    authors: "Lee D.",
+    journal: "Expert Systems with Applications",
+    volume: "332",
+    page: "133728",
+    year: 2026, // 온라인 게재 2026-07-22 (권호는 2027-01) — 온라인 게재 연도 기준
+    month: 7,
+    doi: "10.1016/j.eswa.2026.133728",
+    summary: {
+      ko: "여러 나라의 이질적인 데이터로 사전학습해 단일 국가 데이터의 일반화 한계를 다루는 전이학습. 30개국 COVID-19 데이터로 검증.",
+      en: "A heterogeneous transfer learning framework that pre-trains on data from dissimilar countries to address single-country data limits in epidemic forecasting, validated across 30 countries.",
+    },
+    topics: ["Transfer Learning", "Infectious Disease", "Data-centric AI"],
+  },
+  {
     id: "algal-bloom-xai-2025",
     title:
       "Reinforced explainable AI for algal bloom forecasting under climate change: A multi-run class activation mapping (CAM) approach",

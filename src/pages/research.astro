@@ -8,7 +8,7 @@ import { company } from "../data/company";
 
 <BaseLayout
   title="연구실적 — 한국인공지능"
-  description="한국인공지능 소속으로 J. Cleaner Production에 발표한 SCIE 논문 2편 — 신뢰가능 AI · 설명가능 AI(XAI) · 불확실성 정량화(UQ) 방법론."
+  description="한국인공지능 소속으로 발표한 SCIE 논문 3편 — 신뢰가능 AI · 설명가능 AI(XAI) · 불확실성 정량화(UQ) · 전이학습."
 >
   <section class="relative overflow-hidden">
     <div aria-hidden="true" class="glow-hero pointer-events-none absolute inset-x-0 top-0 -z-10"></div>
@@ -16,10 +16,10 @@ import { company } from "../data/company";
       <SectionHeading
         eyebrow="RESEARCH"
         title="학술지 게재 방법론을 그대로 운영합니다."
-        description="한국인공지능 소속으로 Journal of Cleaner Production(2024·2025)에 발표한 SCIE 논문 2편입니다. XAI · 불확실성 정량화(UQ) 두 주제를, 컨설팅 · 환경 GIS 대시보드 · 자체 SaaS에 동일 절차로 적용합니다."
+        description="한국인공지능 소속으로 Journal of Cleaner Production(2024·2025)과 Expert Systems with Applications(2026)에 발표한 SCIE 논문 3편입니다. 이 중 XAI · 불확실성 정량화(UQ) 방법론을 컨설팅 · 환경 GIS 대시보드 · 자체 SaaS에 동일 절차로 적용합니다."
       />
 
-      <div class="mt-12 grid gap-6 sm:mt-16 md:grid-cols-2 md:items-stretch">
+      <div class="mt-12 grid gap-6 sm:mt-16 md:grid-cols-2 lg:grid-cols-3 md:items-stretch">
         {papers.map((paper) => <ResearchCard paper={paper} lang="ko" />)}
       </div>
     </div>
