@@ -43,8 +43,8 @@ export const services: Service[] = [
       en: "Air, water, marine, and public-health indicators at spatial-temporal resolution.",
     },
     description: {
-      ko: "관측·예보 데이터와 자체 AI 모델을 결합해 시·공간 해상도의 환경 지표를 대시보드로 제공합니다. 단발 예측이 아니라 상시 운영 자산으로, 정부·연구기관과 함께 검증해 왔습니다. Air-Report가 운영 중입니다.",
-      en: "Combines observation and forecast data with in-house AI models to deliver spatial-temporal environmental indicators via dashboards. Not one-off models — always-on assets, validated together with government and research partners. Air-Report is in production.",
+      ko: "관측·예보 데이터와 자체 AI 모델을 결합해 시·공간 해상도의 환경 지표를 대시보드로 제공합니다. 단발 예측이 아니라 상시 운영 자산으로, 정부·연구기관과 함께 검증해 왔습니다. 대기질 대시보드 Air-Report를 용역으로 구축했습니다.",
+      en: "Combines observation and forecast data with in-house AI models to deliver spatial-temporal environmental indicators via dashboards. Not one-off models — always-on assets, validated together with government and research partners. We built the Air-Report air-quality dashboard under contract.",
     },
     highlights: {
       ko: [
