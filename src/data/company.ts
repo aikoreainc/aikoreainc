@@ -29,7 +29,8 @@ export const company = {
   email: "aikoreainc@gmail.com",
   established: 2022,
   links: {
-    homosilicus: "https://homosilicus.github.io",
+    // 실리쿠스 공개 뒤 제품 링크로 쓸 주소. 지금은 비밀번호 화면이라 링크하지 않는다(2026-10-22).
+    silicus: "https://silicus.kr",
     professor: "https://donghyunlee.kr",
   },
 } as const;

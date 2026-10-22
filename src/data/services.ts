@@ -87,29 +87,28 @@ export const services: Service[] = [
     },
   },
   {
-    slug: "homosilicus",
-    title: { ko: "Homosilicus", en: "Homosilicus" },
+    slug: "silicus",
+    title: { ko: "실리쿠스(Silicus)", en: "Silicus" },
     summary: {
-      ko: "자체 B2B SaaS — AI 합성 페르소나로 신제품·가격·UX를 10분 만에 검증합니다.",
-      en: "Our B2B SaaS — synthetic personas validate products, pricing, and UX in 10 minutes.",
+      ko: "자체 B2B SaaS — 한국인 합성 패널에게 설문과 인터뷰를 먼저 해 봅니다(시범 운영 중).",
+      en: "Our B2B SaaS — try surveys and interviews on a synthetic Korean panel first (in pilot).",
     },
     description: {
-      ko: "기업 고객을 AI 페르소나로 복제해 신제품·가격·UX를 즉시 검증합니다. 무한 확장 페르소나와 프라이버시 우선 아키텍처를 갖춘 자체 B2B SaaS로, 컨설팅·연구 용역과 병행하는 제품 매출 축입니다.",
-      en: "Replicate enterprise customers as AI personas to validate new products, pricing, and UX instantly. Infinite persona scaling on a privacy-first architecture — an in-house SaaS revenue line running alongside consulting and research engagements.",
+      ko: "공개된 한국인 페르소나에게 AI 모델로 설문과 인터뷰를 묻고, 결과를 문항별 분포와 집단별 교차표로 보여 줍니다. 합성 응답은 사람 조사를 대신하지 않으며, 본조사 전에 문항과 가설을 다듬는 데 씁니다. 컨설팅·연구 용역과 병행하는 제품 매출 축입니다.",
+      en: "Ask public Korean personas your survey and interview questions through AI models, and read the answers as per-question distributions and group cross-tabs. Synthetic responses do not replace surveys of real people; they help refine questions and hypotheses before fieldwork. An in-house SaaS revenue line running alongside consulting and research engagements.",
     },
     highlights: {
       ko: [
-        "무한 확장 페르소나",
-        "10분 시장 검증",
-        "프라이버시 우선 아키텍처",
+        "설문·인터뷰 합성 응답",
+        "집단별 교차표와 리포트",
+        "AI 합성 응답임을 분명히 표시",
       ],
       en: [
-        "Infinite persona scaling",
-        "Insights in 10 minutes",
-        "Privacy-first architecture",
+        "Synthetic survey and interview responses",
+        "Group cross-tabs and reports",
+        "Clearly labeled as AI-generated",
       ],
     },
-    products: [{ name: "Homosilicus", url: "https://homosilicus.github.io" }],
   },
 ];
 

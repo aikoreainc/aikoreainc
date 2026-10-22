@@ -42,9 +42,7 @@ const navItems = [
           {tagline[lang]}
         </p>
         <a
-          href={company.links.homosilicus}
-          target="_blank"
-          rel="noopener"
+          href={pathFor("/services", lang)}
           class="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-(--color-brand-600) hover:text-(--color-brand-700)"
         >
           {dict.footer.productLink[lang]}

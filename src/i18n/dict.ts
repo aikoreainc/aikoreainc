@@ -24,8 +24,8 @@ export const dict = {
       en: "AI Korea Inc. All rights reserved.",
     },
     productLink: {
-      ko: "주력 SaaS 제품 Homosilicus 보기",
-      en: "Visit our flagship SaaS — Homosilicus",
+      ko: "주력 SaaS 제품 실리쿠스 보기",
+      en: "See our flagship SaaS — Silicus",
     },
   },
   hero: {
